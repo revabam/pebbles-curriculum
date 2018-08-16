@@ -53,19 +53,6 @@ values((SELECT subtopic_seq.nextVal FROM dual), 'Node', 4);
 insert into subtopic (id, name, parent_topic_id)
 values((SELECT subtopic_seq.nextVal FROM dual), 'Express APIs', 4);
 
-/*
-create curriculum_topics linking table
-*/
-CREATE SEQUENCE curriculum_topics_seq
-INCREMENT BY 1;
-
-CREATE TABLE curriculum_topics
-(id INTEGER NOT NULL default curriculum_topics_seq,
-curriculum_id INTEGER,
-topic_id INTEGER,
-week_number INTEGER,
-PRIMARY KEY (id))
-
 /*Full-stack Java curriculum topics*/
 insert into curriculum_topics (id, curriculum_id, topic_id, week_number)
 values((SELECT curriculum_topics_seq.nextVal FROM dual), 1, 1, 1);
