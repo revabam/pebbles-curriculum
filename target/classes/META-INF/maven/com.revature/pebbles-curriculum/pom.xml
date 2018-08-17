@@ -20,7 +20,7 @@
 	</parent>
 
 	<build>
-		<finalName>pebbles-user</finalName>
+		<finalName>pebbles-curriculum</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

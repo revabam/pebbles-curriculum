@@ -2,7 +2,7 @@ CREATE SEQUENCE curriculum_seq
 INCREMENT BY 1;
 
 CREATE TABLE curriculum
-(id INTEGER NOT NULL default curriculum_seq,
+(id INTEGER NOT NULL,
 name VARCHAR(25),
 version VARCHAR(25),
 creator_id INTEGER,
@@ -14,7 +14,7 @@ CREATE SEQUENCE topic_seq
 INCREMENT BY 1;
 
 CREATE TABLE topic
-(id INTEGER NOT NULL default topic_seq,
+(id INTEGER NOT NULL,
 name VARCHAR(25),
 parent_topic_id INTEGER,
 PRIMARY KEY(id));
@@ -23,8 +23,8 @@ CREATE SEQUENCE subtopic_seq
 INCREMENT BY 1;
 
 CREATE TABLE subtopic
-(id INTEGER NOT NULL default subtopic_seq,
-name VARCHAR(25),
+(id INTEGER NOT NULL,
+name VARCHAR(50),
 parent_topic_id INTEGER,
 PRIMARY KEY(id),
 FOREIGN KEY (parent_topic_id) references topic(id));
@@ -36,7 +36,7 @@ CREATE SEQUENCE curriculum_topics_seq
 INCREMENT BY 1;
 
 CREATE TABLE curriculum_topics
-(id INTEGER NOT NULL default curriculum_topics_seq,
+(id INTEGER NOT NULL,
 curriculum_id INTEGER,
 topic_id INTEGER,
 week_number INTEGER,
