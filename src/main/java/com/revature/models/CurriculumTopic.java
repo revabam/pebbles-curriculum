@@ -28,15 +28,19 @@ public class CurriculumTopic implements Serializable {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="curriculum_topics_seq_name")
 	private Integer id;
 	
-	@ManyToOne
-	@JoinColumn(name="curriculum_id", nullable=false, referencedColumnName="id")
-	private Integer curriculum_id;
-	
-	@ManyToOne
-	@JoinColumn(name="topic_id", nullable=false, referencedColumnName="id")
-	private Integer topic_id;
-	
+//	@ManyToOne
+//	@JoinColumn(name="curriculum_id", nullable=false, referencedColumnName="id")
 	@NotNull
+	@Column(name="curriculum_id")
+	private Integer curriculumId;
+	
+//	@ManyToOne
+//	@JoinColumn(name="topic_id", nullable=false, referencedColumnName="id")
+	@NotNull
+	@Column(name="topic_id")
+	private Integer topicId;
+	
+//	@NotNull
 	@Column(name="number_of_weeks")
 	private Integer number_of_weeks;
 	
@@ -44,16 +48,16 @@ public class CurriculumTopic implements Serializable {
 
 	public CurriculumTopic(Integer curriculum_id, Integer topic_id, Integer number_of_weeks) {
 		super();
-		this.curriculum_id = curriculum_id;
-		this.topic_id = topic_id;
+		this.curriculumId = curriculum_id;
+		this.topicId = topic_id;
 		this.number_of_weeks = number_of_weeks;
 	}
 
 	public CurriculumTopic(Integer id, Integer curriculum_id, Integer topic_id, Integer number_of_weeks) {
 		super();
 		this.id = id;
-		this.curriculum_id = curriculum_id;
-		this.topic_id = topic_id;
+		this.curriculumId = curriculum_id;
+		this.topicId = topic_id;
 		this.number_of_weeks = number_of_weeks;
 	}
 
@@ -66,19 +70,19 @@ public class CurriculumTopic implements Serializable {
 	}
 
 	public Integer getCurriculum_id() {
-		return curriculum_id;
+		return curriculumId;
 	}
 
 	public void setCurriculum_id(Integer curriculum_id) {
-		this.curriculum_id = curriculum_id;
+		this.curriculumId = curriculum_id;
 	}
 
 	public Integer getTopic_id() {
-		return topic_id;
+		return topicId;
 	}
 
 	public void setTopic_id(Integer topic_id) {
-		this.topic_id = topic_id;
+		this.topicId = topic_id;
 	}
 
 	public Integer getNumber_of_weeks() {

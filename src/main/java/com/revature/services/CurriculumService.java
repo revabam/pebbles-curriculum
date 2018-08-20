@@ -55,7 +55,7 @@ public class CurriculumService {
 	}
 
 	public List<Topic> getTopicsByCurriculumId(int id) {
-		List<CurriculumTopic> currTopics = currTopicRepo.findCurriculumTopicByCurriculumId();
+		List<CurriculumTopic> currTopics = currTopicRepo.findCurriculumTopicByCurriculumId(id);
 		List<Topic> topics = new ArrayList<>();
 		for(CurriculumTopic curr : currTopics) {
 			Topic topic = topicRepo.findTopicById(curr.getTopic_id());
@@ -106,17 +106,20 @@ public class CurriculumService {
 		} else {
 			return subRepo.save(updatedSubtopic);
 		}
-		
 	}
 
-//	public CurriculumTopic updateCurriculumTopic(int, id, int week, Topic topic) {
-//		CurriculumTopic ct = currTopicRepo.findCurriculumTopicByTopicId(topic.getId());
-//		if(ct == null) {
-//			return null;
-//		} else {
-//			ct.setNumber_of_weeks(week);
-//			return 
-//		}
-//	}
-
+	public CurriculumTopic updateCurriculumTopic(int id, int week, Topic topic) {
+		List<CurriculumTopic> cts = currTopicRepo.findCurriculumTopicByCurriculumId(id);
+		if(cts == null) {
+			return null;
+		} else {
+			for(CurriculumTopic ct : cts) {
+				if(ct.getTopic_id() == topic.getId()) {
+					ct.setNumber_of_weeks(week);
+					return currTopicRepo.save(ct);
+				}
+			}
+		}
+		return null;
+	}
 }

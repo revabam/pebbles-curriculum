@@ -25,7 +25,7 @@ import com.revature.services.CurriculumService;
 
 @CrossOrigin
 @RestController
-@RequestMapping
+@RequestMapping(value="/curriculum")
 public class CurriculumController {
 	
 	@Autowired
@@ -79,7 +79,7 @@ public class CurriculumController {
 		return new ResponseEntity<List<Subtopic>>(subtopics, HttpStatus.OK);
 	}
 	
-	@PostMapping(value="/topic/{id}/{week}", produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value="/topics/{id}/{week}", produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Topic> addTopic(@PathVariable("id") int id, @PathVariable("week") int week, @Valid @RequestBody Topic newTopic) {
 		System.out.println("[DEBUG] - in CurriculumController.addTopic()");
 		Topic topic = service.addTopic(newTopic);
@@ -88,34 +88,35 @@ public class CurriculumController {
 		return new ResponseEntity<Topic>(topic, HttpStatus.CREATED);
 	}
 	
-	@PostMapping(value="/subtopic", produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value="/subtopics", produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Subtopic> addSubtopic(@Valid @RequestBody Subtopic newSubtopic) {
 		System.out.println("[DEBUG] - in CurriculumController.addSubtopic()");
 		Subtopic subtopic = service.addSubtopic(newSubtopic);
 		return new ResponseEntity<Subtopic>(subtopic, HttpStatus.CREATED);
 	}
 	
-	@PutMapping(value="/topic", produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value="/topics", produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Topic> updateTopic(@Valid @RequestBody Topic updatedTopic) {
 		System.out.println("[DEBUG] - in CurriculumController.updateTopic()");
 		Topic topic = service.updateTopic(updatedTopic);
 		return new ResponseEntity<Topic>(topic, HttpStatus.OK);
 	}
 	
-	@PutMapping(value="/subtopic", produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value="/subtopics", produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Subtopic> updateSubtopic(@Valid @RequestBody Subtopic updatedSubtopic) {
 		System.out.println("[DEBUG] - in CurriculumController.updateSubtopic()");
 		Subtopic subtopic = service.updateSubtopic(updatedSubtopic);
 		return new ResponseEntity<Subtopic>(subtopic, HttpStatus.OK);
 	}
 	
-//	@PutMapping(value="topic/{week}", produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
-//	public ResponseEntity<Topic> updateTopicWeek(@PathVariable("week") int week, @Valid @RequestBody Topic topic) {
-//		System.out.println("[DEBUG] - in CurriculumController.updateTopicWeek()");
-//		CurriculumTopic ct = service.updateCurriculumTopic(week, topic);
-//		if(ct == null) {
-//			return new ResponseEntity<Topic>(null, HttpStatus.NOT_FOUND);
-//		}
-//		return new ResponseEntity<Topic>(topic, HttpStatus.OK);
-//	}
+	@PutMapping(value="/topics/{id}/{week}", produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Topic> updateTopicWeek(@PathVariable("id") int id, @PathVariable("week") int week, @Valid @RequestBody Topic topic) {
+		System.out.println("[DEBUG] - in CurriculumController.updateTopicWeek()");
+		CurriculumTopic ct = service.updateCurriculumTopic(id, week, topic);
+		if(ct == null) {
+			return new ResponseEntity<Topic>((Topic) null, HttpStatus.NOT_FOUND);
+		} else {
+			return new ResponseEntity<Topic>(topic, HttpStatus.OK);
+		}
+	}
 }

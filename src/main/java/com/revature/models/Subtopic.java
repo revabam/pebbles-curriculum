@@ -32,23 +32,25 @@ public class Subtopic implements Serializable {
 	@Column(name="name", unique=true)
 	private String name;
 	
-	@ManyToOne
-	@JoinColumn(name="parent_topic_id", nullable=false, referencedColumnName="id")
-	private Topic parent_topic_id;
+//	@ManyToOne
+//	@JoinColumn(name="parent_topic_id", nullable=false, referencedColumnName="id")
+	@NotNull
+	@Column(name="parent_topic_id")
+	private Integer parentTopicId;
 	
 	public Subtopic() {}
 
-	public Subtopic(String name, Topic parent_topic_id) {
+	public Subtopic(String name, Integer parent_topic_id) {
 		super();
 		this.name = name;
-		this.parent_topic_id = parent_topic_id;
+		this.parentTopicId = parent_topic_id;
 	}
 
-	public Subtopic(Integer id, String name, Topic parent_topic_id) {
+	public Subtopic(Integer id, String name, Integer parent_topic_id) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.parent_topic_id = parent_topic_id;
+		this.parentTopicId = parent_topic_id;
 	}
 
 	public Integer getId() {
@@ -67,12 +69,12 @@ public class Subtopic implements Serializable {
 		this.name = name;
 	}
 
-	public Topic getParent_topic_id() {
-		return parent_topic_id;
+	public Integer getParent_topic_id() {
+		return parentTopicId;
 	}
 
-	public void setParent_topic_id(Topic parent_topic_id) {
-		this.parent_topic_id = parent_topic_id;
+	public void setParent_topic_id(Integer parent_topic_id) {
+		this.parentTopicId = parent_topic_id;
 	}
 
 }
