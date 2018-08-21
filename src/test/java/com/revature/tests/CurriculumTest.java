@@ -37,7 +37,7 @@ public class CurriculumTest {
 	
 	@Test
 	public void canAddCurriculum() {
-		Curriculum curr = new Curriculum(0, "Full-stack .Net", "version_1.0.1", 1, new Date(0L), 10);
+		Curriculum curr = new Curriculum(0, "Full-stack .Net", "version_1.0.1", 1, new Date(1534815476247L), 10);
 		
 		JsonObject json = new JsonObject();
 		json.addProperty("curriculum", curr.toString());

@@ -92,7 +92,7 @@ public class CurriculumService {
 	}
 
 	public Topic updateTopic(Topic updatedTopic) {
-		Integer topic = topicRepo.findTopicById(updatedTopic.getId());
+		Topic topic = topicRepo.findTopicById(updatedTopic.getId());
 		if(topic == null) {
 			return null;
 		} else {
