@@ -121,13 +121,13 @@ public class CurriculumController {
 	}
 	
 	@PutMapping(value="/topics/{id}/{week}", produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Integer> updateTopicWeek(@PathVariable("id") int id, @PathVariable("week") int week, @Valid @RequestBody Integer topic) {
+	public ResponseEntity<CurriculumTopic> updateTopicWeek(@PathVariable("id") int id, @PathVariable("week") int week, @Valid @RequestBody Topic topic) {
 		System.out.println("[DEBUG] - in CurriculumController.updateTopicWeek()");
 		CurriculumTopic ct = service.updateCurriculumTopic(id, week, topic);
 		if(ct == null) {
-			return new ResponseEntity<Integer>((Integer) null, HttpStatus.NOT_FOUND);
+			return new ResponseEntity<CurriculumTopic>((CurriculumTopic) null, HttpStatus.NOT_FOUND);
 		} else {
-			return new ResponseEntity<Integer>(topic, HttpStatus.OK);
+			return new ResponseEntity<CurriculumTopic>(ct, HttpStatus.OK);
 		}
 	}
 }
