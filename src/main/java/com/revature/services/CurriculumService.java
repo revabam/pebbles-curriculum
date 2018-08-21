@@ -109,13 +109,13 @@ public class CurriculumService {
 		}
 	}
 
-	public CurriculumTopic updateCurriculumTopic(int id, int week, Integer topic) {
+	public CurriculumTopic updateCurriculumTopic(int id, int week, Topic topic) {
 		List<CurriculumTopic> cts = currTopicRepo.findCurriculumTopicByCurriculumId(id);
 		if(cts == null) {
 			return null;
 		} else {
 			for(CurriculumTopic ct : cts) {
-				if(ct.getTopic_id() == topic) {
+				if(ct.getTopic_id() == topic.getId()) {
 					ct.setNumber_of_weeks(week);
 					return currTopicRepo.save(ct);
 				}
