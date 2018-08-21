@@ -16,7 +16,6 @@ INCREMENT BY 1;
 CREATE TABLE topic
 (id INTEGER NOT NULL,
 name VARCHAR(25),
-parent_topic_id INTEGER,
 PRIMARY KEY(id));
 
 CREATE SEQUENCE subtopic_seq
@@ -40,4 +39,6 @@ CREATE TABLE curriculum_topics
 curriculum_id INTEGER,
 topic_id INTEGER,
 week_number INTEGER,
-PRIMARY KEY (id));
+PRIMARY KEY (id),
+FOREIGN KEY (curriculum_id) references curriculum(id),
+FOREIGN KEY (topic_id) references topic(id));

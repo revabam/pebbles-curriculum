@@ -58,7 +58,7 @@ public class CurriculumService {
 		List<CurriculumTopic> currTopics = currTopicRepo.findCurriculumTopicByCurriculumId(id);
 		List<Topic> topics = new ArrayList<>();
 		for(CurriculumTopic curr : currTopics) {
-			Topic topic = topicRepo.findTopicById(curr.getTopic_id());
+			Topic topic = topicRepo.findOne(curr.getTopic_id());
 			if(topic != null) {
 				topics.add(topic);
 			}
@@ -68,6 +68,7 @@ public class CurriculumService {
 
 	public List<Subtopic> getSubtopicsByCurriculumId(int id) {
 		List<Topic> topics = getTopicsByCurriculumId(id);
+		System.out.println("Topics: " + topics.size());
 		List<Subtopic> subtopics = new ArrayList<>();
 		for(Topic topic : topics) {
 			List<Subtopic> temp = subRepo.findSubtopicByParentTopicId(topic.getId());
@@ -91,7 +92,7 @@ public class CurriculumService {
 	}
 
 	public Topic updateTopic(Topic updatedTopic) {
-		Topic topic = topicRepo.findTopicById(updatedTopic.getId());
+		Integer topic = topicRepo.findTopicById(updatedTopic.getId());
 		if(topic == null) {
 			return null;
 		} else {
@@ -108,13 +109,13 @@ public class CurriculumService {
 		}
 	}
 
-	public CurriculumTopic updateCurriculumTopic(int id, int week, Topic topic) {
+	public CurriculumTopic updateCurriculumTopic(int id, int week, Integer topic) {
 		List<CurriculumTopic> cts = currTopicRepo.findCurriculumTopicByCurriculumId(id);
 		if(cts == null) {
 			return null;
 		} else {
 			for(CurriculumTopic ct : cts) {
-				if(ct.getTopic_id() == topic.getId()) {
+				if(ct.getTopic_id() == topic) {
 					ct.setNumber_of_weeks(week);
 					return currTopicRepo.save(ct);
 				}
