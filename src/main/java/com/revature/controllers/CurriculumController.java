@@ -45,9 +45,10 @@ public class CurriculumController {
 	
 	/**
 	*Gets one curriculum by its id
-	*@param <id><int>
-	*@return ResponseEntity<Curriculum><A curriculum object and a HTTP status code>
-	*@author <Christian DeFaria><1806-Jun18-USF-Java><Wezley Singleton>
+	*
+	*@param id int
+	*@return ResponseEntity<Curriculum> A curriculum object and a HTTP status code
+	*@author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
 	*/
 	@GetMapping(value="/{id}", produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Curriculum> findCurriculumById(@PathVariable("id") int id) {
@@ -62,6 +63,13 @@ public class CurriculumController {
 		}
 	}
 	
+	/**
+	*Adds a curriculum to the database and returns it
+	*
+	*@param newCurr Curriculum
+	*@return ResponseEntity<Curriculum> A curriculum object and a HTTP status code
+	*@author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
+	*/
 	@PostMapping(produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Curriculum> addCurriculum(@RequestBody Curriculum newCurr) {
 		System.out.println("[DEBUG] - in CurriculumController.addCurriculum()");
@@ -69,6 +77,13 @@ public class CurriculumController {
 		return new ResponseEntity<Curriculum>(curr, HttpStatus.CREATED);
 	}
 	
+	/**
+	*Updates a curriculum in the database and returns it
+	*
+	*@param updatedCurr Curriculum
+	*@return ResponseEntity<Curriculum> A curriculum object and a HTTP status code
+	*@author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
+	*/
 	@PutMapping(produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Curriculum> updateCurriculum(@Valid @RequestBody Curriculum updatedCurr) {
 		System.out.println("[DEBUG] - in CurriculumController.updateCurriculum()");
@@ -76,6 +91,13 @@ public class CurriculumController {
 		return new ResponseEntity<Curriculum>(curr, HttpStatus.OK);
 	}
 	
+	/**
+	*Gets all topics in the database associated with a given curriculum
+	*
+	*@param id int
+	*@return ResponseEntity<List<Topic> A list of topic objects and a HTTP status code
+	*@author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
+	*/
 	@GetMapping(value="/topics/{id}", produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Topic>> getAllTopicsByCurriculumId(@PathVariable("id") int id) {
 		System.out.println("[DEBUG] - in CurriculumController.getAllTopicsByCurriculumId()");
@@ -83,6 +105,13 @@ public class CurriculumController {
 		return new ResponseEntity<List<Topic>>(topics, HttpStatus.OK);
 	}
 	
+	/**
+	*Gets all subtopics in the database associated with a given curriculum
+	*
+	*@param id int
+	*@return ResponseEntity<List<Subtopic> A list of subtopic objects and a HTTP status code
+	*@author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
+	*/
 	@GetMapping(value="/subtopics/{id}", produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Subtopic>> getAllSubtopicsByCurriculumId(@PathVariable("id") int id) {
 		System.out.println("[DEBUG] - in CurriculumController.getAllTopicsByCurriculumId()");
@@ -90,6 +119,15 @@ public class CurriculumController {
 		return new ResponseEntity<List<Subtopic>>(subtopics, HttpStatus.OK);
 	}
 	
+	/**
+	*Creates a topic and attaches it to a curriculum
+	*
+	*@param id int
+	*@param week int
+	*@param newTopic Topic
+	*@return ResponseEntity<Topic> A newly created topic object and a HTTP status code
+	*@author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
+	*/
 	@PostMapping(value="/topics/{id}/{week}", produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Topic> addTopic(@PathVariable("id") int id, @PathVariable("week") int week, @RequestBody Topic newTopic) {
 		System.out.println("[DEBUG] - in CurriculumController.addTopic()");
@@ -99,6 +137,13 @@ public class CurriculumController {
 		return new ResponseEntity<Topic>(topic, HttpStatus.CREATED);
 	}
 	
+	/**
+	*Creates a subtopic in the database
+	*
+	*@param newSubtopic Subtopic
+	*@return ResponseEntity<Subtopic> A newly created subtopic object and a HTTP status code
+	*@author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
+	*/
 	@PostMapping(value="/subtopics", produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Subtopic> addSubtopic(@RequestBody Subtopic newSubtopic) {
 		System.out.println("[DEBUG] - in CurriculumController.addSubtopic()");
@@ -106,6 +151,13 @@ public class CurriculumController {
 		return new ResponseEntity<Subtopic>(subtopic, HttpStatus.CREATED);
 	}
 	
+	/**
+	*Updates a topic in the database
+	*
+	*@param updatedTopic Topic
+	*@return ResponseEntity<Topic> A topic object and a HTTP status code
+	*@author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
+	*/
 	@PutMapping(value="/topics", produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Topic> updateTopic(@Valid @RequestBody Topic updatedTopic) {
 		System.out.println("[DEBUG] - in CurriculumController.updateTopic()");
@@ -113,6 +165,13 @@ public class CurriculumController {
 		return new ResponseEntity<Topic>(topic, HttpStatus.OK);
 	}
 	
+	/**
+	*Updates a subtopic in the database
+	*
+	*@param updatedSubtopic Subtopic
+	*@return ResponseEntity<Subtopic> A subtopic object and a HTTP status code
+	*@author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
+	*/
 	@PutMapping(value="/subtopics", produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Subtopic> updateSubtopic(@Valid @RequestBody Subtopic updatedSubtopic) {
 		System.out.println("[DEBUG] - in CurriculumController.updateSubtopic()");
@@ -120,6 +179,15 @@ public class CurriculumController {
 		return new ResponseEntity<Subtopic>(subtopic, HttpStatus.OK);
 	}
 	
+	/**
+	*Updates a topic week in the database
+	*
+	*@param id int
+	*@param week int
+	*@param updatedTopic Topic
+	*@return ResponseEntity<Topic> A CurriculumTopic object and a HTTP status code
+	*@author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
+	*/
 	@PutMapping(value="/topics/{id}/{week}", produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<CurriculumTopic> updateTopicWeek(@PathVariable("id") int id, @PathVariable("week") int week, @Valid @RequestBody Topic topic) {
 		System.out.println("[DEBUG] - in CurriculumController.updateTopicWeek()");
