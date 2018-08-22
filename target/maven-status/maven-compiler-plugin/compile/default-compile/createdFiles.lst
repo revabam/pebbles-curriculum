@@ -1,0 +1,11 @@
+com\revature\repositories\SubtopicRepository.class
+com\revature\models\Topic.class
+com\revature\models\Curriculum.class
+com\revature\models\Subtopic.class
+com\revature\services\CurriculumService.class
+com\revature\Application.class
+com\revature\repositories\CurriculumRepository.class
+com\revature\repositories\CurriculumTopicRepository.class
+com\revature\models\CurriculumTopic.class
+com\revature\repositories\TopicRepository.class
+com\revature\controllers\CurriculumController.class

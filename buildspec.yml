@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Application testing started on `date`
+      - mvn test
+      - echo Application successfully tested on `date`
+  build:
+    commands:
+      - echo Build started on `date`
+      - mvn clean package
+      - echo Application successfully built on `date`
