@@ -3,6 +3,8 @@ package com.revature.services;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,18 +21,20 @@ import com.revature.repositories.TopicRepository;
 @Service
 @Transactional
 public class CurriculumService {
-	
+
 	@Autowired
 	CurriculumRepository currRepo;
-	
+
 	@Autowired
 	CurriculumTopicRepository currTopicRepo;
-	
+
 	@Autowired
 	TopicRepository topicRepo;
-	
+
 	@Autowired
 	SubtopicRepository subRepo;
+
+	private static final Logger logger = LogManager.getLogger(CurriculumService.class);
 
 	public List<Curriculum> findAllCurriculums() {
 		return currRepo.findAll();
@@ -46,8 +50,8 @@ public class CurriculumService {
 
 	public Curriculum updateCurriculum(Curriculum updatedCurr) {
 		Curriculum curr = currRepo.findCurriculumById(updatedCurr.getId());
-		
-		if(curr == null) {
+
+		if (curr == null) {
 			return curr;
 		} else {
 			return currRepo.save(updatedCurr);
@@ -57,9 +61,9 @@ public class CurriculumService {
 	public List<Topic> getTopicsByCurriculumId(int id) {
 		List<CurriculumTopic> currTopics = currTopicRepo.findCurriculumTopicByCurriculumId(id);
 		List<Topic> topics = new ArrayList<>();
-		for(CurriculumTopic curr : currTopics) {
+		for (CurriculumTopic curr : currTopics) {
 			Topic topic = topicRepo.findOne(curr.getTopic_id());
-			if(topic != null) {
+			if (topic != null) {
 				topics.add(topic);
 			}
 		}
@@ -68,11 +72,11 @@ public class CurriculumService {
 
 	public List<Subtopic> getSubtopicsByCurriculumId(int id) {
 		List<Topic> topics = getTopicsByCurriculumId(id);
-		System.out.println("Topics: " + topics.size());
+		logger.info("Topics: " + topics.size());
 		List<Subtopic> subtopics = new ArrayList<>();
-		for(Topic topic : topics) {
+		for (Topic topic : topics) {
 			List<Subtopic> temp = subRepo.findSubtopicByParentTopicId(topic.getId());
-			if(temp.size() > 0) {
+			if (temp.size() > 0) {
 				subtopics.addAll(temp);
 			}
 		}
@@ -93,7 +97,7 @@ public class CurriculumService {
 
 	public Topic updateTopic(Topic updatedTopic) {
 		Topic topic = topicRepo.findTopicById(updatedTopic.getId());
-		if(topic == null) {
+		if (topic == null) {
 			return null;
 		} else {
 			return topicRepo.save(updatedTopic);
@@ -102,7 +106,7 @@ public class CurriculumService {
 
 	public Subtopic updateSubtopic(Subtopic updatedSubtopic) {
 		Subtopic subtopic = subRepo.findSubtopicById(updatedSubtopic.getId());
-		if(subtopic == null) {
+		if (subtopic == null) {
 			return null;
 		} else {
 			return subRepo.save(updatedSubtopic);
@@ -111,11 +115,11 @@ public class CurriculumService {
 
 	public CurriculumTopic updateCurriculumTopic(int id, int week, Topic topic) {
 		List<CurriculumTopic> cts = currTopicRepo.findCurriculumTopicByCurriculumId(id);
-		if(cts == null) {
+		if (cts == null) {
 			return null;
 		} else {
-			for(CurriculumTopic ct : cts) {
-				if(ct.getTopic_id() == topic.getId()) {
+			for (CurriculumTopic ct : cts) {
+				if (ct.getTopic_id() == topic.getId()) {
 					ct.setNumber_of_weeks(week);
 					return currTopicRepo.save(ct);
 				}
