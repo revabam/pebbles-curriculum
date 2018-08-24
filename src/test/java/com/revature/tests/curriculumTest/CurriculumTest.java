@@ -38,8 +38,6 @@ public class CurriculumTest {
 	
 	@Test
 	public void canGetCurriculumById() {
-//		Curriculum testCurr = new Curriculum(1, "Full-stack Java", "version_1.0.1", 1, new Date(1531781274069L), 10);
-//		Curriculum curr = RestAssured.get(url+"/1").as(Curriculum.class);
 		int status = RestAssured.get(url+"/1").getStatusCode();
 		
 		assertEquals(200, status);
@@ -49,9 +47,6 @@ public class CurriculumTest {
 	public void canAddCurriculum() {
 		Curriculum curr = new Curriculum(0, "Full-stack .Net", "version_1.0.1", 1, new Date(1534815476247L), 10);
 		
-//		JsonObject json = new JsonObject();
-//		json.addProperty("curriculum", curr.toString());
-		
 		int status = RestAssured.given().contentType("application/json").body(curr).post(url).getStatusCode();
 		
 		assertEquals(201, status);
@@ -60,11 +55,7 @@ public class CurriculumTest {
 	@Test
 	public void canUpdateCurriculum() {
 		Curriculum updatedCurr = new Curriculum(1, "Full-Stack Java", "version_1.0.1", 1, new Date(1531781274069L), 10);
-		
-//		JsonObject json = new JsonObject();
-//		json.addProperty("curriculum", updatedCurr.toString());
-		
-//		Curriculum curr = RestAssured.given().body(json).put(url).as(Curriculum.class);
+
 		int status = RestAssured.given().contentType("application/json").body(updatedCurr).put(url).getStatusCode();
 		
 		assertEquals(200, status);
@@ -72,11 +63,6 @@ public class CurriculumTest {
 	
 	@Ignore
 	public void canGetTopicsByCurriculumId() {
-//		List<Topic> testTopics = new ArrayList<>();
-//		testTopics.add(new Topic(1, "Core Java"));
-//		testTopics.add(new Topic(2, "SQL"));
-//		testTopics.add(new Topic(3, "JavaScript, HTML, CSS"));
-		
 		List<Topic> topics = RestAssured.get(url+"/topics/1").as(List.class);
 		
 		
@@ -107,9 +93,6 @@ public class CurriculumTest {
 	public void canAddTopic() {
 		Topic topic = new Topic(0, "Angular");
 		
-//		JsonObject json = new JsonObject();
-//		json.addProperty("topic", topic.toString());
-		
 		int status = RestAssured.given().contentType("application/json").body(topic).post(url+"/topics/1/4").getStatusCode();
 		
 		assertEquals(201, status);
@@ -118,9 +101,6 @@ public class CurriculumTest {
 	@Test
 	public void canAddSubtopic() {
 		Subtopic subtopic = new Subtopic("Exceptions", 1);
-		
-//		JsonObject json = new JsonObject();
-//		json.addProperty("subtopic", subtopic.toString());
 		
 		int status = RestAssured.given().contentType("application/json").body(subtopic).post(url+"/subtopics").getStatusCode();
 		
@@ -131,9 +111,6 @@ public class CurriculumTest {
 	public void canUpdateTopic() {
 		Topic testTopic = new Topic(4, "Express Basics");
 		
-//		JsonObject json = new JsonObject();
-//		json.addProperty("topic", testTopic.toString());
-		
 		Topic topic = RestAssured.given().contentType("application/json").body(testTopic).put(url+"/topics").as(Topic.class);
 		
 		assertEquals(testTopic, topic);
@@ -142,18 +119,13 @@ public class CurriculumTest {
 	@Test
 	public void canUpdateSubtopic() {
 		Subtopic testSubtopic = new Subtopic(5, "Levels of Normalization", 2);
-		
-//		JsonObject json = new JsonObject();
-//		json.addProperty("subtopic", testSubtopic.toString());
-		
-//		Subtopic sub = RestAssured.given().contentType("application/json").body(testSubtopic).put(url+"/subtopics").as(Subtopic.class);
+
 		int status = RestAssured.given()
 				.contentType("application/json")
 				.body(testSubtopic)
 				.put(url+"/subtopics")
 				.getStatusCode();
 		
-//		assertEquals(testSubtopic, sub);
 		assertEquals(200, status);
 		Subtopic sub = RestAssured.given().contentType("application/json").body(testSubtopic).put(url+"/subtopics").as(Subtopic.class);
 		
@@ -164,20 +136,14 @@ public class CurriculumTest {
 	
 	@Ignore
 	public void canUpdateTopicWeek() {
-//		CurriculumTopic testCt = new CurriculumTopic(7, 2, 3, 3);
 		Topic topic = new Topic(3, "JavaScript, HTML, CSS");
 		
-//		JsonObject json = new JsonObject();
-//		json.addProperty("topic", topic.toString());
-		
-//		CurriculumTopic ct = RestAssured.given().contentType("application/json").body(topic).put(url+"/topics/2/3").as(CurriculumTopic.class);
 		int status = RestAssured.given()
 				.contentType("application/json")
 				.body(topic)
 				.put(url+"/topics/2/3")
 				.getStatusCode();
 		
-//		assertEquals(testCt, ct);
 		assertEquals(200, status);
 	}
 
