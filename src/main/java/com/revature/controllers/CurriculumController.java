@@ -27,7 +27,7 @@ import com.revature.services.CurriculumService;
 
 @CrossOrigin
 @RestController
-@RequestMapping
+@RequestMapping("/curriculums")
 public class CurriculumController {
 
 	@Autowired
