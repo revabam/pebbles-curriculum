@@ -1,7 +1,6 @@
 package com.revature.tests.curriculumTest;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -14,10 +13,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.google.gson.JsonObject;
 import com.revature.Application;
 import com.revature.models.Curriculum;
-import com.revature.models.CurriculumTopic;
 import com.revature.models.Subtopic;
 import com.revature.models.Topic;
 import com.revature.tests.TestDriver;
@@ -29,7 +26,7 @@ import io.restassured.RestAssured;
 @ContextConfiguration(classes=Application.class)
 public class CurriculumTest {
 	
-	static String url = "http://localhost:9996";
+	static String url = "http://localhost:9996/curriculums";
 	
 	@Test
 	public void canGetAllCurriculums() {
