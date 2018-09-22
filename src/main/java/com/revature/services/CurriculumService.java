@@ -34,8 +34,6 @@ public class CurriculumService {
 	@Autowired
 	SubtopicRepository subRepo;
 
-	private static final Logger logger = LogManager.getLogger(CurriculumService.class);
-
 	public List<Curriculum> findAllCurriculums() {
 		return currRepo.findAll();
 	}
@@ -62,7 +60,7 @@ public class CurriculumService {
 		List<CurriculumTopic> currTopics = currTopicRepo.findCurriculumTopicByCurriculumId(id);
 		List<Topic> topics = new ArrayList<>();
 		for (CurriculumTopic curr : currTopics) {
-			Topic topic = topicRepo.findOne(curr.getTopic_id());
+			Topic topic = topicRepo.findOne(curr.getTopicId());
 			if (topic != null) {
 				topics.add(topic);
 			}
@@ -72,7 +70,6 @@ public class CurriculumService {
 
 	public List<Subtopic> getSubtopicsByCurriculumId(int id) {
 		List<Topic> topics = getTopicsByCurriculumId(id);
-		logger.info("Topics: " + topics.size());
 		List<Subtopic> subtopics = new ArrayList<>();
 		for (Topic topic : topics) {
 			List<Subtopic> temp = subRepo.findSubtopicByParentTopicId(topic.getId());
@@ -119,8 +116,8 @@ public class CurriculumService {
 			return null;
 		} else {
 			for (CurriculumTopic ct : cts) {
-				if (ct.getTopic_id() == topic.getId()) {
-					ct.setNumber_of_weeks(week);
+				if (ct.getTopicId() == topic.getId()) {
+					ct.setNumberOfWeeks(week);
 					return currTopicRepo.save(ct);
 				}
 			}

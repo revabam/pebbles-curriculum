@@ -46,52 +46,72 @@ public class CurriculumTopic implements Serializable {
 	
 	public CurriculumTopic() {}
 
-	public CurriculumTopic(Integer curriculum_id, Integer topic_id, Integer number_of_weeks) {
+	
+
+	public CurriculumTopic(Integer curriculumId, Integer topicId, Integer numberOfWeeks) {
 		super();
-		this.curriculumId = curriculum_id;
-		this.topicId = topic_id;
-		this.numberOfWeeks = number_of_weeks;
+		this.curriculumId = curriculumId;
+		this.topicId = topicId;
+		this.numberOfWeeks = numberOfWeeks;
 	}
 
-	public CurriculumTopic(Integer id, Integer curriculum_id, Integer topic_id, Integer number_of_weeks) {
+	public CurriculumTopic(Integer id, Integer curriculumId, Integer topicId, Integer numberOfWeeks) {
 		super();
 		this.id = id;
-		this.curriculumId = curriculum_id;
-		this.topicId = topic_id;
-		this.numberOfWeeks = number_of_weeks;
+		this.curriculumId = curriculumId;
+		this.topicId = topicId;
+		this.numberOfWeeks = numberOfWeeks;
 	}
+
+
 
 	public Integer getId() {
 		return id;
 	}
 
+
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public Integer getCurriculum_id() {
+
+
+	public Integer getCurriculumId() {
 		return curriculumId;
 	}
 
-	public void setCurriculum_id(Integer curriculum_id) {
-		this.curriculumId = curriculum_id;
+
+
+	public void setCurriculumId(Integer curriculumId) {
+		this.curriculumId = curriculumId;
 	}
 
-	public Integer getTopic_id() {
+
+
+	public Integer getTopicId() {
 		return topicId;
 	}
 
-	public void setTopic_id(Integer topic_id) {
-		this.topicId = topic_id;
+
+
+	public void setTopicId(Integer topicId) {
+		this.topicId = topicId;
 	}
 
-	public Integer getNumber_of_weeks() {
+
+
+	public Integer getNumberOfWeeks() {
 		return numberOfWeeks;
 	}
 
-	public void setNumber_of_weeks(Integer number_of_weeks) {
-		this.numberOfWeeks = number_of_weeks;
+
+
+	public void setNumberOfWeeks(Integer numberOfWeeks) {
+		this.numberOfWeeks = numberOfWeeks;
 	}
+
+
 	
 	
 
