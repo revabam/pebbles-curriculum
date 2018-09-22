@@ -42,7 +42,7 @@ public class CurriculumTopic implements Serializable {
 	
 //	@NotNull
 	@Column(name="number_of_weeks")
-	private Integer number_of_weeks;
+	private Integer numberOfWeeks;
 	
 	public CurriculumTopic() {}
 
@@ -50,7 +50,7 @@ public class CurriculumTopic implements Serializable {
 		super();
 		this.curriculumId = curriculum_id;
 		this.topicId = topic_id;
-		this.number_of_weeks = number_of_weeks;
+		this.numberOfWeeks = number_of_weeks;
 	}
 
 	public CurriculumTopic(Integer id, Integer curriculum_id, Integer topic_id, Integer number_of_weeks) {
@@ -58,7 +58,7 @@ public class CurriculumTopic implements Serializable {
 		this.id = id;
 		this.curriculumId = curriculum_id;
 		this.topicId = topic_id;
-		this.number_of_weeks = number_of_weeks;
+		this.numberOfWeeks = number_of_weeks;
 	}
 
 	public Integer getId() {
@@ -86,11 +86,11 @@ public class CurriculumTopic implements Serializable {
 	}
 
 	public Integer getNumber_of_weeks() {
-		return number_of_weeks;
+		return numberOfWeeks;
 	}
 
 	public void setNumber_of_weeks(Integer number_of_weeks) {
-		this.number_of_weeks = number_of_weeks;
+		this.numberOfWeeks = number_of_weeks;
 	}
 	
 	

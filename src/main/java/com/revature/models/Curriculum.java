@@ -37,36 +37,36 @@ public class Curriculum implements Serializable {
 	
 	@NotNull
 	@Column(name="creator_id")
-	private Integer creator_id;
+	private Integer creatorId;
 	
 	@NotNull
 	@Column(name="date_created")
-	private Date date_created;
+	private Date dateCreated;
 	
 	@NotNull
 	@Column(name="number_of_weeks")
-	private Integer number_of_weeks;
+	private Integer numberOfWeeks;
 	
 	public Curriculum() {}
 
-	public Curriculum(String name, String version, Integer creator_id, Date date_created, Integer number_of_weeks) {
+	public Curriculum(String name, String version, Integer creatorId, Date dateCreated, Integer numberOfWeeks) {
 		super();
 		this.name = name;
 		this.version = version;
-		this.creator_id = creator_id;
-		this.date_created = date_created;
-		this.number_of_weeks = number_of_weeks;
+		this.creatorId = creatorId;
+		this.dateCreated = dateCreated;
+		this.numberOfWeeks = numberOfWeeks;
 	}
 
-	public Curriculum(Integer id, String name, String version, Integer creator_id, Date date_created,
-			Integer number_of_weeks) {
+	public Curriculum(Integer id, String name, String version, Integer creatorId, Date dateCreated,
+			Integer numberOfWeeks) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.version = version;
-		this.creator_id = creator_id;
-		this.date_created = date_created;
-		this.number_of_weeks = number_of_weeks;
+		this.creatorId = creatorId;
+		this.dateCreated = dateCreated;
+		this.numberOfWeeks = numberOfWeeks;
 	}
 
 	public Integer getId() {
@@ -93,39 +93,39 @@ public class Curriculum implements Serializable {
 		this.version = version;
 	}
 
-	public Integer getCreator_id() {
-		return creator_id;
+	public Integer getCreatorId() {
+		return creatorId;
 	}
 
-	public void setCreator_id(Integer creator_id) {
-		this.creator_id = creator_id;
+	public void setCreatorId(Integer creatorId) {
+		this.creatorId = creatorId;
 	}
 
-	public Date getDate_created() {
-		return date_created;
+	public Date getDateCreated() {
+		return dateCreated;
 	}
 
-	public void setDate_created(Date date_created) {
-		this.date_created = date_created;
+	public void setDateCreated(Date dateCreated) {
+		this.dateCreated = dateCreated;
 	}
 
-	public Integer getNumber_of_weeks() {
-		return number_of_weeks;
+	public Integer getNumberOfWeeks() {
+		return numberOfWeeks;
 	}
 
-	public void setNumber_of_weeks(Integer number_of_weeks) {
-		this.number_of_weeks = number_of_weeks;
+	public void setNumberOfWeeks(Integer numberOfWeeks) {
+		this.numberOfWeeks = numberOfWeeks;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((creator_id == null) ? 0 : creator_id.hashCode());
-		result = prime * result + ((date_created == null) ? 0 : date_created.hashCode());
+		result = prime * result + ((creatorId == null) ? 0 : creatorId.hashCode());
+		result = prime * result + ((dateCreated == null) ? 0 : dateCreated.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((number_of_weeks == null) ? 0 : number_of_weeks.hashCode());
+		result = prime * result + ((numberOfWeeks == null) ? 0 : numberOfWeeks.hashCode());
 		result = prime * result + ((version == null) ? 0 : version.hashCode());
 		return result;
 	}
@@ -139,15 +139,15 @@ public class Curriculum implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Curriculum other = (Curriculum) obj;
-		if (creator_id == null) {
-			if (other.creator_id != null)
+		if (creatorId == null) {
+			if (other.creatorId != null)
 				return false;
-		} else if (!creator_id.equals(other.creator_id))
+		} else if (!creatorId.equals(other.creatorId))
 			return false;
-		if (date_created == null) {
-			if (other.date_created != null)
+		if (dateCreated == null) {
+			if (other.dateCreated != null)
 				return false;
-		} else if (!date_created.equals(other.date_created))
+		} else if (!dateCreated.equals(other.dateCreated))
 			return false;
 		if (id == null) {
 			if (other.id != null)
@@ -159,10 +159,10 @@ public class Curriculum implements Serializable {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
-		if (number_of_weeks == null) {
-			if (other.number_of_weeks != null)
+		if (numberOfWeeks == null) {
+			if (other.numberOfWeeks != null)
 				return false;
-		} else if (!number_of_weeks.equals(other.number_of_weeks))
+		} else if (!numberOfWeeks.equals(other.numberOfWeeks))
 			return false;
 		if (version == null) {
 			if (other.version != null)
@@ -174,9 +174,11 @@ public class Curriculum implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Curriculum [id=" + id + ", name=" + name + ", version=" + version + ", creator_id=" + creator_id
-				+ ", date_created=" + date_created + ", number_of_weeks=" + number_of_weeks + "]";
+		return "Curriculum [id=" + id + ", name=" + name + ", version=" + version + ", creatorId=" + creatorId
+				+ ", dateCreated=" + dateCreated + ", numberOfWeeks=" + numberOfWeeks + "]";
 	}
+
+
 	
 	
 
