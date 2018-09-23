@@ -38,17 +38,17 @@ public class Subtopic implements Serializable {
 	
 	public Subtopic() {}
 
-	public Subtopic(String name, Integer parent_topic_id) {
+	public Subtopic(String name, Integer parentTopicId) {
 		super();
 		this.name = name;
-		this.parentTopicId = parent_topic_id;
+		this.parentTopicId = parentTopicId;
 	}
 
-	public Subtopic(Integer id, String name, Integer parent_topic_id) {
+	public Subtopic(Integer id, String name, Integer parentTopicId) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.parentTopicId = parent_topic_id;
+		this.parentTopicId = parentTopicId;
 	}
 
 	public Integer getId() {
@@ -67,12 +67,14 @@ public class Subtopic implements Serializable {
 		this.name = name;
 	}
 
-	public Integer getParent_topic_id() {
+	public Integer getParentTopicId() {
 		return parentTopicId;
 	}
 
-	public void setParent_topic_id(Integer parent_topic_id) {
-		this.parentTopicId = parent_topic_id;
+	public void setParentTopicId(Integer parentTopicId) {
+		this.parentTopicId = parentTopicId;
 	}
+
+
 
 }
