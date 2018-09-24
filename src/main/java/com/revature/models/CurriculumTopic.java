@@ -2,11 +2,15 @@ package com.revature.models;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -26,34 +30,32 @@ public class CurriculumTopic implements Serializable {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="curriculum_topics_seq_name")
 	private Integer id;
 	
-//	@ManyToOne
-//	@JoinColumn(name="curriculum_id", nullable=false, referencedColumnName="id")
+	@ManyToOne(fetch = FetchType.EAGER, optional= false, cascade =CascadeType.ALL)
+	@JoinColumn(name="curriculum_id", nullable=false, referencedColumnName="id")
 	@NotNull
-	@Column(name="curriculum_id")
-	private Integer curriculumId;
+	private Curriculum curriculumId;
 	
-//	@ManyToOne
-//	@JoinColumn(name="topic_id", nullable=false, referencedColumnName="id")
+	@ManyToOne(fetch = FetchType.EAGER, optional= false, cascade =CascadeType.ALL)
+	@JoinColumn(name="topic_id", nullable=false, referencedColumnName="id")
 	@NotNull
-	@Column(name="topic_id")
-	private Integer topicId;
+	private Topic topicId;
 	
-//	@NotNull
-	@Column(name="number_of_weeks")
+	@NotNull
+	@Column(name="week_number")
 	private Integer numberOfWeeks;
 	
 	public CurriculumTopic() {}
 
 	
 
-	public CurriculumTopic(Integer curriculumId, Integer topicId, Integer numberOfWeeks) {
+	public CurriculumTopic(Curriculum curriculumId, Topic topicId, Integer numberOfWeeks) {
 		super();
 		this.curriculumId = curriculumId;
 		this.topicId = topicId;
 		this.numberOfWeeks = numberOfWeeks;
 	}
 
-	public CurriculumTopic(Integer id, Integer curriculumId, Integer topicId, Integer numberOfWeeks) {
+	public CurriculumTopic(Integer id, Curriculum curriculumId, Topic topicId, Integer numberOfWeeks) {
 		super();
 		this.id = id;
 		this.curriculumId = curriculumId;
@@ -75,25 +77,25 @@ public class CurriculumTopic implements Serializable {
 
 
 
-	public Integer getCurriculumId() {
+	public Curriculum getCurriculumId() {
 		return curriculumId;
 	}
 
 
 
-	public void setCurriculumId(Integer curriculumId) {
+	public void setCurriculumId(Curriculum curriculumId) {
 		this.curriculumId = curriculumId;
 	}
 
 
 
-	public Integer getTopicId() {
+	public Topic getTopicId() {
 		return topicId;
 	}
 
 
 
-	public void setTopicId(Integer topicId) {
+	public void setTopicId(Topic topicId) {
 		this.topicId = topicId;
 	}
 
