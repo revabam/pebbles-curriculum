@@ -2,13 +2,17 @@ package com.revature.models;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -48,11 +52,14 @@ public class Curriculum implements Serializable {
 	@Column(name="number_of_weeks")
 	private Integer numWeeks;
 	
+	@Column(name="APPROVED_BY_ID")
 	private int approvedById;
 	
+	@Column(name="CURRICULUM_STATUS")
 	private int curriculumStatus;
 	
-	private List<CurriculumWeek> weeks;
+	@OneToMany(mappedBy = "curriculumWeekId", fetch = FetchType.EAGER)
+	private Set<CurriculumWeek> weeks = new HashSet<CurriculumWeek>();
 	
 	
 

@@ -1,17 +1,44 @@
 package com.revature.models;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "CURRICULUM_WEEK")
 public class CurriculumWeek implements Serializable{
-	
+
+	@Id
+	@Column(name = "CURRICULUM_WEEK_ID")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="curriculum_seq_name")
 	private int curriculumWeekId;
 	
+	@Column(name = "CURRICULUM_ID")
 	private int curriculumId;
 	
+	@Column(name = "WEEK_NUM")
 	private int weekNum;
 	
-	private List<CurriculumDay> days;
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name = "CURRICULUM_WEEK_ID")
+	private Set<CurriculumDay> curWeeks;
+	
+	@OneToMany(mappedBy = "curriculumDayId", fetch = FetchType.EAGER)
+	private Set<CurriculumDay> days = new HashSet<CurriculumDay>();
+	
 
 	public CurriculumWeek() {
 		super();
@@ -49,11 +76,11 @@ public class CurriculumWeek implements Serializable{
 	public void setWeekNum(int weekNum) {
 		this.weekNum = weekNum;
 	}
-
+	
 	public List<CurriculumDay> getDays() {
 		return days;
 	}
-
+	
 	public void setDays(List<CurriculumDay> days) {
 		this.days = days;
 	}

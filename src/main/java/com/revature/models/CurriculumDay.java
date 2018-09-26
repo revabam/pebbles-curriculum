@@ -1,24 +1,50 @@
 package com.revature.models;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "CURRICULUM_DAY")
 public class CurriculumDay implements Serializable{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 5619871966502548105L;
-
+	@Id
+	@Column(name = "CURRICULUM_DAY_ID")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="curriculum_seq_name")
 	private int curriculumDayId;
 	
+	@Column(name = "CURRICULUM_WEEK_ID")
 	private int curriculumWeekId;
 	
+	@Column(name = "DAY_NAME")
 	private String dayName;
 	
+	@Column(name = "DAY_NUM")
 	private int dayNum;
 	
+	@OneToMany(mappedBy = "ID", fetch = FetchType.EAGER)
 	private List<Subtopic> SubTopics;
+	
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name = "CURRICULUM_DAY_ID")
+	private Set<CurriculumWeek> allWeeks =  new HashSet<CurriculumWeek>();
 
 	public CurriculumDay() {
 		super();

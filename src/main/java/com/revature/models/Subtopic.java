@@ -1,9 +1,13 @@
 package com.revature.models;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,11 +36,15 @@ public class Subtopic implements Serializable {
 	@Column(name="name", unique=true)
 	private String name;
 	
-	@ManyToOne
-	@JoinColumn(name="parent_topic_id", nullable=false, referencedColumnName="topicId")
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name="id", nullable=false)
 	@NotNull
 	@Column(name="parent_topic_id")
 	private Integer parentTopicId;
+	
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name="CURRICULUM_DAY_ID")
+	private Set<CurriculumDay> curDays = new HashSet<CurriculumDay>();
 	
 	public Subtopic() {}
 
