@@ -40,7 +40,7 @@ public class CurriculumController {
 	 *         status code
 	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
 	 */
-	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping
 	public ResponseEntity<List<Curriculum>> findAllCurriculums() {
 		List<Curriculum> allCurr = service.findAllCurriculums();
 		return new ResponseEntity<>(allCurr, HttpStatus.OK);
@@ -54,7 +54,7 @@ public class CurriculumController {
 	 * @return ResponseEntity<Curriculum> A curriculum object and a HTTP status code
 	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
 	 */
-	@GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/{id}")
 	public ResponseEntity<Curriculum> findCurriculumById(@PathVariable("id") int id) {
 
 		Curriculum curr = service.findCurriculumById(id);
@@ -73,7 +73,7 @@ public class CurriculumController {
 	 * @return ResponseEntity<Curriculum> A curriculum object and a HTTP status code
 	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
 	 */
-	@PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping
 	public ResponseEntity<Curriculum> addCurriculum(@RequestBody Curriculum newCurr) {
 		Curriculum curr = service.addCurriculum(newCurr);
 		return new ResponseEntity<>(curr, HttpStatus.CREATED);
@@ -140,8 +140,8 @@ public class CurriculumController {
 	public ResponseEntity<Topic> addTopic(@PathVariable("id") int id, @PathVariable("week") int week,
 			@RequestBody Topic newTopic) {
 		Topic topic = service.addTopic(newTopic);
-		CurriculumTopic ct = new CurriculumTopic(id, topic.getId(), week);
-		service.addCurriculumTopic(ct);
+		//CurriculumTopic ct = new CurriculumTopic(id, topic.getId(), week);
+		//service.addCurriculumTopic(ct);
 		return new ResponseEntity<>(topic, HttpStatus.CREATED);
 	}
 

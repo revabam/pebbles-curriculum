@@ -38,7 +38,7 @@ public class CurriculumTopic implements Serializable {
 	@ManyToOne(fetch = FetchType.EAGER, optional= false, cascade =CascadeType.ALL)
 	@JoinColumn(name="topic_id", nullable=false, referencedColumnName="id")
 	@NotNull
-	private Topic topicId;
+	private int topicId;
 	
 	@NotNull
 	@Column(name="week_number")
@@ -48,14 +48,14 @@ public class CurriculumTopic implements Serializable {
 
 	
 
-	public CurriculumTopic(Curriculum curriculumId, Topic topicId, Integer numberOfWeeks) {
+	public CurriculumTopic(Curriculum curriculumId, int topicId, Integer numberOfWeeks) {
 		super();
 		this.curriculumId = curriculumId;
 		this.topicId = topicId;
 		this.numberOfWeeks = numberOfWeeks;
 	}
 
-	public CurriculumTopic(Integer id, Curriculum curriculumId, Topic topicId, Integer numberOfWeeks) {
+	public CurriculumTopic(Integer id, Curriculum curriculumId, int topicId, Integer numberOfWeeks) {
 		super();
 		this.id = id;
 		this.curriculumId = curriculumId;
@@ -89,13 +89,13 @@ public class CurriculumTopic implements Serializable {
 
 
 
-	public Topic getTopicId() {
+	public Integer getTopicId() {
 		return topicId;
 	}
 
 
 
-	public void setTopicId(Topic topicId) {
+	public void setTopicId(int topicId) {
 		this.topicId = topicId;
 	}
 

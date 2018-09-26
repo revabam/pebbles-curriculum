@@ -1,11 +1,11 @@
 Manifest-Version: 1.0
+Built-By: becklarson-Work
+Build-Jdk: 10.0.2
 Implementation-Title: pebbles-curriculum
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: humphreyminott
 Implementation-Vendor-Id: com.revature
-Build-Jdk: 1.8.0_121
+Implementation-Vendor: Pivotal Software, Inc.
 Implementation-URL: http://projects.spring.io/spring-boot/pebbles-curr
  iculum/
 Created-By: Maven Integration for Eclipse
-Implementation-Vendor: Pivotal Software, Inc.
 

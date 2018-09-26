@@ -39,7 +39,7 @@ public class CurriculumService {
 	}
 
 	public Curriculum findCurriculumById(Integer id) {
-		return currRepo.findCurriculumById(id);
+		return currRepo.findByCurriculumId(id);
 	}
 
 	public Curriculum addCurriculum(Curriculum newCurr) {
@@ -47,7 +47,7 @@ public class CurriculumService {
 	}
 
 	public Curriculum updateCurriculum(Curriculum updatedCurr) {
-		Curriculum curr = currRepo.findCurriculumById(updatedCurr.getId());
+		Curriculum curr = currRepo.findByCurriculumId(updatedCurr.getCurriculumId());
 
 		if (curr == null) {
 			return curr;

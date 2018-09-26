@@ -34,8 +34,8 @@ public class Topic implements Serializable {
 	@Column(name="name", unique=true)
 	private String name;
 	
-	@OneToMany(mappedBy = "topicId", fetch = FetchType.EAGER)
-	private Set<CurriculumTopic> ct = new HashSet<CurriculumTopic>();
+	@OneToMany(mappedBy = "parentTopicId", fetch = FetchType.EAGER)
+	private Set<Subtopic> ct = new HashSet<Subtopic>();
 	
 	public Topic() {}
 
