@@ -26,82 +26,95 @@ public class Topic implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="id")
+	@Column(name="TOPIC_ID")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="topic_seq_name")
-	private Integer id;
+	private Integer topicId;
 	
 	@NotNull
 	@Column(name="name", unique=true)
 	private String name;
 	
-	@OneToMany(mappedBy = "parentTopicId", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "topic", fetch = FetchType.EAGER)
 	private Set<Subtopic> ct = new HashSet<Subtopic>();
 	
 	public Topic() {}
 
-	public Topic(String name) {
+
+
+public Topic(Integer topicId, String name, Set<Subtopic> ct) {
 		super();
+		this.topicId = topicId;
 		this.name = name;
+		this.ct = ct;
 	}
 
-	public Topic(Integer id, String name) {
-		super();
-		this.id = id;
-		this.name = name;
-	}
+public Integer getTopicId() {
+	return topicId;
+}
 
-	public Integer getId() {
-		return id;
-	}
+public void setTopicId(Integer topicId) {
+	this.topicId = topicId;
+}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+public String getName() {
+	return name;
+}
 
-	public String getName() {
-		return name;
-	}
+public void setName(String name) {
+	this.name = name;
+}
 
-	public void setName(String name) {
-		this.name = name;
-	}
+public Set<Subtopic> getCt() {
+	return ct;
+}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		return result;
-	}
+public void setCt(Set<Subtopic> ct) {
+	this.ct = ct;
+}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Topic other = (Topic) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
+@Override
+public int hashCode() {
+	final int prime = 31;
+	int result = 1;
+	result = prime * result + ((ct == null) ? 0 : ct.hashCode());
+	result = prime * result + ((name == null) ? 0 : name.hashCode());
+	result = prime * result + ((topicId == null) ? 0 : topicId.hashCode());
+	return result;
+}
+
+@Override
+public boolean equals(Object obj) {
+	if (this == obj)
 		return true;
-	}
+	if (obj == null)
+		return false;
+	if (getClass() != obj.getClass())
+		return false;
+	Topic other = (Topic) obj;
+	if (ct == null) {
+		if (other.ct != null)
+			return false;
+	} else if (!ct.equals(other.ct))
+		return false;
+	if (name == null) {
+		if (other.name != null)
+			return false;
+	} else if (!name.equals(other.name))
+		return false;
+	if (topicId == null) {
+		if (other.topicId != null)
+			return false;
+	} else if (!topicId.equals(other.topicId))
+		return false;
+	return true;
+}
 
-	@Override
-	public String toString() {
-		return "Topic [id=" + id + ", name=" + name + "]";
-	}
-	
+@Override
+public String toString() {
+	return "Topic [topicId=" + topicId + ", name=" + name + ", ct=" + ct + "]";
+}
+
+
 	
 
 }

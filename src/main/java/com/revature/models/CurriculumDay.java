@@ -2,7 +2,6 @@ package com.revature.models;
 
 import java.io.Serializable;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -15,10 +14,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "CURRICULUM_DAY")
+@SequenceGenerator(name="curriculum_seq_name", sequenceName="curriculum_seq", initialValue=3, allocationSize=1)
 public class CurriculumDay implements Serializable{
 
 	/**
@@ -26,25 +28,31 @@ public class CurriculumDay implements Serializable{
 	 */
 	private static final long serialVersionUID = 5619871966502548105L;
 	@Id
-	@Column(name = "CURRICULUM_DAY_ID")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="curriculum_seq_name")
+	@NotNull
+	@Column(name = "CURRICULUM_DAY_ID")
 	private int curriculumDayId;
 	
 	@Column(name = "CURRICULUM_WEEK_ID")
+	@NotNull
 	private int curriculumWeekId;
 	
 	@Column(name = "DAY_NAME")
+	@NotNull
 	private String dayName;
 	
 	@Column(name = "DAY_NUM")
+	@NotNull
 	private int dayNum;
 	
-	@OneToMany(mappedBy = "ID", fetch = FetchType.EAGER)
-	private List<Subtopic> SubTopics;
-	
+
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "CURRICULUM_DAY_ID")
-	private Set<CurriculumWeek> allWeeks =  new HashSet<CurriculumWeek>();
+	@JoinColumn(name = "CURRICULUM_DAY_ID", insertable= false, updatable=false)
+	@NotNull
+	private CurriculumWeek allWeeks;
+	
+	@OneToMany(mappedBy = "dailyTopics", fetch = FetchType.EAGER)
+	private Set<Subtopic> subs = new HashSet<Subtopic>();
 
 	public CurriculumDay() {
 		super();
@@ -52,13 +60,13 @@ public class CurriculumDay implements Serializable{
 	}
 
 	public CurriculumDay(int curriculumDayId, int curriculumWeekId, String dayName, int dayNum,
-			List<Subtopic> subTopics) {
+			CurriculumWeek allWeeks) {
 		super();
 		this.curriculumDayId = curriculumDayId;
 		this.curriculumWeekId = curriculumWeekId;
 		this.dayName = dayName;
 		this.dayNum = dayNum;
-		SubTopics = subTopics;
+		this.allWeeks = allWeeks;
 	}
 
 	public int getCurriculumDayId() {
@@ -93,19 +101,19 @@ public class CurriculumDay implements Serializable{
 		this.dayNum = dayNum;
 	}
 
-	public List<Subtopic> getSubTopics() {
-		return SubTopics;
+	public CurriculumWeek getAllWeeks() {
+		return allWeeks;
 	}
 
-	public void setSubTopics(List<Subtopic> subTopics) {
-		SubTopics = subTopics;
+	public void setAllWeeks(CurriculumWeek allWeeks) {
+		this.allWeeks = allWeeks;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((SubTopics == null) ? 0 : SubTopics.hashCode());
+		result = prime * result + ((allWeeks == null) ? 0 : allWeeks.hashCode());
 		result = prime * result + curriculumDayId;
 		result = prime * result + curriculumWeekId;
 		result = prime * result + ((dayName == null) ? 0 : dayName.hashCode());
@@ -122,10 +130,10 @@ public class CurriculumDay implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		CurriculumDay other = (CurriculumDay) obj;
-		if (SubTopics == null) {
-			if (other.SubTopics != null)
+		if (allWeeks == null) {
+			if (other.allWeeks != null)
 				return false;
-		} else if (!SubTopics.equals(other.SubTopics))
+		} else if (!allWeeks.equals(other.allWeeks))
 			return false;
 		if (curriculumDayId != other.curriculumDayId)
 			return false;
@@ -144,10 +152,8 @@ public class CurriculumDay implements Serializable{
 	@Override
 	public String toString() {
 		return "CurriculumDay [curriculumDayId=" + curriculumDayId + ", curriculumWeekId=" + curriculumWeekId
-				+ ", dayName=" + dayName + ", dayNum=" + dayNum + ", SubTopics=" + SubTopics + "]";
+				+ ", dayName=" + dayName + ", dayNum=" + dayNum + ", allWeeks=" + allWeeks + "]";
 	}
-	
-	
-	
+
 	
 }

@@ -10,9 +10,9 @@ import com.revature.models.Topic;
 @Repository
 public interface TopicRepository extends JpaRepository<Topic, Integer> {
 
-	Topic findTopicById(Integer topic_id);
+	Topic findByTopicId(int topicId);
 
-	List<Topic> findAllByTopicById(int topicId);
+	List<Topic> findAllByTopicId(int topicId);
 
 
 }

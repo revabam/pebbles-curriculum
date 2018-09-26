@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.models.Curriculum;
-import com.revature.models.CurriculumTopic;
 import com.revature.models.Subtopic;
 import com.revature.models.Topic;
 import com.revature.services.CurriculumService;
@@ -93,35 +92,35 @@ public class CurriculumController {
 		return new ResponseEntity<>(curr, HttpStatus.OK);
 	}
 
-	/**
-	 * Gets all topics in the database associated with a given curriculum
-	 *
-	 * @param id
-	 *            int
-	 * @return ResponseEntity<List<Topic> A list of topic objects and a HTTP status
-	 *         code
-	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
-	 */
-	@GetMapping(value = "/topics/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Topic>> getAllTopicsByCurriculumId(@PathVariable("id") int id) {
-		List<Topic> topics = service.getTopicsByCurriculumId(id);
-		return new ResponseEntity<>(topics, HttpStatus.OK);
-	}
-
-	/**
-	 * Gets all subtopics in the database associated with a given curriculum
-	 *
-	 * @param id
-	 *            int
-	 * @return ResponseEntity<List<Subtopic> A list of subtopic objects and a HTTP
-	 *         status code
-	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
-	 */
-	@GetMapping(value = "/subtopics/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Subtopic>> getAllSubtopicsByCurriculumId(@PathVariable("id") int id) {
-		List<Subtopic> subtopics = service.getSubtopicsByCurriculumId(id);
-		return new ResponseEntity<>(subtopics, HttpStatus.OK);
-	}
+//	/**
+//	 * Gets all topics in the database associated with a given curriculum
+//	 *
+//	 * @param id
+//	 *            int
+//	 * @return ResponseEntity<List<Topic> A list of topic objects and a HTTP status
+//	 *         code
+//	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
+//	 */
+//	@GetMapping(value = "/topics/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+//	public ResponseEntity<List<Topic>> getAllTopicsByCurriculumId(@PathVariable("id") int id) {
+//		List<Topic> topics = service.getTopicsByCurriculumId(id);
+//		return new ResponseEntity<>(topics, HttpStatus.OK);
+//	}
+//
+//	/**
+//	 * Gets all subtopics in the database associated with a given curriculum
+//	 *
+//	 * @param id
+//	 *            int
+//	 * @return ResponseEntity<List<Subtopic> A list of subtopic objects and a HTTP
+//	 *         status code
+//	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
+//	 */
+//	@GetMapping(value = "/subtopics/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+//	public ResponseEntity<List<Subtopic>> getAllSubtopicsByCurriculumId(@PathVariable("id") int id) {
+//		List<Subtopic> subtopics = service.getSubtopicsByCurriculumId(id);
+//		return new ResponseEntity<>(subtopics, HttpStatus.OK);
+//	}
 
 	/**
 	 * Creates a topic and attaches it to a curriculum
@@ -200,14 +199,14 @@ public class CurriculumController {
 	 * @return ResponseEntity<Topic> A CurriculumTopic object and a HTTP status code
 	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
 	 */
-	@PutMapping(value = "/topics/{id}/{week}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<CurriculumTopic> updateTopicWeek(@PathVariable("id") int id, @PathVariable("week") int week,
-			@Valid @RequestBody Topic topic) {
-		CurriculumTopic ct = service.updateCurriculumTopic(id, week, topic);
-		if (ct == null) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		} else {
-			return new ResponseEntity<>(ct, HttpStatus.OK);
-		}
-	}
+//	@PutMapping(value = "/topics/{id}/{week}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+//	public ResponseEntity<CurriculumTopic> updateTopicWeek(@PathVariable("id") int id, @PathVariable("week") int week,
+//			@Valid @RequestBody Topic topic) {
+//		CurriculumTopic ct = service.updateCurriculumTopic(id, week, topic);
+//		if (ct == null) {
+//			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//		} else {
+//			return new ResponseEntity<>(ct, HttpStatus.OK);
+//		}
+//	}
 }

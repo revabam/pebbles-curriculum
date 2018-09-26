@@ -1,8 +1,6 @@
 package com.revature.models;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -28,7 +26,7 @@ public class Subtopic implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="id")
+	@Column(name="subtopic_id")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="subtopic_seq_name")
 	private Integer id;
 	
@@ -37,54 +35,83 @@ public class Subtopic implements Serializable {
 	private String name;
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name="id", nullable=false)
+	@JoinColumn(name = "TOPIC_ID", insertable= false, updatable=false)
 	@NotNull
-	@Column(name="parent_topic_id")
-	private Integer parentTopicId;
+	private Topic topic;
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name="CURRICULUM_DAY_ID")
-	private Set<CurriculumDay> curDays = new HashSet<CurriculumDay>();
+	@JoinColumn(name = "CURRICULUM_DAY_ID", insertable= false, updatable=false)
+	@NotNull
+	private Topic dailyTopics;
+	
 	
 	public Subtopic() {}
 
-	public Subtopic(String name, Integer parentTopicId) {
-		super();
-		this.name = name;
-		this.parentTopicId = parentTopicId;
-	}
 
-	public Subtopic(Integer id, String name, Integer parentTopicId) {
+	public Subtopic(Integer id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.parentTopicId = parentTopicId;
 	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Subtopic other = (Subtopic) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
+	}
+
 
 	public Integer getId() {
 		return id;
 	}
 
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 
 	public String getName() {
 		return name;
 	}
 
+
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	public Integer getParentTopicId() {
-		return parentTopicId;
-	}
 
-	public void setParentTopicId(Integer parentTopicId) {
-		this.parentTopicId = parentTopicId;
+	@Override
+	public String toString() {
+		return "Subtopic [id=" + id + ", name=" + name + "]";
 	}
-
 
 
 }

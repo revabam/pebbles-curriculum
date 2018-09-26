@@ -46,11 +46,11 @@ INCREMENT BY 1
 START WITH 12;
 
 DROP TABLE IF EXISTS curriculum_topics CASCADE;
-CREATE TABLE IF NOT EXISTS curriculum_topics
-(id INTEGER NOT NULL,
-curriculum_id INTEGER,
-topic_id INTEGER,
-week_number INTEGER,
-PRIMARY KEY (id),
-FOREIGN KEY (curriculum_id) references curriculum(id),
-FOREIGN KEY (topic_id) references topic(id));
+-- CREATE TABLE IF NOT EXISTS curriculum_topics
+-- (id INTEGER NOT NULL,
+-- curriculum_id INTEGER,
+-- topic_id INTEGER,
+-- week_number INTEGER,
+-- PRIMARY KEY (id),
+-- FOREIGN KEY (curriculum_id) references curriculum(id),
+-- FOREIGN KEY (topic_id) references topic(id));

@@ -1,7 +1,7 @@
 /*
 merge mock data into the curriculum table
 */
-merge into curriculum (id, name, version, creator_id, date_created, number_of_weeks)
+merge into curriculum (id, name, version, creator_id, date_created, number_of_weeks,)
 values(1, 'Full-stack Java', 'version_1.0.1', 1, {ts '2018-07-16 18:47:54.69'}, 10);
 merge into curriculum (id, name, version, creator_id, date_created, number_of_weeks)
 values(2, 'Spark Full-stack Java', 'version_1.0.0', 3, {ts '2018-08-17 10:40:52.00'}, 14);
@@ -54,19 +54,19 @@ merge into subtopic (id, name, parent_topic_id)
 values(11, 'Express APIs', 4);
 
 /*Full-stack Java curriculum topics*/
-merge into curriculum_topics (id, curriculum_id, topic_id, week_number)
-values(1, 1, 1, 1);
-merge into curriculum_topics (id, curriculum_id, topic_id, week_number)
-values(2, 1, 2, 2);
-merge into curriculum_topics (id, curriculum_id, topic_id, week_number)
-values(3, 1, 3, 3);
+-- merge into curriculum_topics (id, curriculum_id, topic_id, week_number)
+-- values(1, 1, 1, 1);
+-- merge into curriculum_topics (id, curriculum_id, topic_id, week_number)
+-- values(2, 1, 2, 2);
+-- merge into curriculum_topics (id, curriculum_id, topic_id, week_number)
+-- values(3, 1, 3, 3);
 
-/*Spark full-stack Java curriculum topics*/
-merge into curriculum_topics (id, curriculum_id, topic_id, week_number)
-values(4, 2, 4, 1);
-merge into curriculum_topics (id, curriculum_id, topic_id, week_number)
-values(5, 2, 1, 2);
-merge into curriculum_topics (id, curriculum_id, topic_id, week_number)
-values(6, 2, 2, 3);
-merge into curriculum_topics (id, curriculum_id, topic_id, week_number)
-values(7, 2, 3, 4);
+-- /*Spark full-stack Java curriculum topics*/
+-- merge into curriculum_topics (id, curriculum_id, topic_id, week_number)
+-- values(4, 2, 4, 1);
+-- merge into curriculum_topics (id, curriculum_id, topic_id, week_number)
+-- values(5, 2, 1, 2);
+-- merge into curriculum_topics (id, curriculum_id, topic_id, week_number)
+-- values(6, 2, 2, 3);
+-- merge into curriculum_topics (id, curriculum_id, topic_id, week_number)
+-- values(7, 2, 3, 4);

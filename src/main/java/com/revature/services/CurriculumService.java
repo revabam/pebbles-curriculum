@@ -10,11 +10,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.models.Curriculum;
-import com.revature.models.CurriculumTopic;
 import com.revature.models.Subtopic;
 import com.revature.models.Topic;
 import com.revature.repositories.CurriculumRepository;
-import com.revature.repositories.CurriculumTopicRepository;
 import com.revature.repositories.SubtopicRepository;
 import com.revature.repositories.TopicRepository;
 
@@ -24,9 +22,6 @@ public class CurriculumService {
 
 	@Autowired
 	CurriculumRepository currRepo;
-
-	@Autowired
-	CurriculumTopicRepository currTopicRepo;
 
 	@Autowired
 	TopicRepository topicRepo;
@@ -56,36 +51,21 @@ public class CurriculumService {
 		}
 	}
 
-	public List<Topic> getTopicsByCurriculumId(int id) {
-		List<CurriculumTopic> currTopics = currTopicRepo.findCurriculumTopicByCurriculumId(id);
-		List<Topic> topics = new ArrayList<>();
-		for (CurriculumTopic curr : currTopics) {
-			Topic topic = topicRepo.findOne(curr.getTopicId());
-			if (topic != null) {
-				topics.add(topic);
-			}
-		}
-		return topics;
-	}
 
-	public List<Subtopic> getSubtopicsByCurriculumId(int id) {
-		List<Topic> topics = getTopicsByCurriculumId(id);
-		List<Subtopic> subtopics = new ArrayList<>();
-		for (Topic topic : topics) {
-			List<Subtopic> temp = subRepo.findSubtopicByParentTopicId(topic.getId());
-			if (temp.size() > 0) {
-				subtopics.addAll(temp);
-			}
-		}
-		return subtopics;
-	}
+//	public List<Subtopic> getSubtopicsByCurriculumId(int id) {
+//		List<Topic> topics = getTopicsByCurriculumId(id);
+//		List<Subtopic> subtopics = new ArrayList<>();
+//		for (Topic topic : topics) {
+//			List<Subtopic> temp = subRepo.findSubtopicByParentTopicId(topic.getId());
+//			if (temp.size() > 0) {
+//				subtopics.addAll(temp);
+//			}
+//		}
+//		return subtopics;
+//	}
 
 	public Topic addTopic(Topic newTopic) {
 		return topicRepo.save(newTopic);
-	}
-
-	public CurriculumTopic addCurriculumTopic(CurriculumTopic ct) {
-		return currTopicRepo.save(ct);
 	}
 
 	public Subtopic addSubtopic(Subtopic newSubtopic) {
@@ -93,7 +73,7 @@ public class CurriculumService {
 	}
 
 	public Topic updateTopic(Topic updatedTopic) {
-		Topic topic = topicRepo.findTopicById(updatedTopic.getId());
+		Topic topic = topicRepo.findByTopicId(updatedTopic.getTopicId());
 		if (topic == null) {
 			return null;
 		} else {
@@ -102,7 +82,7 @@ public class CurriculumService {
 	}
 
 	public Subtopic updateSubtopic(Subtopic updatedSubtopic) {
-		Subtopic subtopic = subRepo.findSubtopicById(updatedSubtopic.getId());
+		Subtopic subtopic = subRepo.findOne(updatedSubtopic.getId());
 		if (subtopic == null) {
 			return null;
 		} else {
@@ -110,18 +90,18 @@ public class CurriculumService {
 		}
 	}
 
-	public CurriculumTopic updateCurriculumTopic(int id, int week, Topic topic) {
-		List<CurriculumTopic> cts = currTopicRepo.findCurriculumTopicByCurriculumId(id);
-		if (cts == null) {
-			return null;
-		} else {
-			for (CurriculumTopic ct : cts) {
-				if (ct.getTopicId() == topic.getId()) {
-					ct.setNumberOfWeeks(week);
-					return currTopicRepo.save(ct);
-				}
-			}
-		}
-		return null;
-	}
+//	public CurriculumTopic updateCurriculumTopic(int id, int week, Topic topic) {
+//		List<CurriculumTopic> cts = currTopicRepo.findCurriculumTopicByCurriculumId(id);
+//		if (cts == null) {
+//			return null;
+//		} else {
+//			for (CurriculumTopic ct : cts) {
+//				if (ct.getTopicId() == topic.getId()) {
+//					ct.setNumberOfWeeks(week);
+//					return currTopicRepo.save(ct);
+//				}
+//			}
+//		}
+//		return null;
+//	}
 }
