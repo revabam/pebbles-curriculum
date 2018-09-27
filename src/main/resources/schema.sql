@@ -29,16 +29,13 @@ CREATE SEQUENCE IF NOT EXISTS subtopic_seq
 INCREMENT BY 1
 START WITH 12;
 
-DROP TABLE IF EXISTS subtopic CASCADE;
+-- DROP TABLE IF EXISTS subtopic CASCADE;
+-- DROP TABLE IF EXISTS topic CASCADE;
+-- ALTER TABLE subtopic
+-- DROP CONSTRAINT FKN59K91C6XDUUKIJFEJ2IVN5AD;
+
 CREATE TABLE IF NOT EXISTS subtopic
-(id INTEGER NOT NULL,
+(subtopic_id INTEGER NOT NULL,
 name VARCHAR(50),
 parent_topic_id INTEGER,
-PRIMARY KEY(id),
-FOREIGN KEY (parent_topic_id) references topic(id));
-
-DROP TABLE IF EXISTS curriculum_status CASCADE;
--- CREATE TABLE IF NOT EXISTS curriculum_status
--- (curriculum_status_id INTEGER NOT NULL,
--- status VARCHAR(25),
--- PRIMARY KEY(curriculum_status_id));
+PRIMARY KEY(subtopic_id));

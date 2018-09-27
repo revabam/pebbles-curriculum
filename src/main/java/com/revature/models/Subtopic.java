@@ -20,14 +20,14 @@ import org.springframework.stereotype.Component;
 @Entity
 @Component
 @Table(name="SUBTOPIC")
-@SequenceGenerator(name="subtopic_seq_name", sequenceName="subtopic_seq", initialValue=12, allocationSize=1)
 public class Subtopic implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="subtopic_id")
+	@SequenceGenerator(name="subtopic_seq_name", sequenceName="subtopic_seq_name", initialValue=12, allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="subtopic_seq_name")
+	@Column(name="subtopic_id")
 	private Integer id;
 	
 	@NotNull
@@ -35,7 +35,7 @@ public class Subtopic implements Serializable {
 	private String name;
 	
 	@Column(name="PARENT_TOPIC_ID")
-	private int parentTopicId = 0;
+	private int parentTopicId;
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "subtopic_id", insertable= false, updatable=false)
