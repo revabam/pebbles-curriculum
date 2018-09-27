@@ -33,9 +33,6 @@ public class CurriculumDay implements Serializable{
 	@Column(name = "CURRICULUM_DAY_ID")
 	private int curriculumDayId;
 	
-	@Column(name = "CURRICULUM_WEEK_ID")
-	@NotNull
-	private int curriculumWeekId;
 	
 	@Column(name = "DAY_NUM")
 	@NotNull
@@ -43,7 +40,6 @@ public class CurriculumDay implements Serializable{
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "subtopic_id", insertable= false, updatable=false)
-	@NotNull
 	private CurriculumWeek allWeeks;
 	
 	@OneToMany(mappedBy = "dailyTopics", fetch = FetchType.EAGER)
@@ -52,14 +48,15 @@ public class CurriculumDay implements Serializable{
 	public CurriculumDay() {
 		super();
 	}
-
-	public CurriculumDay(int curriculumDayId, int curriculumWeekId, int dayNum, Set<Subtopic> subTopics) {
+	
+	public CurriculumDay(int curriculumDayId, int dayNum, Set<Subtopic> subTopics) {
 		super();
 		this.curriculumDayId = curriculumDayId;
-		this.curriculumWeekId = curriculumWeekId;
 		this.dayNum = dayNum;
 		this.subTopics = subTopics;
 	}
+
+
 
 	public int getCurriculumDayId() {
 		return curriculumDayId;
@@ -67,14 +64,6 @@ public class CurriculumDay implements Serializable{
 
 	public void setCurriculumDayId(int curriculumDayId) {
 		this.curriculumDayId = curriculumDayId;
-	}
-
-	public int getCurriculumWeekId() {
-		return curriculumWeekId;
-	}
-
-	public void setCurriculumWeekId(int curriculumWeekId) {
-		this.curriculumWeekId = curriculumWeekId;
 	}
 
 	public int getDayNum() {
@@ -85,6 +74,8 @@ public class CurriculumDay implements Serializable{
 		this.dayNum = dayNum;
 	}
 
+
+
 	public Set<Subtopic> getSubTopics() {
 		return subTopics;
 	}
@@ -93,12 +84,12 @@ public class CurriculumDay implements Serializable{
 		this.subTopics = subTopics;
 	}
 
-
 	@Override
 	public String toString() {
-		return "CurriculumDay [curriculumDayId=" + curriculumDayId + ", curriculumWeekId=" + curriculumWeekId
-				+ ", dayNum=" + dayNum + ", subTopics=" + subTopics + "]";
+		return "CurriculumDay [curriculumDayId=" + curriculumDayId + ", dayNum=" + dayNum
+				+ ", subTopics=" + subTopics + "]";
 	}
+
 
 	
 }

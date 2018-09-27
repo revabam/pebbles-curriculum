@@ -36,6 +36,14 @@ values(3, 'Covariance', 1);
 /*sql topics*/
 insert into subtopic (subtopic_id, name, parent_topic_id)
 values(4, 'SQL Sublanguages', 2);
+
+insert into curriculum values (1,'java',1, 1, '2018-09-27', 10, 1, 2, 1 );
+
+insert into curriculum_week values (1, 1, 1);
+
+insert into CURRICULUM_DAY values (1, 1, 1);
+
+--insert into CURRICULUM_DAY values (2, 1, 2);
 -- insert into subtopic (subtopic_id, name, parent_topic_id)
 -- values(5, 'Normalization', 2);
 -- insert into subtopic (subtopic_id, name, parent_topic_id)

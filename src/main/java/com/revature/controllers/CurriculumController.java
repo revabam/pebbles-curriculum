@@ -41,6 +41,7 @@ public class CurriculumController {
 	 */
 	@GetMapping
 	public ResponseEntity<List<Curriculum>> findAllCurriculums() {
+		System.out.println("GET METHODHIT");
 		List<Curriculum> allCurr = service.findAllCurriculums();
 		return new ResponseEntity<>(allCurr, HttpStatus.OK);
 	}

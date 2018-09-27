@@ -30,6 +30,8 @@ public class CurriculumService {
 	SubtopicRepository subRepo;
 
 	public List<Curriculum> findAllCurriculums() {
+		System.out.println("SERVICE HIT");
+		System.out.println("RETURN IS " + currRepo.findAll());
 		return currRepo.findAll();
 	}
 

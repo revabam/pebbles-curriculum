@@ -38,7 +38,7 @@ public class Curriculum implements Serializable {
 	
 	@NotNull
 	@Column(name="version")
-	private String vrsion;
+	private Integer version;
 	
 	@NotNull
 	@Column(name="creator_id")
@@ -47,7 +47,7 @@ public class Curriculum implements Serializable {
 	@Column(name="APPROVED_BY_ID")
 	private int approvedById;
 	
-	@Column(name="CURRICULUM_STATUS_ID")
+	@Column(name="STATUS")
 	private int status;
 	
 	@NotNull
@@ -63,12 +63,12 @@ public class Curriculum implements Serializable {
 
 	public Curriculum() {}
 
-	public Curriculum(Integer id, String name, String vrsion, Integer creatorId, int approvedById, int status,
+	public Curriculum(Integer id, String name, Integer version, Integer creatorId, int approvedById, int status,
 			Date dateCreated, Integer numOfWeeks, Set<CurriculumWeek> weeks) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.vrsion = vrsion;
+		this.version = version;
 		this.creatorId = creatorId;
 		this.approvedById = approvedById;
 		this.status = status;
@@ -93,12 +93,12 @@ public class Curriculum implements Serializable {
 		this.name = name;
 	}
 
-	public String getVrsion() {
-		return vrsion;
+	public Integer getVersion() {
+		return version;
 	}
 
-	public void setVrsion(String vrsion) {
-		this.vrsion = vrsion;
+	public void setVersion(Integer version) {
+		this.version = version;
 	}
 
 	public Integer getCreatorId() {
@@ -160,7 +160,7 @@ public class Curriculum implements Serializable {
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((numOfWeeks == null) ? 0 : numOfWeeks.hashCode());
 		result = prime * result + status;
-		result = prime * result + ((vrsion == null) ? 0 : vrsion.hashCode());
+		result = prime * result + ((version == null) ? 0 : version.hashCode());
 		result = prime * result + ((weeks == null) ? 0 : weeks.hashCode());
 		return result;
 	}
@@ -203,10 +203,10 @@ public class Curriculum implements Serializable {
 			return false;
 		if (status != other.status)
 			return false;
-		if (vrsion == null) {
-			if (other.vrsion != null)
+		if (version == null) {
+			if (other.version != null)
 				return false;
-		} else if (!vrsion.equals(other.vrsion))
+		} else if (!version.equals(other.version))
 			return false;
 		if (weeks == null) {
 			if (other.weeks != null)
@@ -218,7 +218,7 @@ public class Curriculum implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Curriculum [id=" + id + ", name=" + name + ", vrsion=" + vrsion + ", creatorId=" + creatorId
+		return "Curriculum [id=" + id + ", name=" + name + ", vrsion=" + version + ", creatorId=" + creatorId
 				+ ", approvedById=" + approvedById + ", status=" + status + ", dateCreated=" + dateCreated
 				+ ", numOfWeeks=" + numOfWeeks + ", weeks=" + weeks + "]";
 	}

@@ -36,7 +36,6 @@ public class CurriculumWeek implements Serializable{
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "CURRICULUM_WEEK_ID", insertable= false, updatable=false)
-	@NotNull
 	private CurriculumWeek curWeeks;
 	
 	@OneToMany(mappedBy = "curriculumDayId", fetch = FetchType.EAGER)
