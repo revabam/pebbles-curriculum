@@ -37,17 +37,12 @@ public class CurriculumDay implements Serializable{
 	@NotNull
 	private int curriculumWeekId;
 	
-	@Column(name = "DAY_NAME")
-	@NotNull
-	private String dayName;
-	
 	@Column(name = "DAY_NUM")
 	@NotNull
 	private int dayNum;
 	
-
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "CURRICULUM_DAY_ID", insertable= false, updatable=false)
+	@JoinColumn(name = "subtopic_id", insertable= false, updatable=false)
 	@NotNull
 	private CurriculumWeek allWeeks;
 	
@@ -58,12 +53,10 @@ public class CurriculumDay implements Serializable{
 		super();
 	}
 
-	public CurriculumDay(int curriculumDayId, int curriculumWeekId, String dayName, int dayNum,
-			Set<Subtopic> subTopics) {
+	public CurriculumDay(int curriculumDayId, int curriculumWeekId, int dayNum, Set<Subtopic> subTopics) {
 		super();
 		this.curriculumDayId = curriculumDayId;
 		this.curriculumWeekId = curriculumWeekId;
-		this.dayName = dayName;
 		this.dayNum = dayNum;
 		this.subTopics = subTopics;
 	}
@@ -84,14 +77,6 @@ public class CurriculumDay implements Serializable{
 		this.curriculumWeekId = curriculumWeekId;
 	}
 
-	public String getDayName() {
-		return dayName;
-	}
-
-	public void setDayName(String dayName) {
-		this.dayName = dayName;
-	}
-
 	public int getDayNum() {
 		return dayNum;
 	}
@@ -108,50 +93,12 @@ public class CurriculumDay implements Serializable{
 		this.subTopics = subTopics;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + curriculumDayId;
-		result = prime * result + curriculumWeekId;
-		result = prime * result + ((dayName == null) ? 0 : dayName.hashCode());
-		result = prime * result + dayNum;
-		result = prime * result + ((subTopics == null) ? 0 : subTopics.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		CurriculumDay other = (CurriculumDay) obj;
-		if (curriculumDayId != other.curriculumDayId)
-			return false;
-		if (curriculumWeekId != other.curriculumWeekId)
-			return false;
-		if (dayName == null) {
-			if (other.dayName != null)
-				return false;
-		} else if (!dayName.equals(other.dayName))
-			return false;
-		if (dayNum != other.dayNum)
-			return false;
-		if (subTopics == null) {
-			if (other.subTopics != null)
-				return false;
-		} else if (!subTopics.equals(other.subTopics))
-			return false;
-		return true;
-	}
 
 	@Override
 	public String toString() {
 		return "CurriculumDay [curriculumDayId=" + curriculumDayId + ", curriculumWeekId=" + curriculumWeekId
-				+ ", dayName=" + dayName + ", dayNum=" + dayNum + ", subTopics=" + subTopics + "]";
+				+ ", dayNum=" + dayNum + ", subTopics=" + subTopics + "]";
 	}
+
 	
 }

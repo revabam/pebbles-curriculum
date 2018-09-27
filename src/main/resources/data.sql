@@ -55,7 +55,7 @@ values(11, 'Express APIs', 4);
 
 
 /*Status Table*/
--- merge into curriculum_status values (0, "Master");
+-- merge into curriculum_status (curriculum_status_id, ) values (0, "Master");
 -- merge into curriculum_status values (1, "Not-master");
 
 /*Full-stack Java curriculum topics*/

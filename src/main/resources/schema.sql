@@ -37,20 +37,8 @@ parent_topic_id INTEGER,
 PRIMARY KEY(id),
 FOREIGN KEY (parent_topic_id) references topic(id));
 
-/*
-create curriculum_topics linking table
-*/
-DROP SEQUENCE IF EXISTS curriculum_topics_seq;
-CREATE SEQUENCE IF NOT EXISTS curriculum_topics_seq
-INCREMENT BY 1
-START WITH 12;
-
-DROP TABLE IF EXISTS curriculum_topics CASCADE;
--- CREATE TABLE IF NOT EXISTS curriculum_topics
--- (id INTEGER NOT NULL,
--- curriculum_id INTEGER,
--- topic_id INTEGER,
--- week_number INTEGER,
--- PRIMARY KEY (id),
--- FOREIGN KEY (curriculum_id) references curriculum(id),
--- FOREIGN KEY (topic_id) references topic(id));
+DROP TABLE IF EXISTS curriculum_status CASCADE;
+-- CREATE TABLE IF NOT EXISTS curriculum_status
+-- (curriculum_status_id INTEGER NOT NULL,
+-- status VARCHAR(25),
+-- PRIMARY KEY(curriculum_status_id));

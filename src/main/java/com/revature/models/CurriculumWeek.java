@@ -30,10 +30,6 @@ public class CurriculumWeek implements Serializable{
 	@NotNull
 	private int curriculumWeekId;
 	
-	@Column(name = "CURRICULUM_ID")
-	@NotNull
-	private int curriculumId;
-	
 	@Column(name = "WEEK_NUM")
 	@NotNull
 	private int weekNum;
@@ -52,14 +48,14 @@ public class CurriculumWeek implements Serializable{
 		super();
 	}
 
-	public CurriculumWeek(int curriculumWeekId, int curriculumId, int weekNum,
-			Set<CurriculumDay> days) {
+
+	public CurriculumWeek(int curriculumWeekId, int weekNum, Set<CurriculumDay> days) {
 		super();
 		this.curriculumWeekId = curriculumWeekId;
-		this.curriculumId = curriculumId;
 		this.weekNum = weekNum;
 		this.days = days;
 	}
+
 
 	public int getCurriculumWeekId() {
 		return curriculumWeekId;
@@ -68,16 +64,6 @@ public class CurriculumWeek implements Serializable{
 
 	public void setCurriculumWeekId(int curriculumWeekId) {
 		this.curriculumWeekId = curriculumWeekId;
-	}
-
-
-	public int getCurriculumId() {
-		return curriculumId;
-	}
-
-
-	public void setCurriculumId(int curriculumId) {
-		this.curriculumId = curriculumId;
 	}
 
 
@@ -90,6 +76,8 @@ public class CurriculumWeek implements Serializable{
 		this.weekNum = weekNum;
 	}
 
+
+
 	public Set<CurriculumDay> getDays() {
 		return days;
 	}
@@ -99,44 +87,12 @@ public class CurriculumWeek implements Serializable{
 		this.days = days;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + curriculumId;
-		result = prime * result + curriculumWeekId;
-		result = prime * result + ((days == null) ? 0 : days.hashCode());
-		result = prime * result + weekNum;
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		CurriculumWeek other = (CurriculumWeek) obj;
-		if (curriculumId != other.curriculumId)
-			return false;
-		if (curriculumWeekId != other.curriculumWeekId)
-			return false;
-		if (days == null) {
-			if (other.days != null)
-				return false;
-		} else if (!days.equals(other.days))
-			return false;
-		if (weekNum != other.weekNum)
-			return false;
-		return true;
-	}
 
 	@Override
 	public String toString() {
-		return "CurriculumWeek [curriculumWeekId=" + curriculumWeekId + ", curriculumId=" + curriculumId + ", weekNum="
-				+ weekNum + ", days=" + days + "]";
+		return "CurriculumWeek [curriculumWeekId=" + curriculumWeekId + ", weekNum=" + weekNum + ", days=" + days + "]";
 	}
+
+	
 
 }

@@ -167,11 +167,11 @@ public class CurriculumController {
 	 * @return ResponseEntity<Topic> A topic object and a HTTP status code
 	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
 	 */
-	@PutMapping(value = "/topics", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Topic> updateTopic(@Valid @RequestBody Topic updatedTopic) {
-		Topic topic = service.updateTopic(updatedTopic);
-		return new ResponseEntity<>(topic, HttpStatus.OK);
-	}
+//	@PutMapping(value = "/topics", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+//	public ResponseEntity<Topic> updateTopic(@Valid @RequestBody Topic updatedTopic) {
+//		Topic topic = service.updateTopic(updatedTopic);
+//		return new ResponseEntity<>(topic, HttpStatus.OK);
+//	}
 
 	/**
 	 * Updates a subtopic in the database

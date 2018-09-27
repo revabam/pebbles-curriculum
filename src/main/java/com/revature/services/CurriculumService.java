@@ -34,7 +34,7 @@ public class CurriculumService {
 	}
 
 	public Curriculum findCurriculumById(Integer id) {
-		return currRepo.findByCurriculumId(id);
+		return currRepo.findById(id);
 	}
 
 	public Curriculum addCurriculum(Curriculum newCurr) {
@@ -42,7 +42,7 @@ public class CurriculumService {
 	}
 
 	public Curriculum updateCurriculum(Curriculum updatedCurr) {
-		Curriculum curr = currRepo.findByCurriculumId(updatedCurr.getCurriculumId());
+		Curriculum curr = currRepo.findById(updatedCurr.getId());
 
 		if (curr == null) {
 			return curr;
@@ -72,14 +72,14 @@ public class CurriculumService {
 		return subRepo.save(newSubtopic);
 	}
 
-	public Topic updateTopic(Topic updatedTopic) {
-		Topic topic = topicRepo.findByTopicId(updatedTopic.getTopicId());
-		if (topic == null) {
-			return null;
-		} else {
-			return topicRepo.save(updatedTopic);
-		}
-	}
+//	public Topic updateTopic(Topic updatedTopic) {
+//		Topic topic = topicRepo.findByTopicId(updatedTopic.getTopicId());
+//		if (topic == null) {
+//			return null;
+//		} else {
+//			return topicRepo.save(updatedTopic);
+//		}
+//	}
 
 	public Subtopic updateSubtopic(Subtopic updatedSubtopic) {
 		Subtopic subtopic = subRepo.findOne(updatedSubtopic.getId());
