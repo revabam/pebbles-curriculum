@@ -50,20 +50,17 @@ public class CurriculumWeek implements Serializable{
 
 	public CurriculumWeek() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-
-	public CurriculumWeek(int curriculumWeekId, int curriculumId, int weekNum, Set<CurriculumDay> curWeeks,
+	public CurriculumWeek(int curriculumWeekId, int curriculumId, int weekNum, CurriculumWeek curWeeks,
 			Set<CurriculumDay> days) {
 		super();
 		this.curriculumWeekId = curriculumWeekId;
 		this.curriculumId = curriculumId;
 		this.weekNum = weekNum;
-//		this.curWeeks = curWeeks;
+		this.curWeeks = curWeeks;
 		this.days = days;
 	}
-
 
 	public int getCurriculumWeekId() {
 		return curriculumWeekId;
@@ -95,14 +92,14 @@ public class CurriculumWeek implements Serializable{
 	}
 
 
-//	public Set<CurriculumDay> getCurWeeks() {
-//		return curWeeks;
-//	}
-//
-//
-//	public void setCurWeeks(Set<CurriculumDay> curWeeks) {
-//		this.curWeeks = curWeeks;
-//	}
+	public CurriculumWeek getCurWeeks() {
+		return curWeeks;
+	}
+
+
+	public void setCurWeeks(CurriculumWeek curWeeks) {
+		this.curWeeks = curWeeks;
+	}
 
 
 	public Set<CurriculumDay> getDays() {
@@ -113,7 +110,6 @@ public class CurriculumWeek implements Serializable{
 	public void setDays(Set<CurriculumDay> days) {
 		this.days = days;
 	}
-
 
 	@Override
 	public int hashCode() {
@@ -126,7 +122,6 @@ public class CurriculumWeek implements Serializable{
 		result = prime * result + weekNum;
 		return result;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -155,7 +150,6 @@ public class CurriculumWeek implements Serializable{
 			return false;
 		return true;
 	}
-
 
 	@Override
 	public String toString() {
