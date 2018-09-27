@@ -55,8 +55,11 @@ public class Curriculum implements Serializable {
 	@Column(name="APPROVED_BY_ID")
 	private int approvedById;
 	
-	@Column(name="CURRICULUM_STATUS")
+	@Column(name="CURRICULUM_STATUS_ID")
 	private int curriculumStatus;
+	
+	@OneToMany(mappedBy = "curriculumStatus", fetch = FetchType.LAZY)
+	private Set<CurriculumStatus> status = new HashSet<CurriculumStatus>();
 	
 	@OneToMany(mappedBy = "curWeeks", fetch = FetchType.LAZY)
 	private Set<CurriculumWeek> weeks = new HashSet<CurriculumWeek>();
@@ -67,10 +70,9 @@ public class Curriculum implements Serializable {
 		super();
 	}
 
-
-
 	public Curriculum(Integer curriculumId, String curriculumName, String curriculumVersion, Integer creatorId,
-			Date dateCreated, Integer numWeeks, int approvedById, int curriculumStatus, Set<CurriculumWeek> weeks) {
+			Date dateCreated, Integer numWeeks, int approvedById, int curriculumStatus, Set<CurriculumStatus> status,
+			Set<CurriculumWeek> weeks) {
 		super();
 		this.curriculumId = curriculumId;
 		this.curriculumName = curriculumName;
@@ -80,118 +82,89 @@ public class Curriculum implements Serializable {
 		this.numWeeks = numWeeks;
 		this.approvedById = approvedById;
 		this.curriculumStatus = curriculumStatus;
+		this.status = status;
 		this.weeks = weeks;
 	}
-
-
 
 	public Integer getCurriculumId() {
 		return curriculumId;
 	}
 
-
-
 	public void setCurriculumId(Integer curriculumId) {
 		this.curriculumId = curriculumId;
 	}
-
-
 
 	public String getCurriculumName() {
 		return curriculumName;
 	}
 
-
-
 	public void setCurriculumName(String curriculumName) {
 		this.curriculumName = curriculumName;
 	}
-
-
 
 	public String getCurriculumVersion() {
 		return curriculumVersion;
 	}
 
-
-
 	public void setCurriculumVersion(String curriculumVersion) {
 		this.curriculumVersion = curriculumVersion;
 	}
-
-
 
 	public Integer getCreatorId() {
 		return creatorId;
 	}
 
-
-
 	public void setCreatorId(Integer creatorId) {
 		this.creatorId = creatorId;
 	}
-
-
 
 	public Date getDateCreated() {
 		return dateCreated;
 	}
 
-
-
 	public void setDateCreated(Date dateCreated) {
 		this.dateCreated = dateCreated;
 	}
-
-
 
 	public Integer getNumWeeks() {
 		return numWeeks;
 	}
 
-
-
 	public void setNumWeeks(Integer numWeeks) {
 		this.numWeeks = numWeeks;
 	}
-
-
 
 	public int getApprovedById() {
 		return approvedById;
 	}
 
-
-
 	public void setApprovedById(int approvedById) {
 		this.approvedById = approvedById;
 	}
-
-
 
 	public int getCurriculumStatus() {
 		return curriculumStatus;
 	}
 
-
-
 	public void setCurriculumStatus(int curriculumStatus) {
 		this.curriculumStatus = curriculumStatus;
 	}
 
+	public Set<CurriculumStatus> getStatus() {
+		return status;
+	}
 
+	public void setStatus(Set<CurriculumStatus> status) {
+		this.status = status;
+	}
 
 	public Set<CurriculumWeek> getWeeks() {
 		return weeks;
 	}
 
-
-
 	public void setWeeks(Set<CurriculumWeek> weeks) {
 		this.weeks = weeks;
 	}
-
-
 
 	@Override
 	public int hashCode() {
@@ -205,11 +178,10 @@ public class Curriculum implements Serializable {
 		result = prime * result + ((curriculumVersion == null) ? 0 : curriculumVersion.hashCode());
 		result = prime * result + ((dateCreated == null) ? 0 : dateCreated.hashCode());
 		result = prime * result + ((numWeeks == null) ? 0 : numWeeks.hashCode());
+		result = prime * result + ((status == null) ? 0 : status.hashCode());
 		result = prime * result + ((weeks == null) ? 0 : weeks.hashCode());
 		return result;
 	}
-
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -254,6 +226,11 @@ public class Curriculum implements Serializable {
 				return false;
 		} else if (!numWeeks.equals(other.numWeeks))
 			return false;
+		if (status == null) {
+			if (other.status != null)
+				return false;
+		} else if (!status.equals(other.status))
+			return false;
 		if (weeks == null) {
 			if (other.weeks != null)
 				return false;
@@ -262,17 +239,12 @@ public class Curriculum implements Serializable {
 		return true;
 	}
 
-
-
 	@Override
 	public String toString() {
 		return "Curriculum [curriculumId=" + curriculumId + ", curriculumName=" + curriculumName
 				+ ", curriculumVersion=" + curriculumVersion + ", creatorId=" + creatorId + ", dateCreated="
 				+ dateCreated + ", numWeeks=" + numWeeks + ", approvedById=" + approvedById + ", curriculumStatus="
-				+ curriculumStatus + ", weeks=" + weeks + "]";
+				+ curriculumStatus + ", status=" + status + ", weeks=" + weeks + "]";
 	}
 	
-
-	
-
 }

@@ -53,6 +53,11 @@ values(10, 'Node', 4);
 merge into subtopic (id, name, parent_topic_id)
 values(11, 'Express APIs', 4);
 
+
+/*Status Table*/
+-- merge into curriculum_status values (0, "Master");
+-- merge into curriculum_status values (1, "Not-master");
+
 /*Full-stack Java curriculum topics*/
 -- merge into curriculum_topics (id, curriculum_id, topic_id, week_number)
 -- values(1, 1, 1, 1);

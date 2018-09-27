@@ -52,13 +52,12 @@ public class CurriculumWeek implements Serializable{
 		super();
 	}
 
-	public CurriculumWeek(int curriculumWeekId, int curriculumId, int weekNum, CurriculumWeek curWeeks,
+	public CurriculumWeek(int curriculumWeekId, int curriculumId, int weekNum,
 			Set<CurriculumDay> days) {
 		super();
 		this.curriculumWeekId = curriculumWeekId;
 		this.curriculumId = curriculumId;
 		this.weekNum = weekNum;
-		this.curWeeks = curWeeks;
 		this.days = days;
 	}
 
@@ -91,17 +90,6 @@ public class CurriculumWeek implements Serializable{
 		this.weekNum = weekNum;
 	}
 
-
-	public CurriculumWeek getCurWeeks() {
-		return curWeeks;
-	}
-
-
-	public void setCurWeeks(CurriculumWeek curWeeks) {
-		this.curWeeks = curWeeks;
-	}
-
-
 	public Set<CurriculumDay> getDays() {
 		return days;
 	}
@@ -115,7 +103,6 @@ public class CurriculumWeek implements Serializable{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((curWeeks == null) ? 0 : curWeeks.hashCode());
 		result = prime * result + curriculumId;
 		result = prime * result + curriculumWeekId;
 		result = prime * result + ((days == null) ? 0 : days.hashCode());
@@ -132,11 +119,6 @@ public class CurriculumWeek implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		CurriculumWeek other = (CurriculumWeek) obj;
-		if (curWeeks == null) {
-			if (other.curWeeks != null)
-				return false;
-		} else if (!curWeeks.equals(other.curWeeks))
-			return false;
 		if (curriculumId != other.curriculumId)
 			return false;
 		if (curriculumWeekId != other.curriculumWeekId)
@@ -154,8 +136,7 @@ public class CurriculumWeek implements Serializable{
 	@Override
 	public String toString() {
 		return "CurriculumWeek [curriculumWeekId=" + curriculumWeekId + ", curriculumId=" + curriculumId + ", weekNum="
-				+ weekNum + ", curWeeks=" + curWeeks + ", days=" + days + "]";
+				+ weekNum + ", days=" + days + "]";
 	}
-
 
 }

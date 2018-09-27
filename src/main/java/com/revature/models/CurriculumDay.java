@@ -52,21 +52,20 @@ public class CurriculumDay implements Serializable{
 	private CurriculumWeek allWeeks;
 	
 	@OneToMany(mappedBy = "dailyTopics", fetch = FetchType.EAGER)
-	private Set<Subtopic> subs = new HashSet<Subtopic>();
+	private Set<Subtopic> subTopics = new HashSet<Subtopic>();
 
 	public CurriculumDay() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public CurriculumDay(int curriculumDayId, int curriculumWeekId, String dayName, int dayNum,
-			CurriculumWeek allWeeks) {
+			Set<Subtopic> subTopics) {
 		super();
 		this.curriculumDayId = curriculumDayId;
 		this.curriculumWeekId = curriculumWeekId;
 		this.dayName = dayName;
 		this.dayNum = dayNum;
-		this.allWeeks = allWeeks;
+		this.subTopics = subTopics;
 	}
 
 	public int getCurriculumDayId() {
@@ -101,23 +100,23 @@ public class CurriculumDay implements Serializable{
 		this.dayNum = dayNum;
 	}
 
-	public CurriculumWeek getAllWeeks() {
-		return allWeeks;
+	public Set<Subtopic> getSubTopics() {
+		return subTopics;
 	}
 
-	public void setAllWeeks(CurriculumWeek allWeeks) {
-		this.allWeeks = allWeeks;
+	public void setSubTopics(Set<Subtopic> subTopics) {
+		this.subTopics = subTopics;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((allWeeks == null) ? 0 : allWeeks.hashCode());
 		result = prime * result + curriculumDayId;
 		result = prime * result + curriculumWeekId;
 		result = prime * result + ((dayName == null) ? 0 : dayName.hashCode());
 		result = prime * result + dayNum;
+		result = prime * result + ((subTopics == null) ? 0 : subTopics.hashCode());
 		return result;
 	}
 
@@ -130,11 +129,6 @@ public class CurriculumDay implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		CurriculumDay other = (CurriculumDay) obj;
-		if (allWeeks == null) {
-			if (other.allWeeks != null)
-				return false;
-		} else if (!allWeeks.equals(other.allWeeks))
-			return false;
 		if (curriculumDayId != other.curriculumDayId)
 			return false;
 		if (curriculumWeekId != other.curriculumWeekId)
@@ -146,14 +140,18 @@ public class CurriculumDay implements Serializable{
 			return false;
 		if (dayNum != other.dayNum)
 			return false;
+		if (subTopics == null) {
+			if (other.subTopics != null)
+				return false;
+		} else if (!subTopics.equals(other.subTopics))
+			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
 		return "CurriculumDay [curriculumDayId=" + curriculumDayId + ", curriculumWeekId=" + curriculumWeekId
-				+ ", dayName=" + dayName + ", dayNum=" + dayNum + ", allWeeks=" + allWeeks + "]";
+				+ ", dayName=" + dayName + ", dayNum=" + dayNum + ", subTopics=" + subTopics + "]";
 	}
-
 	
 }
