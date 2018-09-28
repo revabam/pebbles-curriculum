@@ -39,10 +39,10 @@ public class CurriculumDay implements Serializable{
 	private int dayNum;
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "subtopic_id", insertable= false, updatable=false)
-	private CurriculumWeek allWeeks;
+	@JoinColumn(name = "CURRICULUM_WEEK_ID", insertable= false, updatable=false)
+	private CurriculumWeek days;
 	
-	@OneToMany(mappedBy = "dailyTopics", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "subtopics", fetch = FetchType.EAGER)
 	private Set<Subtopic> subTopics = new HashSet<Subtopic>();
 
 	public CurriculumDay() {

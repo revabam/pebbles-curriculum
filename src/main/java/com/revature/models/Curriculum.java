@@ -28,7 +28,7 @@ public class Curriculum implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="CURRICULUM_WEEK_ID")
+	@Column(name="ID")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="curriculum_seq_name")
 	private Integer id;
 	
@@ -58,7 +58,7 @@ public class Curriculum implements Serializable {
 	@Column(name="number_of_weeks")
 	private Integer numOfWeeks;
 	
-	@OneToMany(mappedBy = "curWeeks", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "weeks", fetch = FetchType.LAZY)
 	private Set<CurriculumWeek> weeks = new HashSet<CurriculumWeek>();
 
 	public Curriculum() {}

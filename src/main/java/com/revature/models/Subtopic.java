@@ -31,26 +31,27 @@ public class Subtopic implements Serializable {
 	private Integer id;
 	
 	@NotNull
-	@Column(name="name", unique=true)
-	private String name;
-	
-	@Column(name="PARENT_TOPIC_ID")
-	private int parentTopicId;
+	@Column(name="name_id", unique=true)
+	private int nameId;
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "subtopic_id", insertable= false, updatable=false)
+	@JoinColumn(name = "CURRICULUM_DAY_ID", insertable= false, updatable=false)
 	@NotNull
-	private Topic dailyTopics;
+	private CurriculumDay dailySubtopics;
+	
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name = "ID", insertable= false, updatable=false)
+	@NotNull
+	private Topic subtopics;
 	
 	
 	public Subtopic() {}
 
 
-	public Subtopic(Integer id, String name, int parentTopicId) {
+	public Subtopic(Integer id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.parentTopicId = parentTopicId;
 	}
 
 
@@ -68,25 +69,12 @@ public class Subtopic implements Serializable {
 		return name;
 	}
 
-
 	public void setName(String name) {
 		this.name = name;
 	}
 
-
-	public int getParentTopicId() {
-		return parentTopicId;
-	}
-
-
-	public void setParentTopicId(int parentTopicId) {
-		this.parentTopicId = parentTopicId;
-	}
-
-
 	@Override
 	public String toString() {
-		return "Subtopic [id=" + id + ", name=" + name + ", parentTopicId=" + parentTopicId + "]";
+		return "Subtopic [id=" + id + ", name=" + name + "]";
 	}
-
 }
