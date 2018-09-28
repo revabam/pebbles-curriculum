@@ -31,8 +31,8 @@ public class Subtopic implements Serializable {
 	private Integer id;
 	
 	@NotNull
-	@Column(name="name_id", unique=true)
-	private int nameId;
+	@Column(name="name", unique=true)
+	private String name;
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "CURRICULUM_DAY_ID", insertable= false, updatable=false)
