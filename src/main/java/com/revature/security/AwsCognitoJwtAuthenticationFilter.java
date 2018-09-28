@@ -14,6 +14,12 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.GenericFilterBean;
 
+/**
+ * 
+ * The purpose of this class is too distinguish between non-authentic tokens from authentic tokens
+ * @author Tosin Onilogbo
+ *
+ */
 public class AwsCognitoJwtAuthenticationFilter extends GenericFilterBean {
 
     private static final Logger logger = LoggerFactory.getLogger(AwsCognitoJwtAuthenticationFilter.class);

@@ -22,16 +22,16 @@ import com.nimbusds.jwt.proc.ConfigurableJWTProcessor;
 import com.nimbusds.jwt.proc.DefaultJWTProcessor;
 
 /**
-*
-* Our auto configuration class that exposes
-*
-* - CredentialHolder
-* - JWTProcessor
-* - AuthenticationProvider
-* - JWTAuthenticationFilter
-* - AwsCognitoJtwConfiguration
-*
-*/
+ * The purpose of this class is too provide the algorithm necessary for processing the JWT and extracting its authentication details. 
+ * The JWT contains a set of claims about the user and are structured with a header, payload, and signature. 
+ * The header contains information of what type of token it is as well as the hashing algorithm being used in this case being RSA.
+ * The JWS algorithm used is RS256 for RSA PKCS #1 signature with SHA-256 so when a token with an unexpected algorithm is received 
+ * it'll be rejected in the authenticationFilter class.
+ * 
+ * @author Tosin Onilogbo
+ *
+ */
+
 @Configuration
 @ConditionalOnClass({AwsCognitoJwtAuthenticationFilter.class, AwsCognitoIdTokenProcessor.class})
 @EnableConfigurationProperties({JwtConfiguration.class})
