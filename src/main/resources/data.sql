@@ -15,6 +15,7 @@ merge mock data into the topic and subtopic lookup tables
 */
 /*topic*/
 /*full-stack java topics*/
+
 merge into topic (id, name)
 values(1, 'Core Java');
 merge into topic (id, name)
@@ -24,6 +25,7 @@ values(3, 'JavaScript, HTML, CSS');
 /*spark batch topics*/
 merge into topic (id, name)
 values(4, 'Express');
+
 
 -- /*subtopic*/
 /*core java subtopics*/
@@ -38,6 +40,18 @@ values(4, 'Express');
 --merge into subtopic_name (id, name)
 --values(4, 'SQL Sublanguages');
 
+insert into SUBTOPIC_NAMES (NAME_ID, SUBTOPIC_NAME)
+values (1, 'For Loops');
+
+insert into SUBTOPIC_NAMES (NAME_ID, SUBTOPIC_NAME)
+values (2, 'While Loops');
+
+insert into SUBTOPIC_NAMES (NAME_ID, SUBTOPIC_NAME)
+values (3, 'Do While');
+
+insert into SUBTOPIC_NAMES (NAME_ID, SUBTOPIC_NAME)
+values (4, 'If statments');
+
 insert into curriculum values (1,'java',1, 1, '2018-09-27', 10, 1, 2);
 
 insert into curriculum_week values (1, 1, 1);
@@ -46,15 +60,15 @@ insert into curriculum_week values (1, 1, 1);
 insert into CURRICULUM_DAY values (1, 1, 1);
 insert into CURRICULUM_DAY values (2, 1, 2);
 
-insert into subtopic (subtopic_id, name, CURRICULUM_DAY_ID, ID)
-values(1, 'Interfaces', 1, 1);
-insert into subtopic (subtopic_id, name, CURRICULUM_DAY_ID, id)
-values(2, 'Inheritance', 1, 1);
-insert into subtopic (subtopic_id, name, CURRICULUM_DAY_ID, id)   
-values(3, 'Covariance', 2, 1);
-/*sql topics*/
-insert into subtopic (subtopic_id, name, CURRICULUM_DAY_ID, id)
-values(4, 'SQL Sublanguages', 2, 2);
+insert into subtopic (subtopic_id, CURRICULUM_DAY_ID, ID, subtopic_name_ID)
+values(1,  1, 1, 1);
+insert into subtopic (subtopic_id, CURRICULUM_DAY_ID, id, subtopic_name_ID)
+values(2,  1, 1, 2);
+insert into subtopic (subtopic_id, CURRICULUM_DAY_ID, id, subtopic_name_ID)   
+values(3,  2, 1, 3);
+insert into subtopic (subtopic_id, CURRICULUM_DAY_ID, id, subtopic_name_ID)
+values(4,  2, 2, 4);
+
 
 -- insert into subtopic (subtopic_id, name, parent_topic_id)
 -- values(5, 'Normalization', 2);
