@@ -35,15 +35,15 @@ START WITH 12;
 -- DROP CONSTRAINT FKN59K91C6XDUUKIJFEJ2IVN5AD;
 
 DROP TABLE IF EXISTS subtopic_name CASCADE;
-CREATE TABLE IF NOT EXISTS subtopic_name
-(subtopic_name_id INTEGER NOT NULL,
-name INTEGER NOT NULL,
-PRIMARY KEY(subtopic_name_id));
+--CREATE TABLE IF NOT EXISTS subtopic_name
+--(subtopic_name_id INTEGER NOT NULL,
+--name INTEGER NOT NULL,
+--PRIMARY KEY(subtopic_name_id));
 
 DROP TABLE IF EXISTS subtopic CASCADE;
 CREATE TABLE IF NOT EXISTS subtopic
 (subtopic_id INTEGER NOT NULL,
-name_id INTEGER,
+name varchar(25),
 CURRICULUM_DAY_ID INTEGER,
 ID INTEGER,
 PRIMARY KEY(subtopic_id));

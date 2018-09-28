@@ -28,15 +28,15 @@ values(4, 'Express');
 -- /*subtopic*/
 /*core java subtopics*/
 
-merge into subtopic_name (id, name)
-values(1, 'Interfaces');
-merge into subtopic_name (id, name)
-values(2, 'Inheritance');
-merge into subtopic_name (id, name)
-values(3, 'Covariance');
-/*spark batch topics*/
-merge into subtopic_name (id, name)
-values(4, 'SQL Sublanguages');
+--merge into subtopic_name (id, name)
+--values(1, 'Interfaces');
+--merge into subtopic_name (id, name)
+--values(2, 'Inheritance');
+--merge into subtopic_name (id, name)
+--values(3, 'Covariance');
+--/*spark batch topics*/
+--merge into subtopic_name (id, name)
+--values(4, 'SQL Sublanguages');
 
 insert into curriculum values (1,'java',1, 1, '2018-09-27', 10, 1, 2);
 
@@ -46,15 +46,15 @@ insert into curriculum_week values (1, 1, 1);
 insert into CURRICULUM_DAY values (1, 1, 1);
 insert into CURRICULUM_DAY values (2, 1, 2);
 
-insert into subtopic (subtopic_id, name_id, CURRICULUM_DAY_ID, ID)
-values(1, 1, 1, 1);
-insert into subtopic (subtopic_id, name_id, CURRICULUM_DAY_ID, id)
-values(2, 2, 1, 1);
-insert into subtopic (subtopic_id, name_id, CURRICULUM_DAY_ID, id)   
-values(3, 3, 2, 1);
+insert into subtopic (subtopic_id, name, CURRICULUM_DAY_ID, ID)
+values(1, 'Interfaces', 1, 1);
+insert into subtopic (subtopic_id, name, CURRICULUM_DAY_ID, id)
+values(2, 'Inheritance', 1, 1);
+insert into subtopic (subtopic_id, name, CURRICULUM_DAY_ID, id)   
+values(3, 'Covariance', 2, 1);
 /*sql topics*/
-insert into subtopic (subtopic_id, name_id, CURRICULUM_DAY_ID, id)
-values(4, 4, 2, 2);
+insert into subtopic (subtopic_id, name, CURRICULUM_DAY_ID, id)
+values(4, 'SQL Sublanguages', 2, 2);
 
 -- insert into subtopic (subtopic_id, name, parent_topic_id)
 -- values(5, 'Normalization', 2);
