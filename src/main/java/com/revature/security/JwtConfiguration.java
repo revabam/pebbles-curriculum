@@ -10,7 +10,7 @@ public class JwtConfiguration {
     private static final String COGNITO_IDENTITY_POOL_URL = "https://cognito-idp.auth.us-east-1.amazonaws.com/_7bWZrc3vS";
     private static final String JSON_WEB_TOKEN_SET_URL_SUFFIX = "/.well-known/jwks.json";
 
-    private String userPoolId;
+    private String userPoolId = "us-east-1_7bWZrc3vS";
     private String identityPoolId;
 
     private String jwkUrl;

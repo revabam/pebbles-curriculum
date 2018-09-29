@@ -16,7 +16,7 @@ import org.springframework.web.filter.GenericFilterBean;
 
 /**
  * 
- * The purpose of this class is too distinguish between non-authentic tokens from authentic tokens
+ * The purpose of this class is too distinguish non-authentic tokens from authentic tokens and take accorded action.
  * @author Tosin Onilogbo
  *
  */
