@@ -17,6 +17,13 @@ import org.springframework.security.core.userdetails.User;
 import com.nimbusds.jwt.JWTClaimsSet;
 import com.nimbusds.jwt.proc.ConfigurableJWTProcessor;
 
+/**
+ * 
+ * This class is responsible for processing the token by extracting it from the Authorization header and then extracting the actual authentication and claims.
+ * @author Tosin Onilogbo
+ *
+ */
+
 public class AwsCognitoIdTokenProcessor {
 
     private static final Log logger = LogFactory.getLog(AwsCognitoIdTokenProcessor.class);
