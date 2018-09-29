@@ -42,7 +42,7 @@ public class CurriculumDay implements Serializable{
 	@JoinColumn(name = "CURRICULUM_WEEK_ID", insertable= false, updatable=false)
 	private CurriculumWeek days;
 	
-	@OneToMany(mappedBy = "subtopics", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "dailySubtopics", fetch = FetchType.EAGER)
 	private Set<Subtopic> subTopics = new HashSet<Subtopic>();
 
 	public CurriculumDay() {

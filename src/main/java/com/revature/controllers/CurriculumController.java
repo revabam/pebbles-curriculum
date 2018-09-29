@@ -43,6 +43,7 @@ public class CurriculumController {
 	public ResponseEntity<List<Curriculum>> findAllCurriculums() {
 		System.out.println("GET METHODHIT");
 		List<Curriculum> allCurr = service.findAllCurriculums();
+		System.out.println("Returning " + allCurr);
 		return new ResponseEntity<>(allCurr, HttpStatus.OK);
 	}
 

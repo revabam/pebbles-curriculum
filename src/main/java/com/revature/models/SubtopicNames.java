@@ -9,6 +9,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -30,19 +32,18 @@ public class SubtopicNames implements Serializable {
 	@Column(name = "SUBTOPIC_NAME")
 	@NotNull
 	private String topicName;
-	
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "subtopicNames")
-	private Set<Subtopic> subtopic = new HashSet<Subtopic>();
 
+	@OneToOne(mappedBy = "subtopicNames")
+    private Subtopic subtopicName; 
+    
 	public SubtopicNames() {
 		super();
 	}
 
-	public SubtopicNames(int nameId, String topicName, Set<Subtopic> subtopic) {
+	public SubtopicNames(int nameId, String topicName) {
 		super();
 		this.nameId = nameId;
 		this.topicName = topicName;
-		this.subtopic = subtopic;
 	}
 
 	public int getNameId() {

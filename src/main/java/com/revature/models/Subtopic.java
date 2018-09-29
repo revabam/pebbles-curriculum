@@ -1,6 +1,8 @@
 package com.revature.models;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -11,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -30,32 +33,22 @@ public class Subtopic implements Serializable {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "subtopic_seq_name")
 	@Column(name = "subtopic_id")
 	private Integer id;
-
-//	@NotNull
-//	@Column(name = "name", unique = true)
-//	private String name;
-
+	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "CURRICULUM_DAY_ID", insertable = false, updatable = false)
 	@NotNull
 	private CurriculumDay dailySubtopics;
 
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "ID", insertable = false, updatable = false)
-	@NotNull
-	private Topic subtopics;
-
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "SUBTOPIC_NAME_ID", nullable = false)
-	private SubtopicNames subtopicNames;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "SUBTOPIC_NAME_ID")
+	private SubtopicNames subtopicNames = new SubtopicNames();
 
 	public Subtopic() {
 	}
 
-	public Subtopic(Integer id, String name, CurriculumDay dailySubtopics, SubtopicNames subtopicNames) {
+	public Subtopic(Integer id, SubtopicNames subtopicNames) {
 		super();
 		this.id = id;
-		this.dailySubtopics = dailySubtopics;
 		this.subtopicNames = subtopicNames;
 	}
 
@@ -77,7 +70,7 @@ public class Subtopic implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Subtopic [id=" + id  + "]";
+		return "Subtopic [id=" + id + ", subtopicNames=" + subtopicNames + "]";
 	}
 
 }
