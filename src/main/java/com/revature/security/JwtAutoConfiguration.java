@@ -36,23 +36,25 @@ import com.nimbusds.jwt.proc.DefaultJWTProcessor;
 @ConditionalOnClass({AwsCognitoJwtAuthenticationFilter.class, AwsCognitoIdTokenProcessor.class})
 @EnableConfigurationProperties({JwtConfiguration.class})
 public class JwtAutoConfiguration {
-
+	
    @Bean
    //Each Http Request will have its own instance of a bean
    @Scope(value="request", proxyMode= ScopedProxyMode.TARGET_CLASS)
    public JwtIdTokenCredentialsHolder awsCognitoCredentialsHolder() {
+	   System.out.println("8");
        return new JwtIdTokenCredentialsHolder();
    }
 
    @Bean
-   public AwsCognitoIdTokenProcessor awsCognitoIdTokenProcessor() { return new AwsCognitoIdTokenProcessor(); }
+   public AwsCognitoIdTokenProcessor awsCognitoIdTokenProcessor() { System.out.println("7");return new AwsCognitoIdTokenProcessor(); }
 
    @Bean
-   public JwtAuthenticationProvider jwtAuthenticationProvider() { return new JwtAuthenticationProvider(); }
+   public JwtAuthenticationProvider jwtAuthenticationProvider() { System.out.println("6");return new JwtAuthenticationProvider(); }
 
 
    @Bean
    public AwsCognitoJwtAuthenticationFilter awsCognitoJwtAuthenticationFilter() {
+	   System.out.println("5");
        return new AwsCognitoJwtAuthenticationFilter(awsCognitoIdTokenProcessor());
    }
 
@@ -61,6 +63,7 @@ public class JwtAutoConfiguration {
 
    @Bean
    public ConfigurableJWTProcessor configurableJWTProcessor() throws MalformedURLException {
+	   System.out.println("4");
        ResourceRetriever resourceRetriever = new DefaultResourceRetriever(jwtConfiguration.getConnectionTimeout(), jwtConfiguration.getReadTimeout());
        URL jwkSetURL = new URL(jwtConfiguration.getJwkUrl());
        JWKSource keySource = new RemoteJWKSet(jwkSetURL, resourceRetriever);
