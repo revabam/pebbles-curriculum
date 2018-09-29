@@ -39,7 +39,6 @@ public class Topic implements Serializable {
 	@OneToMany(mappedBy = "topic", fetch = FetchType.EAGER)
 	private Set<SubtopicNames> subtopicNames = new HashSet<SubtopicNames>();
 
-
 	public Topic() {
 	}
 
