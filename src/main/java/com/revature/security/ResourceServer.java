@@ -12,8 +12,8 @@ public class ResourceServer implements ResourceServerConfigurer{
 
 	@Override
 	public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
-		AuthorizationServer.tokenKeyAccess("isAnonymous() || hasAuthority('ROLE_TRUSTED_CLIENT')").checkTokenAccess(
-				"hasAuthority('ROLE_TRUSTED_CLIENT')");
+//		AuthoionServer.tokenKeyAccess("isAnonymous() || hasAuthority('ROLE_TRUSTED_CLIENT')").checkTokenAccess(
+//				"hasAuthority('ROLE_TRUSTED_CLIENT')");rizat
 	}
 
 	@Override
