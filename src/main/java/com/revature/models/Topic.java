@@ -35,6 +35,9 @@ public class Topic implements Serializable {
 	@NotNull
 	@Column(name = "name", unique = true)
 	private String name;
+	
+	@OneToMany(mappedBy = "topic", fetch = FetchType.EAGER)
+	private Set<SubtopicNames> subtopicNames = new HashSet<SubtopicNames>();
 
 
 	public Topic() {
@@ -44,6 +47,30 @@ public class Topic implements Serializable {
 		super();
 		this.topicId = topicId;
 		this.name = name;
+	}
+
+	public Integer getTopicId() {
+		return topicId;
+	}
+
+	public void setTopicId(Integer topicId) {
+		this.topicId = topicId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Set<SubtopicNames> getSubtopicNames() {
+		return subtopicNames;
+	}
+
+	public void setSubtopicNames(Set<SubtopicNames> subtopicNames) {
+		this.subtopicNames = subtopicNames;
 	}
 
 	@Override

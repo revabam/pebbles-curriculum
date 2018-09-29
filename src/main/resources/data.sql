@@ -40,17 +40,17 @@ values(4, 'Express');
 --merge into subtopic_name (id, name)
 --values(4, 'SQL Sublanguages');
 
-insert into SUBTOPIC_NAMES (NAME_ID, SUBTOPIC_NAME)
-values (1, 'For Loops');
+insert into SUBTOPIC_NAMES (NAME_ID, SUBTOPIC_NAME, TOPIC_ID)
+values (1, 'For Loops', 1);
 
-insert into SUBTOPIC_NAMES (NAME_ID, SUBTOPIC_NAME)
-values (2, 'While Loops');
+insert into SUBTOPIC_NAMES (NAME_ID, SUBTOPIC_NAME, TOPIC_ID)
+values (2, 'While Loops', 1);
 
-insert into SUBTOPIC_NAMES (NAME_ID, SUBTOPIC_NAME)
-values (3, 'Do While');
+insert into SUBTOPIC_NAMES (NAME_ID, SUBTOPIC_NAME, TOPIC_ID)
+values (3, 'Do While', 2);
 
-insert into SUBTOPIC_NAMES (NAME_ID, SUBTOPIC_NAME)
-values (4, 'If statments');
+insert into SUBTOPIC_NAMES (NAME_ID, SUBTOPIC_NAME, TOPIC_ID)
+values (4, 'If statments', 3);
 
 insert into curriculum values (1,'java',1, 1, '2018-09-27', 10, 1, 2);
 

@@ -16,6 +16,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "SUBTOPIC_NAMES")
 public class SubtopicNames implements Serializable {
@@ -28,22 +30,32 @@ public class SubtopicNames implements Serializable {
 	@Id
 	@Column(name = "NAME_ID")
 	private int nameId;
+	
 
 	@Column(name = "SUBTOPIC_NAME")
 	@NotNull
 	private String topicName;
 
 	@OneToOne(mappedBy = "subtopicNames")
-    private Subtopic subtopicName; 
+    private Subtopic subtopicName;
+	
+	@Column(name="TOPIC_ID")
+	private int topicId;
+	
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name = "TOPIC_ID", insertable= false, updatable=false)
+	private Topic topic;
     
 	public SubtopicNames() {
 		super();
 	}
 
-	public SubtopicNames(int nameId, String topicName) {
+	public SubtopicNames(int nameId, String topicName, int topicId, Topic topic) {
 		super();
 		this.nameId = nameId;
 		this.topicName = topicName;
+		this.topicId = topicId;
+		this.topic = topic;
 	}
 
 	public int getNameId() {
@@ -59,12 +71,22 @@ public class SubtopicNames implements Serializable {
 	}
 
 	public void setTopicName(String topicName) {
-		this.topicName = topicName;
+		this.topicName = topicName;	
+	}
+	
+	public int getTopicId() {
+		return topicId;
+	}
+
+	public void setTopicId(int topicId) {
+		this.topicId = topicId;
 	}
 
 	@Override
 	public String toString() {
-		return "SubtopicNames [nameId=" + nameId + ", topicName=" + topicName + "]";
+		return "SubtopicNames [nameId=" + nameId + ", topicName=" + topicName + ", topicId=" + topicId + ", topic="
+				+ topic + "]";
 	}
+
 
 }
