@@ -1,46 +1,42 @@
 package com.revature.security;
 
-import java.util.Collections;
-
-import org.springframework.context.annotation.Bean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.ProviderManager;
+import org.springframework.core.Ordered;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.web.AuthenticationEntryPoint;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @Configuration
-public class JwtSecurityConfig extends WebSecurityConfigurerAdapter {
-	
-	private JwtAuthenticationProvider authenticationProvider;
-	private JwtAuthenticationEntryPoint entryPoint;
+public class JwtSecurityConfig extends WebSecurityConfigurerAdapter implements Ordered {
 
-	@Bean
-	public AuthenticationManager authenticationManager() {
-		return new ProviderManager(Collections.singletonList(authenticationProvider));
+	private int order = 4; 
+	
+	@Autowired
+	private AwsCognitoJwtAuthenticationFilter awsCognitoJwtAuthenticationFilter;
+	
+	@Override
+	public int getOrder() {
+		return order;
 	}
 	
-	@Bean
-	public JwtAuthenticationTokenFilter authenticationTokenFilter() {
-		
-		JwtAuthenticationTokenFilter filter = new JwtAuthenticationTokenFilter();
-		filter.setAuthenticationManager(authenticationManager());
-		filter.setAuthenticationSuccessHandler(new JwtSuccessHandler());
-		return filter;
+	public void setOrder(int order) {
+		this.order = order;
 	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable()
-				   .authorizeRequests().antMatchers("/auth/**").authenticated()
-				   .and()
-				   .exceptionHandling().authenticationEntryPoint(entryPoint)
-				   .a
-		
-	}
 
+		http.headers().cacheControl();
+		http.csrf().disable()
+				.authorizeRequests()
+				.antMatchers("/topic/**").authenticated()
+				.antMatchers("/**").permitAll() // needs to be the last matcher, otherwise all matchers following it would never be reached
+				.anyRequest().authenticated()
+				.and()
+				.addFilterBefore(awsCognitoJwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+	}
 	
 }

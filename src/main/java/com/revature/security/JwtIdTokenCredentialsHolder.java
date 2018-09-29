@@ -2,6 +2,8 @@ package com.revature.security;
 
 public class JwtIdTokenCredentialsHolder {
 	
+	private String idToken;
+	
 	 public String getIdToken() {
 	        return idToken;
 	    }
@@ -10,7 +12,5 @@ public class JwtIdTokenCredentialsHolder {
 	        this.idToken = idToken;
 	        return this;
 	    }
-
-	    private String idToken;
 
 }
