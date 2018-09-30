@@ -37,18 +37,18 @@ public class Topic implements Serializable {
 	private String name;
 	
 	@OneToMany(mappedBy = "topic", fetch = FetchType.EAGER)
-	private Set<DaySubTopic> daySubTopic = new HashSet<DaySubTopic>();
+	private Set<SubtopicNames> daySubTopic = new HashSet<SubtopicNames>();
 
 	public Topic() {
 	}
 
-	public Topic(Integer topicId, String name, Set<DaySubTopic> daySubTopic) {
+	public Topic(Integer topicId, String name, Set<SubtopicNames> daySubTopic) {
 		super();
 		this.topicId = topicId;
 		this.name = name;
 		this.daySubTopic = daySubTopic;
 	}
-	
+
 	public Integer getTopicId() {
 		return topicId;
 	}
@@ -65,11 +65,11 @@ public class Topic implements Serializable {
 		this.name = name;
 	}
 
-	public Set<DaySubTopic> getDaySubTopic() {
+	public Set<SubtopicNames> getDaySubTopic() {
 		return daySubTopic;
 	}
 
-	public void setDaySubTopic(Set<DaySubTopic> daySubTopic) {
+	public void setDaySubTopic(Set<SubtopicNames> daySubTopic) {
 		this.daySubTopic = daySubTopic;
 	}
 

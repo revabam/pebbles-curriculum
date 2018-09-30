@@ -23,27 +23,20 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name = "SUBTOPIC_NAMES")
 public class SubtopicNames implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -6260965338214448594L;
 
 	@Id
-	@Column(name = "NAME_ID")
+	@Column(name = "SUBTOPIC_NAME_ID")
 	private int nameId;
 	
 
 	@Column(name = "SUBTOPIC_NAME")
 	@NotNull
 	private String topicName;
-	
-//	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE }, mappedBy = "subTopicName")
-//    private Set<DaySubTopic> daySubTopic = new HashSet<>();
-//	
 
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "NAME_ID", insertable= false, updatable=false)
-    private DaySubTopic subtopicName;
+//	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//	@JoinColumn(name = "SUBTOPIC_NAME_ID", insertable= false, updatable=false)
+//    private DaySubTopic daySubtopic;
 	
 	@Column(name="TOPIC_ID")
 	private int topicId;

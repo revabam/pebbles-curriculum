@@ -29,20 +29,12 @@ START WITH 12;
 --name INTEGER NOT NULL,
 --PRIMARY KEY(subtopic_name_id));
 
-DROP TABLE IF EXISTS day_subtopic CASCADE;
-CREATE TABLE IF NOT EXISTS day_subtopic
-(subtopic_id INTEGER NOT NULL,
-subtopic_name varchar(50),
-CURRICULUM_DAY_ID INTEGER,
-PARENT_TOPIC_ID INTEGER,
-PRIMARY KEY(subtopic_id));
-
 DROP TABLE IF EXISTS subtopic_names CASCADE;
--- CREATE TABLE IF NOT EXISTS subtopic_names
--- (name_id INTEGER NOT NULL,
--- subtopic_name VARCHAR(50),
--- topic_id INTEGER NOT NULL,
--- PRIMARY KEY(name_id));
+CREATE TABLE IF NOT EXISTS subtopic_names
+(subtopic_name_id INTEGER NOT NULL,
+subtopic_name VARCHAR(50),
+TOPIC_ID INTEGER NOT NULL,
+PRIMARY KEY(subtopic_name_id));
 
 DROP TABLE IF EXISTS CURRICULUM CASCADE;
 CREATE TABLE IF NOT EXISTS CURRICULUM
@@ -85,3 +77,10 @@ DROP TABLE IF EXISTS DaySubtopic_SubtopicNames CASCADE;
 -- FOREIGN KEY(NAME_ID) REFERENCES subtopic_names(name_id),
 -- FOREIGN KEY(SUBTOPIC_ID) REFERENCES day_subtopic(subtopic_id));
 
+DROP TABLE IF EXISTS day_subtopic CASCADE;
+CREATE TABLE IF NOT EXISTS day_subtopic
+(subtopic_id INTEGER NOT NULL,
+CURRICULUM_DAY_ID INTEGER,
+subtopic_name_id INTEGER,
+-- PARENT_TOPIC_ID INTEGER,
+PRIMARY KEY(subtopic_id));

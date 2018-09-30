@@ -43,27 +43,18 @@ public class DaySubTopic implements Serializable {
 	@NotNull
 	private CurriculumDay dailySubtopics;
 	
-	@Column(name="SUBTOPIC_NAME")
-	private String subTopicName;
-	
-	@Column(name="PARENT_TOPIC_ID")
-	private int parentTopicId;
-	
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "PARENT_TOPIC_ID", insertable = false, updatable = false)
-	@NotNull
-	private Topic topic;
+	@Column(name="SUBTOPIC_NAME_ID")
+	private int subTopicNameId;
 
 	public DaySubTopic() {
 	}
-
-	public DaySubTopic(Integer id, String subTopicName, int parentTopicId) {
+	
+	public DaySubTopic(Integer id, int subTopicNameId, Set<SubtopicNames> subTopicName) {
 		super();
 		this.id = id;
-		this.subTopicName = subTopicName;
-		this.parentTopicId = parentTopicId;
+		this.subTopicNameId = subTopicNameId;
 	}
-
+	
 	public Integer getId() {
 		return id;
 	}
@@ -72,25 +63,19 @@ public class DaySubTopic implements Serializable {
 		this.id = id;
 	}
 
-	public String getSubTopicName() {
-		return subTopicName;
+	public int getSubTopicNameId() {
+		return subTopicNameId;
 	}
 
-	public void setSubTopicName(String subTopicName) {
-		this.subTopicName = subTopicName;
-	}
-
-	public int getParentTopicId() {
-		return parentTopicId;
-	}
-
-	public void setParentTopicId(int parentTopicId) {
-		this.parentTopicId = parentTopicId;
+	public void setSubTopicNameId(int subTopicNameId) {
+		this.subTopicNameId = subTopicNameId;
 	}
 
 	@Override
 	public String toString() {
-		return "DaySubTopic [id=" + id + ", subTopicName=" + subTopicName + ", parentTopicId=" + parentTopicId + "]";
+		return "DaySubTopic [id=" + id + ", subTopicNameId=" + subTopicNameId
+				+ "]";
 	}
+
 	
 }
