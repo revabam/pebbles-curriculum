@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -46,6 +47,14 @@ public class TopicController {
 		//CurriculumTopic ct = new CurriculumTopic(id, topic.getId(), week);
 		//service.addCurriculumTopic(ct);
 		return new ResponseEntity<>(topic, HttpStatus.CREATED);
+	}
+	
+	@GetMapping("/find/{id}")
+	public ResponseEntity<Topic> findTopic(@PathVariable int id){
+		
+		Topic value = service.findTopic(id);
+		return new ResponseEntity<>(value, HttpStatus.OK);
+		
 	}
 	
 	@ExceptionHandler(Exception.class)

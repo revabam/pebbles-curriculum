@@ -1,14 +1,16 @@
 package com.revature.controllers;
 
+import java.util.Set;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -58,6 +60,12 @@ public class SubTopicController {
 	public ResponseEntity<DaySubTopic> updateSubtopic(@Valid @RequestBody DaySubTopic updatedSubtopic) {
 		DaySubTopic subtopic = service.updateSubtopic(updatedSubtopic);
 		return new ResponseEntity<>(subtopic, HttpStatus.OK);
+	}
+	
+	@GetMapping
+	public ResponseEntity<Set<DaySubTopic> > getAllSubtopics(){
+		Set<DaySubTopic> values = service.getAllSubtopics();
+		return new ResponseEntity<>(values, HttpStatus.OK);
 	}
 	
 	@ExceptionHandler(Exception.class)

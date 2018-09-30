@@ -18,5 +18,9 @@ public class TopicService {
 	public Topic addTopic(Topic newTopic) {
 		return topicRepo.save(newTopic);
 	}
+	
+	public Topic findTopic( int id) {
+		return topicRepo.findByTopicId(id);
+	}
 
 }
