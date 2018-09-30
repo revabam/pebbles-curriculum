@@ -34,10 +34,6 @@ public class SubtopicNames implements Serializable {
 	@NotNull
 	private String topicName;
 
-//	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//	@JoinColumn(name = "SUBTOPIC_NAME_ID", insertable= false, updatable=false)
-//    private DaySubTopic daySubtopic;
-	
 	@Column(name="TOPIC_ID")
 	private int topicId;
 	
