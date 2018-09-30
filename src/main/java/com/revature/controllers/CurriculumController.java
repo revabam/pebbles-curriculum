@@ -20,8 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.models.Curriculum;
-import com.revature.models.DaySubTopic;
-import com.revature.models.Topic;
 import com.revature.services.CurriculumService;
 
 @CrossOrigin
@@ -166,4 +164,5 @@ public class CurriculumController {
 //			return new ResponseEntity<>(ct, HttpStatus.OK);
 //		}
 //	}
+	
 }

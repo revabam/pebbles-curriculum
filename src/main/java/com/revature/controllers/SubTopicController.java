@@ -35,8 +35,9 @@ public class SubTopicController {
 	 *         status code
 	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
 	 */
-	@PostMapping(value = "/subtopics", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping
 	public ResponseEntity<DaySubTopic> addSubtopic(@RequestBody DaySubTopic newSubtopic) {
+		System.out.println("CREATING SUBTOPIC " + newSubtopic);
 		DaySubTopic subtopic = service.addSubtopic(newSubtopic);
 		return new ResponseEntity<>(subtopic, HttpStatus.CREATED);
 	}
@@ -49,7 +50,7 @@ public class SubTopicController {
 	 * @return ResponseEntity<Subtopic> A subtopic object and a HTTP status code
 	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
 	 */
-	@PutMapping(value = "/subtopics", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping
 	public ResponseEntity<DaySubTopic> updateSubtopic(@Valid @RequestBody DaySubTopic updatedSubtopic) {
 		DaySubTopic subtopic = service.updateSubtopic(updatedSubtopic);
 		return new ResponseEntity<>(subtopic, HttpStatus.OK);

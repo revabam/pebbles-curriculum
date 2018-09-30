@@ -8,7 +8,6 @@ import com.revature.models.DaySubTopic;
 import com.revature.repositories.SubtopicRepository;
 
 @Service
-@Transactional
 public class SubTopicService {
 	
 	@Autowired
@@ -17,7 +16,10 @@ public class SubTopicService {
 	
 	
 	public DaySubTopic addSubtopic(DaySubTopic newSubtopic) {
-		return subRepo.save(newSubtopic);
+		DaySubTopic x = subRepo.save(newSubtopic);
+		System.out.println("SAVED SUBTOPIC " + x);
+
+		return x;
 	}
 	
 	public DaySubTopic updateSubtopic(DaySubTopic updatedSubtopic) {
