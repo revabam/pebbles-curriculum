@@ -39,7 +39,10 @@ public class JwtAutoConfiguration {
 
    @Bean
 <<<<<<< HEAD
+<<<<<<< HEAD
    //Each Http Request will have its own instance of a bean
+=======
+>>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
 =======
 >>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
    @Scope(value="request", proxyMode= ScopedProxyMode.TARGET_CLASS)
@@ -74,7 +77,10 @@ public class JwtAutoConfiguration {
        return jwtProcessor;
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
 =======
 >>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
 }

@@ -8,6 +8,10 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import javax.servlet.http.HttpServletResponse;
+>>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
 =======
 import javax.servlet.http.HttpServletResponse;
 >>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
@@ -37,7 +41,10 @@ public class AwsCognitoJwtAuthenticationFilter extends GenericFilterBean {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
 =======
 >>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
         Authentication authentication = null;
@@ -51,6 +58,10 @@ public class AwsCognitoJwtAuthenticationFilter extends GenericFilterBean {
             else if(authentication==null) {
             	 throw new ServletException("Access Denied");
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            	 
+>>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
 =======
             	 
 >>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
@@ -62,6 +73,7 @@ public class AwsCognitoJwtAuthenticationFilter extends GenericFilterBean {
             SecurityContextHolder.clearContext();
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         //Calling the doFilter method from the filter chain class
         filterChain.doFilter(request,response);
@@ -69,6 +81,8 @@ public class AwsCognitoJwtAuthenticationFilter extends GenericFilterBean {
     }
 }
 =======
+=======
+>>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
         HttpServletResponse httpServletResponse = (HttpServletResponse) response;
         System.out.println(httpServletResponse.getStatus());
         httpServletResponse.setStatus(401);
@@ -76,5 +90,9 @@ public class AwsCognitoJwtAuthenticationFilter extends GenericFilterBean {
         //Calling the doFilter method from the filter chain class
         filterChain.doFilter(request,httpServletResponse);
     }
+<<<<<<< HEAD
+}
+>>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
+=======
 }
 >>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8

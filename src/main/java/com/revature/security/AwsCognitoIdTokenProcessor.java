@@ -18,6 +18,7 @@ import com.nimbusds.jwt.JWTClaimsSet;
 import com.nimbusds.jwt.proc.ConfigurableJWTProcessor;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /**
  * 
  * This class is responsible for processing the token by extracting it from the Authorization header and then extracting the actual authentication and claims.
@@ -25,6 +26,8 @@ import com.nimbusds.jwt.proc.ConfigurableJWTProcessor;
  *
  */
 
+=======
+>>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
 =======
 >>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
 public class AwsCognitoIdTokenProcessor {
@@ -96,6 +99,10 @@ public class AwsCognitoIdTokenProcessor {
     }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
 =======
 
 >>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8

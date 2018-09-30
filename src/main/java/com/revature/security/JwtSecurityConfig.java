@@ -6,16 +6,22 @@ import org.springframework.core.Ordered;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 =======
+=======
+>>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @EnableWebSecurity
+<<<<<<< HEAD
+>>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
+=======
 >>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @Configuration
@@ -38,6 +44,7 @@ public class JwtSecurityConfig extends WebSecurityConfigurerAdapter implements O
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 		http.headers().cacheControl();
 		http.csrf().disable()
@@ -51,6 +58,8 @@ public class JwtSecurityConfig extends WebSecurityConfigurerAdapter implements O
 	
 }
 =======
+=======
+>>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
 		http.headers().cacheControl();
 		http.csrf().disable()
 				.authorizeRequests()
@@ -87,5 +96,9 @@ public class JwtSecurityConfig extends WebSecurityConfigurerAdapter implements O
 			.build();
 	}*/
 	
+<<<<<<< HEAD
+}
+>>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
+=======
 }
 >>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
