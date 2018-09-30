@@ -4,13 +4,13 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,8 +18,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.WebRequest;
 
 import com.revature.models.Curriculum;
+import com.revature.models.ExceptionObject;
 import com.revature.services.CurriculumService;
 
 @CrossOrigin
@@ -164,5 +166,14 @@ public class CurriculumController {
 //			return new ResponseEntity<>(ct, HttpStatus.OK);
 //		}
 //	}
+	
+	@ExceptionHandler(Exception.class)
+	  public final ResponseEntity<ExceptionObject> handleUserNotFoundException(Exception ex, WebRequest request) {
+		ExceptionObject errorDetails = new ExceptionObject(ex.getMessage(), ex.toString(), "" + this.getClass());
+		if (ex instanceof HttpMessageNotReadableException) {
+			return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
+		}
+	    return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
+	  }
 	
 }
