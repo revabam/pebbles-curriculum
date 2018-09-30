@@ -44,31 +44,54 @@ insert into SUBTOPIC_NAMES (NAME_ID, SUBTOPIC_NAME, TOPIC_ID)
 values (1, 'For Loops', 1);
 
 insert into SUBTOPIC_NAMES (NAME_ID, SUBTOPIC_NAME, TOPIC_ID)
-values (2, 'While Loops', 1);
+values (2, 'While Loops', 2);
 
 insert into SUBTOPIC_NAMES (NAME_ID, SUBTOPIC_NAME, TOPIC_ID)
-values (3, 'Do While', 2);
+values (3, 'Do While', 3);
 
 insert into SUBTOPIC_NAMES (NAME_ID, SUBTOPIC_NAME, TOPIC_ID)
-values (4, 'If statments', 3);
+values (4, 'If statments', 4);
 
 insert into curriculum values (1,'java',1, 1, '2018-09-27', 10, 1, 2);
+insert into curriculum values (2,'java',2, 1, '2018-09-29', 10, 1, 2);
 
 insert into curriculum_week values (1, 1, 1);
---insert into curriculum_week values (2, 1, 1);
+insert into curriculum_week values (2, 2, 1);
 
 insert into CURRICULUM_DAY values (1, 1, 1);
 insert into CURRICULUM_DAY values (2, 1, 2);
+insert into CURRICULUM_DAY values (3, 2, 1);
+insert into CURRICULUM_DAY values (4, 2, 2);
 
-insert into subtopic (subtopic_id, CURRICULUM_DAY_ID, ID, subtopic_name_ID)
-values(1,  1, 1, 1);
-insert into subtopic (subtopic_id, CURRICULUM_DAY_ID, id, subtopic_name_ID)
-values(2,  1, 1, 2);
-insert into subtopic (subtopic_id, CURRICULUM_DAY_ID, id, subtopic_name_ID)   
-values(3,  2, 1, 3);
-insert into subtopic (subtopic_id, CURRICULUM_DAY_ID, id, subtopic_name_ID)
-values(4,  2, 2, 4);
 
+
+
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, name_ID)
+values(1, 1, 1);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, name_ID)
+values(2, 1, 2);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, name_ID)   
+values(3, 2, 3);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, name_ID)
+values(4, 2, 4);
+
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, name_ID)
+values(5, 3, 1);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, name_ID)
+values(6, 3, 2);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, name_ID)   
+values(7, 4, 3);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, name_ID)
+values(8, 4, 4);
+
+insert into DaySubtopic_SubtopicName values (1, 1);
+insert into DaySubtopic_SubtopicName values (2, 2);
+insert into DaySubtopic_SubtopicName values (3, 3);
+insert into DaySubtopic_SubtopicName values (4, 4);
+insert into DaySubtopic_SubtopicName values (5, 1);
+insert into DaySubtopic_SubtopicName values (6, 2);
+insert into DaySubtopic_SubtopicName values (7, 3);
+insert into DaySubtopic_SubtopicName values (8, 4);
 
 -- insert into subtopic (subtopic_id, name, parent_topic_id)
 -- values(5, 'Normalization', 2);

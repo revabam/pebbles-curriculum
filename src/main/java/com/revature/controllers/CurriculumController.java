@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.models.Curriculum;
-import com.revature.models.Subtopic;
+import com.revature.models.DaySubTopic;
 import com.revature.models.Topic;
 import com.revature.services.CurriculumService;
 
@@ -124,42 +124,9 @@ public class CurriculumController {
 //		return new ResponseEntity<>(subtopics, HttpStatus.OK);
 //	}
 
-	/**
-	 * Creates a topic and attaches it to a curriculum
-	 *
-	 * @param id
-	 *            int
-	 * @param week
-	 *            int
-	 * @param newTopic
-	 *            Topic
-	 * @return ResponseEntity<Topic> A newly created topic object and a HTTP status
-	 *         code
-	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
-	 */
-	@PostMapping(value = "/topics/{id}/{week}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Topic> addTopic(@PathVariable("id") int id, @PathVariable("week") int week,
-			@RequestBody Topic newTopic) {
-		Topic topic = service.addTopic(newTopic);
-		//CurriculumTopic ct = new CurriculumTopic(id, topic.getId(), week);
-		//service.addCurriculumTopic(ct);
-		return new ResponseEntity<>(topic, HttpStatus.CREATED);
-	}
 
-	/**
-	 * Creates a subtopic in the database
-	 *
-	 * @param newSubtopic
-	 *            Subtopic
-	 * @return ResponseEntity<Subtopic> A newly created subtopic object and a HTTP
-	 *         status code
-	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
-	 */
-	@PostMapping(value = "/subtopics", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Subtopic> addSubtopic(@RequestBody Subtopic newSubtopic) {
-		Subtopic subtopic = service.addSubtopic(newSubtopic);
-		return new ResponseEntity<>(subtopic, HttpStatus.CREATED);
-	}
+
+
 
 	/**
 	 * Updates a topic in the database
@@ -175,19 +142,7 @@ public class CurriculumController {
 //		return new ResponseEntity<>(topic, HttpStatus.OK);
 //	}
 
-	/**
-	 * Updates a subtopic in the database
-	 *
-	 * @param updatedSubtopic
-	 *            Subtopic
-	 * @return ResponseEntity<Subtopic> A subtopic object and a HTTP status code
-	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
-	 */
-	@PutMapping(value = "/subtopics", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Subtopic> updateSubtopic(@Valid @RequestBody Subtopic updatedSubtopic) {
-		Subtopic subtopic = service.updateSubtopic(updatedSubtopic);
-		return new ResponseEntity<>(subtopic, HttpStatus.OK);
-	}
+	
 
 	/**
 	 * Updates a topic week in the database

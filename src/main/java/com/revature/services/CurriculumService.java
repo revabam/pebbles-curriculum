@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.models.Curriculum;
-import com.revature.models.Subtopic;
+import com.revature.models.DaySubTopic;
 import com.revature.models.Topic;
 import com.revature.repositories.CurriculumRepository;
 import com.revature.repositories.SubtopicRepository;
@@ -65,13 +65,9 @@ public class CurriculumService {
 //		return subtopics;
 //	}
 
-	public Topic addTopic(Topic newTopic) {
-		return topicRepo.save(newTopic);
-	}
 
-	public Subtopic addSubtopic(Subtopic newSubtopic) {
-		return subRepo.save(newSubtopic);
-	}
+
+
 
 //	public Topic updateTopic(Topic updatedTopic) {
 //		Topic topic = topicRepo.findByTopicId(updatedTopic.getTopicId());
@@ -82,14 +78,7 @@ public class CurriculumService {
 //		}
 //	}
 
-	public Subtopic updateSubtopic(Subtopic updatedSubtopic) {
-		Subtopic subtopic = subRepo.findOne(updatedSubtopic.getId());
-		if (subtopic == null) {
-			return null;
-		} else {
-			return subRepo.save(updatedSubtopic);
-		}
-	}
+
 
 //	public CurriculumTopic updateCurriculumTopic(int id, int week, Topic topic) {
 //		List<CurriculumTopic> cts = currTopicRepo.findCurriculumTopicByCurriculumId(id);

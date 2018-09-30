@@ -56,15 +56,17 @@ public class Curriculum implements Serializable {
 	
 	@NotNull
 	@Column(name="number_of_weeks")
-	private Integer numOfWeeks;
+	private Integer numberOfWeeks;
 	
 	@OneToMany(mappedBy = "weeks", fetch = FetchType.LAZY)
-	private Set<CurriculumWeek> weeks = new HashSet<CurriculumWeek>();
+	private Set<CurriculumWeek> curriculumWeek = new HashSet<CurriculumWeek>();
 
-	public Curriculum() {}
+	public Curriculum() {
+		super();
+	}
 
 	public Curriculum(Integer id, String name, Integer version, Integer creatorId, int approvedById, int status,
-			Date dateCreated, Integer numOfWeeks, Set<CurriculumWeek> weeks) {
+			Date dateCreated, Integer numberOfWeeks, Set<CurriculumWeek> curriculumWeek) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -73,8 +75,8 @@ public class Curriculum implements Serializable {
 		this.approvedById = approvedById;
 		this.status = status;
 		this.dateCreated = dateCreated;
-		this.numOfWeeks = numOfWeeks;
-		this.weeks = weeks;
+		this.numberOfWeeks = numberOfWeeks;
+		this.curriculumWeek = curriculumWeek;
 	}
 
 	public Integer getId() {
@@ -133,96 +135,27 @@ public class Curriculum implements Serializable {
 		this.dateCreated = dateCreated;
 	}
 
-	public Integer getNumOfWeeks() {
-		return numOfWeeks;
+	public Integer getNumberOfWeeks() {
+		return numberOfWeeks;
 	}
 
-	public void setNumOfWeeks(Integer numOfWeeks) {
-		this.numOfWeeks = numOfWeeks;
+	public void setNumberOfWeeks(Integer numberOfWeeks) {
+		this.numberOfWeeks = numberOfWeeks;
 	}
 
-	public Set<CurriculumWeek> getWeeks() {
-		return weeks;
+	public Set<CurriculumWeek> getCurriculumWeek() {
+		return curriculumWeek;
 	}
 
-	public void setWeeks(Set<CurriculumWeek> weeks) {
-		this.weeks = weeks;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + approvedById;
-		result = prime * result + ((creatorId == null) ? 0 : creatorId.hashCode());
-		result = prime * result + ((dateCreated == null) ? 0 : dateCreated.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((numOfWeeks == null) ? 0 : numOfWeeks.hashCode());
-		result = prime * result + status;
-		result = prime * result + ((version == null) ? 0 : version.hashCode());
-		result = prime * result + ((weeks == null) ? 0 : weeks.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Curriculum other = (Curriculum) obj;
-		if (approvedById != other.approvedById)
-			return false;
-		if (creatorId == null) {
-			if (other.creatorId != null)
-				return false;
-		} else if (!creatorId.equals(other.creatorId))
-			return false;
-		if (dateCreated == null) {
-			if (other.dateCreated != null)
-				return false;
-		} else if (!dateCreated.equals(other.dateCreated))
-			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		if (numOfWeeks == null) {
-			if (other.numOfWeeks != null)
-				return false;
-		} else if (!numOfWeeks.equals(other.numOfWeeks))
-			return false;
-		if (status != other.status)
-			return false;
-		if (version == null) {
-			if (other.version != null)
-				return false;
-		} else if (!version.equals(other.version))
-			return false;
-		if (weeks == null) {
-			if (other.weeks != null)
-				return false;
-		} else if (!weeks.equals(other.weeks))
-			return false;
-		return true;
+	public void setCurriculumWeek(Set<CurriculumWeek> curriculumWeek) {
+		this.curriculumWeek = curriculumWeek;
 	}
 
 	@Override
 	public String toString() {
-		return "Curriculum [id=" + id + ", name=" + name + ", vrsion=" + version + ", creatorId=" + creatorId
+		return "Curriculum [id=" + id + ", name=" + name + ", version=" + version + ", creatorId=" + creatorId
 				+ ", approvedById=" + approvedById + ", status=" + status + ", dateCreated=" + dateCreated
-				+ ", numOfWeeks=" + numOfWeeks + ", weeks=" + weeks + "]";
+				+ ", numberOfWeeks=" + numberOfWeeks + ", curriculumWeek=" + curriculumWeek + "]";
 	}
-
-	
 	
 }

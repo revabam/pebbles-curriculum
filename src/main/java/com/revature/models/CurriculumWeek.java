@@ -40,7 +40,7 @@ public class CurriculumWeek implements Serializable{
 	
 	@OneToMany(mappedBy = "days", fetch = FetchType.EAGER)
 	@NotNull
-	private Set<CurriculumDay> days = new HashSet<CurriculumDay>();
+	private Set<CurriculumDay> curriculumDay = new HashSet<CurriculumDay>();
 	
 
 	public CurriculumWeek() {
@@ -48,11 +48,12 @@ public class CurriculumWeek implements Serializable{
 	}
 
 
-	public CurriculumWeek(int curriculumWeekId, int weekNum, Set<CurriculumDay> days) {
+	public CurriculumWeek(int curriculumWeekId, int weekNum, Curriculum weeks, Set<CurriculumDay> curriculumDay) {
 		super();
 		this.curriculumWeekId = curriculumWeekId;
 		this.weekNum = weekNum;
-		this.days = days;
+		this.weeks = weeks;
+		this.curriculumDay = curriculumDay;
 	}
 
 
@@ -76,21 +77,24 @@ public class CurriculumWeek implements Serializable{
 	}
 
 
-
-	public Set<CurriculumDay> getDays() {
-		return days;
+	public Set<CurriculumDay> getCurriculumDay() {
+		return curriculumDay;
 	}
 
 
-	public void setDays(Set<CurriculumDay> days) {
-		this.days = days;
+	public void setCurriculumDay(Set<CurriculumDay> curriculumDay) {
+		this.curriculumDay = curriculumDay;
 	}
 
 
 	@Override
 	public String toString() {
-		return "CurriculumWeek [curriculumWeekId=" + curriculumWeekId + ", weekNum=" + weekNum + ", days=" + days + "]";
+		return "CurriculumWeek [curriculumWeekId=" + curriculumWeekId + ", weekNum=" + weekNum 
+				+ ", curriculumDay=" + curriculumDay + "]";
 	}
+
+
+	
 
 	
 

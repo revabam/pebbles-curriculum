@@ -15,7 +15,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.revature.Application;
 import com.revature.models.Curriculum;
-import com.revature.models.Subtopic;
+import com.revature.models.DaySubTopic;
 import com.revature.models.Topic;
 import com.revature.tests.TestDriver;
 
@@ -68,20 +68,20 @@ public class CurriculumTest {
 	
 	@Test
 	public void canGetSubtopicsByCurriculumId() {
-		List<Subtopic> testSubtopics = new ArrayList<>();
-		testSubtopics.add(new Subtopic(10, "Node", 4));
-		testSubtopics.add(new Subtopic(11, "Express APIs", 4));
-		testSubtopics.add(new Subtopic(1, "Interfaces", 1));
-		testSubtopics.add(new Subtopic(2, "Inheritance", 1));
-		testSubtopics.add(new Subtopic(3, "Covariance", 1));
-		testSubtopics.add(new Subtopic(4, "SQL Sublanguages", 2));
-		testSubtopics.add(new Subtopic(5, "Normalization", 2));
-		testSubtopics.add(new Subtopic(6, "Stored Procedures", 2));
-		testSubtopics.add(new Subtopic(7, "HTML elements", 3));
-		testSubtopics.add(new Subtopic(8, "JavaScript DOM manipulation", 3));
-		testSubtopics.add(new Subtopic(9, "Inline, internal, and external CSS", 3));
+		List<DaySubTopic> testSubtopics = new ArrayList<>();
+		testSubtopics.add(new DaySubTopic(10, "Node", 4));
+		testSubtopics.add(new DaySubTopic(11, "Express APIs", 4));
+		testSubtopics.add(new DaySubTopic(1, "Interfaces", 1));
+		testSubtopics.add(new DaySubTopic(2, "Inheritance", 1));
+		testSubtopics.add(new DaySubTopic(3, "Covariance", 1));
+		testSubtopics.add(new DaySubTopic(4, "SQL Sublanguages", 2));
+		testSubtopics.add(new DaySubTopic(5, "Normalization", 2));
+		testSubtopics.add(new DaySubTopic(6, "Stored Procedures", 2));
+		testSubtopics.add(new DaySubTopic(7, "HTML elements", 3));
+		testSubtopics.add(new DaySubTopic(8, "JavaScript DOM manipulation", 3));
+		testSubtopics.add(new DaySubTopic(9, "Inline, internal, and external CSS", 3));
 		
-		List<Subtopic> subtopics = RestAssured.get(url+"/subtopics/2").as(List.class);
+		List<DaySubTopic> subtopics = RestAssured.get(url+"/subtopics/2").as(List.class);
 
 		assertEquals(testSubtopics.size(), subtopics.size());
 	}
@@ -97,7 +97,7 @@ public class CurriculumTest {
 	
 	@Test
 	public void canAddSubtopic() {
-		Subtopic subtopic = new Subtopic("Exceptions", 1);
+		DaySubTopic subtopic = new DaySubTopic("Exceptions", 1);
 		
 		int status = RestAssured.given().contentType("application/json").body(subtopic).post(url+"/subtopics").getStatusCode();
 		
@@ -115,7 +115,7 @@ public class CurriculumTest {
 	
 	@Test
 	public void canUpdateSubtopic() {
-		Subtopic testSubtopic = new Subtopic(5, "Levels of Normalization", 2);
+		DaySubTopic testSubtopic = new DaySubTopic(5, "Levels of Normalization", 2);
 
 		int status = RestAssured.given()
 				.contentType("application/json")
@@ -124,7 +124,7 @@ public class CurriculumTest {
 				.getStatusCode();
 		
 		assertEquals(200, status);
-		Subtopic sub = RestAssured.given().contentType("application/json").body(testSubtopic).put(url+"/subtopics").as(Subtopic.class);
+		DaySubTopic sub = RestAssured.given().contentType("application/json").body(testSubtopic).put(url+"/subtopics").as(DaySubTopic.class);
 		
 		assertEquals(testSubtopic.getId(), sub.getId());
 		assertEquals(testSubtopic.getName(), sub.getName());

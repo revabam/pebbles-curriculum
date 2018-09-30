@@ -43,17 +43,17 @@ public class CurriculumDay implements Serializable{
 	private CurriculumWeek days;
 	
 	@OneToMany(mappedBy = "dailySubtopics", fetch = FetchType.EAGER)
-	private Set<Subtopic> subTopics = new HashSet<Subtopic>();
+	private Set<DaySubTopic> subTopic = new HashSet<DaySubTopic>();
 
 	public CurriculumDay() {
 		super();
 	}
 	
-	public CurriculumDay(int curriculumDayId, int dayNum, Set<Subtopic> subTopics) {
+	public CurriculumDay(int curriculumDayId, int dayNum, Set<DaySubTopic> subTopic) {
 		super();
 		this.curriculumDayId = curriculumDayId;
 		this.dayNum = dayNum;
-		this.subTopics = subTopics;
+		this.subTopic = subTopic;
 	}
 
 
@@ -74,22 +74,18 @@ public class CurriculumDay implements Serializable{
 		this.dayNum = dayNum;
 	}
 
-
-
-	public Set<Subtopic> getSubTopics() {
-		return subTopics;
+	public Set<DaySubTopic> getSubTopic() {
+		return subTopic;
 	}
 
-	public void setSubTopics(Set<Subtopic> subTopics) {
-		this.subTopics = subTopics;
+	public void setSubTopic(Set<DaySubTopic> subTopic) {
+		this.subTopic = subTopic;
 	}
 
 	@Override
 	public String toString() {
 		return "CurriculumDay [curriculumDayId=" + curriculumDayId + ", dayNum=" + dayNum
-				+ ", subTopics=" + subTopics + "]";
+				+ ", subTopic=" + subTopic + "]";
 	}
-
-
 	
 }

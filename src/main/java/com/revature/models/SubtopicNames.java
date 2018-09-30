@@ -1,6 +1,6 @@
 package com.revature.models;
 
-import java.io.Serializable;
+import java.io.Serializable; 
 import java.util.HashSet;
 import java.util.Set;
 
@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -35,9 +36,14 @@ public class SubtopicNames implements Serializable {
 	@Column(name = "SUBTOPIC_NAME")
 	@NotNull
 	private String topicName;
+	
+	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE }, mappedBy = "subTopicName")
+    private Set<DaySubTopic> daySubTopic = new HashSet<>();
+	
 
-	@OneToOne(mappedBy = "subtopicNames")
-    private Subtopic subtopicName;
+//	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//	@JoinColumn(name = "NAME_ID", insertable= false, updatable=false)
+//    private DaySubTopic subtopicName;
 	
 	@Column(name="TOPIC_ID")
 	private int topicId;
@@ -50,12 +56,11 @@ public class SubtopicNames implements Serializable {
 		super();
 	}
 
-	public SubtopicNames(int nameId, String topicName, int topicId, Topic topic) {
+	public SubtopicNames(int nameId, String topicName, int topicId) {
 		super();
 		this.nameId = nameId;
 		this.topicName = topicName;
 		this.topicId = topicId;
-		this.topic = topic;
 	}
 
 	public int getNameId() {
