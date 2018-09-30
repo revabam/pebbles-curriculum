@@ -2,13 +2,9 @@ package com.revature.services;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import com.revature.models.Curriculum;
 import com.revature.models.CurriculumTopic;
 import com.revature.models.Subtopic;
@@ -34,7 +30,6 @@ public class CurriculumService {
 	@Autowired
 	SubtopicRepository subRepo;
 
-	private static final Logger logger = LogManager.getLogger(CurriculumService.class);
 
 	public List<Curriculum> findAllCurriculums() {
 		return currRepo.findAll();
@@ -72,7 +67,6 @@ public class CurriculumService {
 
 	public List<Subtopic> getSubtopicsByCurriculumId(int id) {
 		List<Topic> topics = getTopicsByCurriculumId(id);
-		logger.info("Topics: " + topics.size());
 		List<Subtopic> subtopics = new ArrayList<>();
 		for (Topic topic : topics) {
 			List<Subtopic> temp = subRepo.findSubtopicByParentTopicId(topic.getId());
