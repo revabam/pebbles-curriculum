@@ -1,0 +1,20 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          cognito-client-1:
+            client-id: 6mrdhjt4gch9lvrd5vpeh4n748
+            client-secret: viut9iprfln5jbf7c0legkvj6kgpergt32kk9d25s8mjgkb54l9
+            client-name: Cognito Code Grant
+            provider: COGNITO
+            scope: openid email phone profile aws.cognito.signin.user.admin
+            redirect-uri-template: http://d2iny48xdni2vj.cloudfront.net/dashboard
+            authorization-grant-type: authorization_code
+        provider:
+          cognito:
+            authorization-uri: https://bambam-client.auth.us-east-1.amazoncognito.com/oauth2/authorize
+            token-uri: https://bambam-client.auth.us-east-1.amazoncognito.com/oauth2/token
+            user-info-uri: https://bambam-client.auth.us-east-1.amazoncognito.com/oauth2/userInfo
+            jwk-set-uri: https://cognito-idp.auth.us-east-1.amazonaws.com/_7bWZrc3vS/.well-known/jwks.json
+            user-name-attribute: cognito:username
