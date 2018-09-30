@@ -78,6 +78,9 @@
 		<!-- <dependency> <groupId>org.springframework.security</groupId> <artifactId>spring-security-web</artifactId> 
 			<version>5.1.0.RELEASE</version> </dependency> -->
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
 
 		<dependency>
 			<groupId>com.nimbusds</groupId>
@@ -104,6 +107,7 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-config</artifactId>
 		</dependency>
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 		<!-- Security -->
@@ -183,6 +187,10 @@
 
 		<dependency>
 >>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
+=======
+
+		<dependency>
+>>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-oauth2-client</artifactId>
 			<version>5.1.0.RELEASE</version>
@@ -195,8 +203,11 @@
 		</dependency>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
 =======
 >>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
 =======
