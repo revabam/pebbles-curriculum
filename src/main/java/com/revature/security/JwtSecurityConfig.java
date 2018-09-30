@@ -1,21 +1,16 @@
 package com.revature.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.oauth2.client.registration.ClientRegistration;
-import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
-import org.springframework.security.oauth2.client.registration.InMemoryClientRegistrationRepository;
-import org.springframework.security.oauth2.core.AuthorizationGrantType;
-import org.springframework.security.oauth2.core.ClientAuthenticationMethod;
-import org.springframework.security.oauth2.core.oidc.IdTokenClaimNames;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+@EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @Configuration
 public class JwtSecurityConfig extends WebSecurityConfigurerAdapter implements Ordered {
@@ -36,11 +31,10 @@ public class JwtSecurityConfig extends WebSecurityConfigurerAdapter implements O
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		System.out.println("2");
 		http.headers().cacheControl();
 		http.csrf().disable()
 				.authorizeRequests()
-				.antMatchers("/topics/**").authenticated()
+				.antMatchers("/curriculums/**").authenticated()
 				.antMatchers("/**").permitAll() // needs to be the last matcher, otherwise all matchers following it would never be reached
 				.anyRequest().authenticated()
 				.and()

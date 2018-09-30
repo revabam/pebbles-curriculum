@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,7 +33,6 @@ public class AwsCognitoJwtAuthenticationFilter extends GenericFilterBean {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
-
         Authentication authentication = null;
         try {
             authentication = awsCognitoIdTokenProcessor.getAuthentication((HttpServletRequest)request);
@@ -43,6 +43,7 @@ public class AwsCognitoJwtAuthenticationFilter extends GenericFilterBean {
             
             else if(authentication==null) {
             	 throw new ServletException("Access Denied");
+            	 
             	
             }
 
@@ -50,9 +51,11 @@ public class AwsCognitoJwtAuthenticationFilter extends GenericFilterBean {
             logger.error("Access Denied",e);
             SecurityContextHolder.clearContext();
         }
-
+        HttpServletResponse httpServletResponse = (HttpServletResponse) response;
+        System.out.println(httpServletResponse.getStatus());
+        httpServletResponse.setStatus(401);
+        System.out.println(httpServletResponse.getStatus());
         //Calling the doFilter method from the filter chain class
-        filterChain.doFilter(request,response);
-
+        filterChain.doFilter(request,httpServletResponse);
     }
 }
