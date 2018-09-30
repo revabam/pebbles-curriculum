@@ -15,6 +15,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -41,50 +42,55 @@ public class DaySubTopic implements Serializable {
 	@JoinColumn(name = "CURRICULUM_DAY_ID", insertable = false, updatable = false)
 	@NotNull
 	private CurriculumDay dailySubtopics;
-
-	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.MERGE
-
-    })
-    @JoinTable(name = "DaySubtopic_SubtopicName", joinColumns = {
-            @JoinColumn(name = "SUBTOPIC_ID") }, inverseJoinColumns = {
-                    @JoinColumn(name = "NAME_ID") })
-	@JsonProperty(access = Access.READ_ONLY)
-    private Set<SubtopicNames> subTopicName = new HashSet<>();
 	
-//    @OneToMany(mappedBy = "subtopicName", fetch = FetchType.LAZY)
-//	private Set<SubtopicNames> subtopicName = new HashSet<SubtopicNames>();
+	@Column(name="SUBTOPIC_NAME")
+	private String subTopicName;
+	
+	@Column(name="PARENT_TOPIC_ID")
+	private int parentTopicId;
+	
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name = "PARENT_TOPIC_ID", insertable = false, updatable = false)
+	@NotNull
+	private Topic topic;
 
 	public DaySubTopic() {
 	}
+
+	public DaySubTopic(Integer id, String subTopicName, int parentTopicId) {
+		super();
+		this.id = id;
+		this.subTopicName = subTopicName;
+		this.parentTopicId = parentTopicId;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getSubTopicName() {
+		return subTopicName;
+	}
+
+	public void setSubTopicName(String subTopicName) {
+		this.subTopicName = subTopicName;
+	}
+
+	public int getParentTopicId() {
+		return parentTopicId;
+	}
+
+	public void setParentTopicId(int parentTopicId) {
+		this.parentTopicId = parentTopicId;
+	}
+
+	@Override
+	public String toString() {
+		return "DaySubTopic [id=" + id + ", subTopicName=" + subTopicName + ", parentTopicId=" + parentTopicId + "]";
+	}
 	
-public DaySubTopic(Integer id, Set<SubtopicNames> subTopicName) {
-	super();
-	this.id = id;
-	this.subTopicName = subTopicName;
-}
-
-public Integer getId() {
-	return id;
-}
-
-public void setId(Integer id) {
-	this.id = id;
-}
-
-public Set<SubtopicNames> getSubTopicName() {
-	return subTopicName;
-}
-
-public void setSubTopicName(Set<SubtopicNames> subTopicName) {
-	this.subTopicName = subTopicName;
-}
-
-@Override
-public String toString() {
-	return "DaySubTopic [id=" + id + ", subTopicName=" + subTopicName + "]";
-}
-
-
-	
-
 }

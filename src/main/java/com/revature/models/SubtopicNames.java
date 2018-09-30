@@ -37,13 +37,13 @@ public class SubtopicNames implements Serializable {
 	@NotNull
 	private String topicName;
 	
-	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE }, mappedBy = "subTopicName")
-    private Set<DaySubTopic> daySubTopic = new HashSet<>();
-	
+//	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE }, mappedBy = "subTopicName")
+//    private Set<DaySubTopic> daySubTopic = new HashSet<>();
+//	
 
-//	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//	@JoinColumn(name = "NAME_ID", insertable= false, updatable=false)
-//    private DaySubTopic subtopicName;
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name = "NAME_ID", insertable= false, updatable=false)
+    private DaySubTopic subtopicName;
 	
 	@Column(name="TOPIC_ID")
 	private int topicId;
