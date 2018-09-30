@@ -38,7 +38,10 @@ import com.nimbusds.jwt.proc.DefaultJWTProcessor;
 public class JwtAutoConfiguration {
 
    @Bean
+<<<<<<< HEAD
    //Each Http Request will have its own instance of a bean
+=======
+>>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
    @Scope(value="request", proxyMode= ScopedProxyMode.TARGET_CLASS)
    public JwtIdTokenCredentialsHolder awsCognitoCredentialsHolder() {
        return new JwtIdTokenCredentialsHolder();
@@ -70,5 +73,8 @@ public class JwtAutoConfiguration {
        jwtProcessor.setJWSKeySelector(keySelector);
        return jwtProcessor;
    }
+<<<<<<< HEAD
 
+=======
+>>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
 }

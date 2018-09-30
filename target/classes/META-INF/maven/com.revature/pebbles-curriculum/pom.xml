@@ -104,53 +104,6 @@
 			<artifactId>spring-security-config</artifactId>
 		</dependency>
 
-<<<<<<< HEAD
-		<!-- Security -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.security.oauth.boot</groupId>
-			<artifactId>spring-security-oauth2-autoconfigure</artifactId>
-			<version>2.0.0.RELEASE</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.nimbusds</groupId>
-			<artifactId>nimbus-jose-jwt</artifactId>
-			<version>4.23</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-jwt</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-web</artifactId>
-			<version>5.1.0.RELEASE</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-oauth2-core</artifactId>
-			<version>5.1.0.RELEASE</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-config</artifactId>
-		</dependency>
-
-=======
->>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-oauth2-client</artifactId>
@@ -162,11 +115,6 @@
 			<artifactId>spring-security-oauth2-jose</artifactId>
 			<version>5.1.0.RELEASE</version>
 		</dependency>
-<<<<<<< HEAD
-
-
-=======
->>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
 		<!-- Eureka: Service registration and discovery -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>

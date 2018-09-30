@@ -15,8 +15,11 @@ public class JwtAuthenticationProvider implements AuthenticationProvider {
 	public boolean supports(Class<?> authentication) {
 		return true;
 	}
+<<<<<<< HEAD
 	
 	
 	
 
+=======
+>>>>>>> de47c8913e6d20e002aa5126f5f2bb4b65144bf8
 }
