@@ -38,6 +38,9 @@ public class CurriculumDay implements Serializable{
 	@NotNull
 	private int dayNum;
 	
+	@Column(name = "CURRICULUM_WEEK_ID")
+	private int curriculumWeekId;
+	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "CURRICULUM_WEEK_ID", insertable= false, updatable=false)
 	private CurriculumWeek days;
@@ -49,14 +52,21 @@ public class CurriculumDay implements Serializable{
 		super();
 	}
 	
-	public CurriculumDay(int curriculumDayId, int dayNum, Set<DaySubTopic> subTopic) {
+	public CurriculumDay(int curriculumDayId, int dayNum, int curriculumWeekId, Set<DaySubTopic> subTopic) {
 		super();
 		this.curriculumDayId = curriculumDayId;
 		this.dayNum = dayNum;
+		this.curriculumWeekId = curriculumWeekId;
 		this.subTopic = subTopic;
 	}
 
+	public int getCurriculumWeekId() {
+		return curriculumWeekId;
+	}
 
+	public void setCurriculumWeekId(int curriculumWeekId) {
+		this.curriculumWeekId = curriculumWeekId;
+	}
 
 	public int getCurriculumDayId() {
 		return curriculumDayId;
