@@ -1,5 +1,7 @@
 package com.revature.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -48,13 +50,28 @@ public class TopicController {
 		//service.addCurriculumTopic(ct);
 		return new ResponseEntity<>(topic, HttpStatus.CREATED);
 	}
-	
+	/**
+	 * Finds topic by its ID.
+	 * @param Int id
+	 * @return ResponseEntity<Topic>
+	 * @author Beck Larson
+	 */
 	@GetMapping("/find/{id}")
 	public ResponseEntity<Topic> findTopic(@PathVariable int id){
 		
 		Topic value = service.findTopic(id);
 		return new ResponseEntity<>(value, HttpStatus.OK);
 		
+	}
+	/**
+	 * Find all topics within the database.
+	 * @return
+	 * @author Beck Larson, Joey Shannon
+	 */
+	@GetMapping("/topics")
+	public ResponseEntity<List<Topic>> findAllTopics(){
+		List<Topic> value = service.findAllTopics();
+		return new ResponseEntity<>(value, HttpStatus.OK);
 	}
 	/**
 	 * Handles all exceptions thrown within the SubTopicController, then creates a error object. 

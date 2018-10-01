@@ -1,5 +1,7 @@
 package com.revature.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,6 +33,14 @@ public class TopicService {
 	 */
 	public Topic findTopic( int id) {
 		return topicRepo.findByTopicId(id);
+	}
+	/**
+	 * Finds all topics currently within the database.
+	 * @return List<Topic>
+	 * @author Beck Larson
+	 */
+	public List<Topic> findAllTopics(){
+		return topicRepo.findAll();
 	}
 
 }
