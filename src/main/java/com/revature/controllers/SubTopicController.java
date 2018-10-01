@@ -26,17 +26,14 @@ import com.revature.services.SubTopicService;
 @RestController
 @RequestMapping("/subtopic")
 public class SubTopicController {
-	
+
 	@Autowired
 	SubTopicService service;
-	
-	
-	
+
 	/**
 	 * Creates a subtopic in the database
 	 *
-	 * @param newSubtopic
-	 *            Subtopic
+	 * @param newSubtopic Subtopic
 	 * @return ResponseEntity<Subtopic> A newly created subtopic object and a HTTP
 	 *         status code
 	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
@@ -47,12 +44,11 @@ public class SubTopicController {
 		DaySubTopic subtopic = service.addSubtopic(newSubtopic);
 		return new ResponseEntity<>(subtopic, HttpStatus.CREATED);
 	}
-	
+
 	/**
 	 * Updates a subtopic in the database
 	 *
-	 * @param updatedSubtopic
-	 *            Subtopic
+	 * @param updatedSubtopic Subtopic
 	 * @return ResponseEntity<Subtopic> A subtopic object and a HTTP status code
 	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
 	 */
@@ -61,33 +57,39 @@ public class SubTopicController {
 		DaySubTopic subtopic = service.updateSubtopic(updatedSubtopic);
 		return new ResponseEntity<>(subtopic, HttpStatus.OK);
 	}
-	
+
 	/**
 	 * Returns all subtopics within the database
-	 * @return ResponseEntity<Set<DaySubTopic>> A set of subtopics and an HttpStatus.OK
+	 * 
+	 * @return ResponseEntity<Set<DaySubTopic>> A set of subtopics and an
+	 *         HttpStatus.OK
 	 * @author Beck Larson
 	 * 
 	 */
 	@GetMapping
-	public ResponseEntity<Set<DaySubTopic> > getAllSubtopics(){
+	public ResponseEntity<Set<DaySubTopic>> getAllSubtopics() {
 		Set<DaySubTopic> values = service.getAllSubtopics();
 		return new ResponseEntity<>(values, HttpStatus.OK);
 	}
-	
+
 	/**
-	 * Handles all exceptions thrown within the SubTopicController, then creates a error object. 
+	 * Handles all exceptions thrown within the SubTopicController, then creates a
+	 * error object.
+	 * 
 	 * @param Exception
 	 * @param request
-	 * @return ResponseEntity<ExceptionObject> A error object that contains details based off of the exception caught and a HttpStatus based off of the exception thrown. 
+	 * @return ResponseEntity<ExceptionObject> A error object that contains details
+	 *         based off of the exception caught and a HttpStatus based off of the
+	 *         exception thrown.
 	 * @author Beck Larson
 	 */
-	//@ExceptionHandler(Exception.class)
-	  public final ResponseEntity<ExceptionObject> handleUserNotFoundException(Exception ex, WebRequest request) {
+	@ExceptionHandler(Exception.class)
+	public final ResponseEntity<ExceptionObject> handleUserNotFoundException(Exception ex, WebRequest request) {
 		ExceptionObject errorDetails = new ExceptionObject(ex.getMessage(), ex.toString(), "" + this.getClass());
 		if (ex instanceof HttpMessageNotReadableException) {
 			return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
 		}
-	    return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
-	  }
+		return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
+	}
 
 }
