@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -87,6 +88,16 @@ public class CurriculumDayController {
 	public ResponseEntity<CurriculumDay> updateCurriculumDay(@RequestBody CurriculumDay day) {
 		CurriculumDay update = curriculumDayService.updateDay(day);
 		return new ResponseEntity<>(update, HttpStatus.OK);
+	}
+	
+	/**
+	 * Deletes a Curriculumday from the database based on id
+	 * @param id
+	 * @author Rhys Yamasaki | Spark-1806-Jun-2018-USF | Steven Kelsey
+	 */
+	@DeleteMapping("{id}")
+	public void deleteCurriculumDay(@PathVariable int id) {
+		curriculumDayService.delete(id);
 	}
 	
 	/**

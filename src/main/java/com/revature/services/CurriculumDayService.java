@@ -63,4 +63,13 @@ public class CurriculumDayService {
 	public CurriculumDay updateDay(CurriculumDay day) {
 		return curriculumDayRepo.save(day);
 	}
+	
+	/**
+	 * Deletes a Curriculumday from the database based on id
+	 * @param id
+	 * @author Rhys Yamasaki | Spark-1806-Jun-2018-USF | Steven Kelsey
+	 */
+	public void delete(int id) {
+		curriculumDayRepo.delete(id);
+	}
 }

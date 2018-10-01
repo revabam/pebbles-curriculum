@@ -4,9 +4,9 @@ import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.models.DaySubTopic;
+import com.revature.repositories.SubtopicNamesRepository;
 import com.revature.repositories.SubtopicRepository;
 
 @Service
@@ -14,6 +14,9 @@ public class SubTopicService {
 	
 	@Autowired
 	SubtopicRepository subRepo;
+	
+	@Autowired
+	SubtopicNamesRepository subtopicNamesRepo;
 	
 	
 	/**
@@ -58,6 +61,16 @@ public class SubTopicService {
 	 */
 	public void deleteSubtopic(int id) {
 		subRepo.delete(id);
+	}
+	
+	/**
+	 * Deletes a day subtopic.
+	 * 
+	 * @param int id
+	 * @author Chris Holmes | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 */
+	public void delete(int id) {
+		subtopicNamesRepo.delete(id);
 	}
 
 }

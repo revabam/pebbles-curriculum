@@ -84,6 +84,18 @@ public class SubTopicController {
 		service.deleteSubtopic(id);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
+	
+	/**
+	 * Deletes a subtopic with the specified id from the database.
+	 * @param int id
+	 * @return HttpStatus
+	 * @author Chris Holmes | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 */
+	@DeleteMapping("/day/{id}")
+	public ResponseEntity<HttpStatus> deleteDaySubTopic(@PathVariable int id){
+		service.delete(id);
+		return new ResponseEntity<>(HttpStatus.OK);
+	}
 
 	/**
 	 * Handles all exceptions thrown within the SubTopicController, then creates a
