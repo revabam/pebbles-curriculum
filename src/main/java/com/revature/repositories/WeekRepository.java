@@ -12,4 +12,6 @@ import com.revature.models.CurriculumWeek;
 public interface WeekRepository extends JpaRepository<CurriculumWeek, Serializable>{
 
 	List<CurriculumWeek> findAll();
+
+	CurriculumWeek findByCurriculumWeekIdAndWeekNum(int id, int week);
 }

@@ -48,6 +48,17 @@ public class CurriculumWeekController {
 		CurriculumWeek value = service.findById(id);
 		return new ResponseEntity<>(value, HttpStatus.OK);
 	}
+	/**
+	 * Finds a curriculum week by its ID and week num from the database.
+	 * 
+	 * @return ResponseEntity<CurriculumWeek>
+	 * @author Beck Larson
+	 */
+	@GetMapping(value = "/{id}/{week}")
+	public ResponseEntity<CurriculumWeek> findWeek(@PathVariable int id, int week) {
+		CurriculumWeek value = service.findByIdAndWeekNum(id, week);
+		return new ResponseEntity<>(value, HttpStatus.OK);
+	}
 
 	/**
 	 * Creates a new week and saves it to the database.

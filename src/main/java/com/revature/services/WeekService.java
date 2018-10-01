@@ -48,5 +48,14 @@ public class WeekService {
 	public CurriculumWeek findById(int id) {
 		return weekRepo.findOne(id);
 	}
+	/**
+	 * Finds a week by it ID and week number.
+	 * @param int id, int week
+	 * @return CurriculumWeek
+	 * @author Beck Larson
+	 */
+	public CurriculumWeek findByIdAndWeekNum(int id, int week) {
+		return weekRepo.findByCurriculumWeekIdAndWeekNum(id, week);
+	}
 	
 }
