@@ -8,6 +8,6 @@ import com.revature.models.Curriculum;
 @Repository
 public interface CurriculumRepository extends JpaRepository<Curriculum, Integer> {
 
-	Curriculum findCurriculumById(Integer id);
+	Curriculum findById(Integer id);
 
 }
