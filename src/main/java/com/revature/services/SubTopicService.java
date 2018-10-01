@@ -10,7 +10,6 @@ import com.revature.models.DaySubTopic;
 import com.revature.repositories.SubtopicRepository;
 
 @Service
-@Transactional
 public class SubTopicService {
 	
 	@Autowired
