@@ -20,7 +20,7 @@ public class SubTopicService {
 	 * Creates a new subtopic and saves it to the database.
 	 * @param DaySubTopic
 	 * @return saved DaySubTopic
-	 * @author Beck Larson
+	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
 	public DaySubTopic addSubtopic(DaySubTopic newSubtopic) {
 		return subRepo.save(newSubtopic);
@@ -30,7 +30,7 @@ public class SubTopicService {
 	 * Updates a subtopic that exists in the database.
 	 * @param DaySubTopic
 	 * @return null or saved DaySubTopic
-	 * @author Beck Larson
+	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
 	public DaySubTopic updateSubtopic(DaySubTopic updatedSubtopic) {
 		DaySubTopic subtopic = subRepo.findOne(updatedSubtopic.getId());
@@ -44,7 +44,7 @@ public class SubTopicService {
 	/**
 	 * Gets all of the subtopics within the database.
 	 * @return Set<DaySubTopic>
-	 * @author Beck Larson
+	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
 	public Set<DaySubTopic> getAllSubtopics() {
 		return subRepo.findAll();

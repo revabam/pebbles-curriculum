@@ -20,6 +20,7 @@ public class TopicService {
 	 * Creates a new subtopic in the database.
 	 * @param Topic
 	 * @return Saved Topic.
+	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
 	public Topic addTopic(Topic newTopic) {
 		return topicRepo.save(newTopic);
@@ -29,7 +30,7 @@ public class TopicService {
 	 * Finds a Topic by its id.
 	 * @param int id
 	 * @return Topic
-	 * @author Beck Larson
+	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
 	public Topic findTopic( int id) {
 		return topicRepo.findByTopicId(id);
@@ -37,7 +38,7 @@ public class TopicService {
 	/**
 	 * Finds all topics currently within the database.
 	 * @return List<Topic>
-	 * @author Beck Larson
+	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
 	public List<Topic> findAllTopics(){
 		return topicRepo.findAll();

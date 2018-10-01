@@ -63,7 +63,7 @@ public class SubTopicController {
 	 * 
 	 * @return ResponseEntity<Set<DaySubTopic>> A set of subtopics and an
 	 *         HttpStatus.OK
-	 * @author Beck Larson
+	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 * 
 	 */
 	@GetMapping
@@ -81,7 +81,7 @@ public class SubTopicController {
 	 * @return ResponseEntity<ExceptionObject> A error object that contains details
 	 *         based off of the exception caught and a HttpStatus based off of the
 	 *         exception thrown.
-	 * @author Beck Larson
+	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
 	@ExceptionHandler(Exception.class)
 	public final ResponseEntity<ExceptionObject> handleUserNotFoundException(Exception ex, WebRequest request) {

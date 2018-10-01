@@ -54,7 +54,7 @@ public class TopicController {
 	 * Finds topic by its ID.
 	 * @param Int id
 	 * @return ResponseEntity<Topic>
-	 * @author Beck Larson
+	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
 	@GetMapping("/find/{id}")
 	public ResponseEntity<Topic> findTopic(@PathVariable int id){
@@ -66,7 +66,7 @@ public class TopicController {
 	/**
 	 * Find all topics within the database.
 	 * @return
-	 * @author Beck Larson, Joey Shannon
+	 * @author Beck Larson, Joey Shannon | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
 	@GetMapping("/topics")
 	public ResponseEntity<List<Topic>> findAllTopics(){
@@ -78,7 +78,7 @@ public class TopicController {
 	 * @param Exception
 	 * @param request
 	 * @return ResponseEntity<ExceptionObject> A error object that contains details based off of the exception caught and a HttpStatus based off of the exception thrown. 
-	 * @author Beck Larson
+	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
 	@ExceptionHandler(Exception.class)
 	  public final ResponseEntity<ExceptionObject> handleUserNotFoundException(Exception ex, WebRequest request) {

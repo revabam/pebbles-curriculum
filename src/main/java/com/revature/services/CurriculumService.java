@@ -19,7 +19,7 @@ public class CurriculumService {
 	/**
 	 * Find all curriculums that are currently in the database.
 	 * @return List<Curriculum> 
-	 * @author Beck Larson
+	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
 	public List<Curriculum> findAllCurriculums() {
 		return currRepo.findAll();
@@ -29,7 +29,7 @@ public class CurriculumService {
 	 *Finds a Curriculum by is id.
 	 * @param integer id
 	 * @return Curriculum 
-	 * @author Beck Larson
+	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
 	public Curriculum findCurriculumById(Integer id) {
 		return currRepo.findById(id);
@@ -39,7 +39,7 @@ public class CurriculumService {
 	 * Creates a new curriculum in the database.
 	 * @param Curriculum
 	 * @return saved Curriculum
-	 * @author Beck Larson
+	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
 	public Curriculum addCurriculum(Curriculum newCurr) {
 		return currRepo.save(newCurr);
@@ -49,7 +49,7 @@ public class CurriculumService {
 	 * Updates a Curriculum in the Database
 	 * @param Curriculum
 	 * @return updated Curriculum
-	 * @author Beck Larson
+	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
 	public Curriculum updateCurriculum(Curriculum updatedCurr) {
 		Curriculum curr = currRepo.findById(updatedCurr.getId());
