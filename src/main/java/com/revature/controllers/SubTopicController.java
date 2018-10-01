@@ -9,8 +9,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -70,6 +72,17 @@ public class SubTopicController {
 	public ResponseEntity<Set<DaySubTopic>> getAllSubtopics() {
 		Set<DaySubTopic> values = service.getAllSubtopics();
 		return new ResponseEntity<>(values, HttpStatus.OK);
+	}
+	/**
+	 * Deletes a subtopic with the specified id from the database.
+	 * @param int id
+	 * @return HttpStatus
+	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 */
+	@DeleteMapping("/{id}")
+	public ResponseEntity<HttpStatus> deleteSubTopic(@PathVariable int id){
+		service.deleteSubtopic(id);
+		return new ResponseEntity<>(HttpStatus.OK);
 	}
 
 	/**

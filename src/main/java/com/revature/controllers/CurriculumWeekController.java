@@ -1,5 +1,6 @@
 package com.revature.controllers;
 
+import java.sql.ResultSet;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -89,6 +91,17 @@ public class CurriculumWeekController {
 	public ResponseEntity<CurriculumWeek> updateWeek(@RequestBody CurriculumWeek week) {
 		CurriculumWeek value = service.updateWeek(week);
 		return new ResponseEntity<>(value, HttpStatus.ACCEPTED);
+	}
+	/**
+	 * Deletes a week with the id requested.
+	 * @param int id
+	 * @return HttpStatus
+	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 */
+	@DeleteMapping("{id}")
+	public ResponseEntity<HttpStatus> deleteWeek(@PathVariable int id){
+		service.deleteWeek(id);
+		return new ResponseEntity<>(HttpStatus.OK);
 	}
 
 	/**

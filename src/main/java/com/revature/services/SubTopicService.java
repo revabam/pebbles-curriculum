@@ -49,5 +49,15 @@ public class SubTopicService {
 	public Set<DaySubTopic> getAllSubtopics() {
 		return subRepo.findAll();
 	}
+	
+	/**
+	 * Deletes a subtopic.
+	 * 
+	 * @param int id
+	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 */
+	public void deleteSubtopic(int id) {
+		subRepo.delete(id);
+	}
 
 }

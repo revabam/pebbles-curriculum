@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.models.CurriculumWeek;
 import com.revature.repositories.WeekRepository;
 
 @Service
+@Transactional
 public class WeekService {
 	
 	@Autowired 
@@ -57,6 +59,14 @@ public class WeekService {
 	 */
 	public CurriculumWeek findByIdAndWeekNum(int id, int week) {
 		return weekRepo.findByCurriculumWeekIdAndWeekNum(id, week);
+	}
+	/**
+	 * Deletes a week if it has no children.
+	 * @param int id
+	 *  @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 */
+	public void deleteWeek(int id) {
+		weekRepo.deleteByCurriculumWeekId(id);
 	}
 	
 }
