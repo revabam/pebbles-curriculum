@@ -3,6 +3,12 @@ package com.revature.security;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+/**
+ * This class is a Java Bean for JWTs configurations.
+ * 
+ * @author Alex Moraga, Richard Iskra, Tosin Onilogbo
+ *
+ */
 @Component
 @ConfigurationProperties(prefix = "com.revature.security.jwt.aws")
 public class JwtConfiguration {
@@ -13,6 +19,8 @@ public class JwtConfiguration {
     private String userPoolId;
     private String identityPoolId;
 
+//  Cognitos credentials
+//  Change is your credentials are different. 
     private String jwkUrl;
     private String region = "us-east-1";
     private String userNameField = "cognito:username";
@@ -28,6 +36,7 @@ public class JwtConfiguration {
         return jwkUrl;
     }
 
+//  method to return formatted strings of (COGNITO_IDENTITY_POOL_URL,region,userPoolId)
     public String getCognitoIdentityPoolUrl() {
         return String.format(COGNITO_IDENTITY_POOL_URL,region,userPoolId);
     }

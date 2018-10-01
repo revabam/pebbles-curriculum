@@ -7,11 +7,19 @@ import org.springframework.security.core.GrantedAuthority;
 
 import com.nimbusds.jwt.JWTClaimsSet;
 
+/**
+ * Class for JwtAuthentication
+ * 
+ * @author Alex Moraga, Richard Iskra, Tosin Onilogbo
+ *
+ */
+
 public class JwtAuthentication extends AbstractAuthenticationToken {
 
     private final Object principal;
     private JWTClaimsSet jwtClaimsSet;
-
+    
+//  Constructor for an object, claimsSet, and a collection storing Strings of granted authorities (from the interface)
     public JwtAuthentication(Object principal, JWTClaimsSet jwtClaimsSet, Collection<? extends GrantedAuthority> authorities) {
         super(authorities);
         this.principal = principal;
