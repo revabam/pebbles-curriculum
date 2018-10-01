@@ -56,7 +56,13 @@ public class TopicController {
 		return new ResponseEntity<>(value, HttpStatus.OK);
 		
 	}
-	
+	/**
+	 * Handles all exceptions thrown within the SubTopicController, then creates a error object. 
+	 * @param Exception
+	 * @param request
+	 * @return ResponseEntity<ExceptionObject> A error object that contains details based off of the exception caught and a HttpStatus based off of the exception thrown. 
+	 * @author Beck Larson
+	 */
 	@ExceptionHandler(Exception.class)
 	  public final ResponseEntity<ExceptionObject> handleUserNotFoundException(Exception ex, WebRequest request) {
 		ExceptionObject errorDetails = new ExceptionObject(ex.getMessage(), ex.toString(), "" + this.getClass());

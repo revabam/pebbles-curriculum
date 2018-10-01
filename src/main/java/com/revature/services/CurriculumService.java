@@ -15,20 +15,42 @@ public class CurriculumService {
 
 	@Autowired
 	CurriculumRepository currRepo;
-
+	
+	/**
+	 * Find all curriculums that are currently in the database.
+	 * @return List<Curriculum> 
+	 * @author Beck Larson
+	 */
 	public List<Curriculum> findAllCurriculums() {
-		System.out.println("RETURN IS " + currRepo.findAll());
 		return currRepo.findAll();
 	}
 
+	/**
+	 *Finds a Curriculum by is id.
+	 * @param integer id
+	 * @return Curriculum 
+	 * @author Beck Larson
+	 */
 	public Curriculum findCurriculumById(Integer id) {
 		return currRepo.findById(id);
 	}
 
+	/**
+	 * Creates a new curriculum in the database.
+	 * @param Curriculum
+	 * @return saved Curriculum
+	 * @author Beck Larson
+	 */
 	public Curriculum addCurriculum(Curriculum newCurr) {
 		return currRepo.save(newCurr);
 	}
 
+	/**
+	 * Updates a Curriculum in the Database
+	 * @param Curriculum
+	 * @return updated Curriculum
+	 * @author Beck Larson
+	 */
 	public Curriculum updateCurriculum(Curriculum updatedCurr) {
 		Curriculum curr = currRepo.findById(updatedCurr.getId());
 

@@ -17,11 +17,22 @@ public class SubTopicService {
 	SubtopicRepository subRepo;
 	
 	
-	
+	/**
+	 * Creates a new subtopic and saves it to the database.
+	 * @param DaySubTopic
+	 * @return saved DaySubTopic
+	 * @author Beck Larson
+	 */
 	public DaySubTopic addSubtopic(DaySubTopic newSubtopic) {
 		return subRepo.save(newSubtopic);
 	}
 	
+	/**
+	 * Updates a subtopic that exists in the database.
+	 * @param DaySubTopic
+	 * @return null or saved DaySubTopic
+	 * @author Beck Larson
+	 */
 	public DaySubTopic updateSubtopic(DaySubTopic updatedSubtopic) {
 		DaySubTopic subtopic = subRepo.findOne(updatedSubtopic.getId());
 		if (subtopic == null) {
@@ -31,6 +42,11 @@ public class SubTopicService {
 		}
 	}
 	
+	/**
+	 * Gets all of the subtopics within the database.
+	 * @return Set<DaySubTopic>
+	 * @author Beck Larson
+	 */
 	public Set<DaySubTopic> getAllSubtopics() {
 		return subRepo.findAll();
 	}
