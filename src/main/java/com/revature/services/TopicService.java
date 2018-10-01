@@ -43,5 +43,13 @@ public class TopicService {
 	public List<Topic> findAllTopics(){
 		return topicRepo.findAll();
 	}
+	/**
+	 * deletes a topic by its id.
+	 * @param int id
+	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 */
+	public void deleteTopic(int id) {
+		topicRepo.deleteTopicByTopicId(id);
+	}
 
 }

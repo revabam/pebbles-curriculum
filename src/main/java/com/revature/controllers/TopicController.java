@@ -8,6 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -72,6 +73,11 @@ public class TopicController {
 	public ResponseEntity<List<Topic>> findAllTopics(){
 		List<Topic> value = service.findAllTopics();
 		return new ResponseEntity<>(value, HttpStatus.OK);
+	}
+	@DeleteMapping("/{id}")
+	public ResponseEntity<HttpStatus> deleteTopic(@PathVariable int id){
+		service.deleteTopic(id);
+		return new ResponseEntity<>(HttpStatus.OK);
 	}
 	/**
 	 * Handles all exceptions thrown within the SubTopicController, then creates a error object. 
