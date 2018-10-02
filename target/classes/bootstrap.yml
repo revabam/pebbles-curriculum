@@ -1,3 +1,31 @@
 spring:
   application:
     name: pebbles-curriculum
+  security:
+    oauth2:
+      client:
+        registration:
+          cognito-client-1:
+            client-id: 
+            client-secret: 
+            client-name: Bam-Bam Client
+            provider: cognito
+            scope: openid
+        provider:
+          cognito:
+            authorization-uri: https://bambam-client.auth.us-east-1.amazoncognito.com/oauth2/authorize
+            token-uri: https://bambam-client.auth.us-east-1.amazoncognito.com/oauth2/token
+            user-info-uri: https://bambam-client.auth.us-east-1.amazoncognito.com/oauth2/userInfo
+            jwk-set-uri: https://cognito-idp.auth.us-east-1.amazonaws.com/_7bWZrc3vS/.well-known/jwks.json.json
+            user-name-attribute: cognito:username
+#urls:
+#  cognito: localhost:4200
+#endpoints:
+#  authorize: https://bambam-client.auth.us-east-1.amazoncognito.com
+#  token: https://bambam-client.auth.us-east-1.amazoncognito.com/oauth2/token
+#cognito:
+#  client: 
+#  secret: 
+#  callback: http://d2iny48xdni2vj.cloudfront.net/dashboard
+#  keys: https://cognito-idp.auth.us-east-1.amazonaws.com/_7bWZrc3vS/.well-known/jwks.json
+#  scope: aws.cognito.signin.user.admin

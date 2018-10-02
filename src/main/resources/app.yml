@@ -1,13 +1,13 @@
 spring:
 security:
 urls:
-  cognito: localhost:4200
+  cognito: https://bambam-client.auth.us-east-1.amazoncognito.com/
 endpoints:
-  authorize: https://bambam-client.auth.us-east-1.amazoncognito.com/oauth2/authorize?response_type=code&client_id=6mrdhjt4gch9lvrd5vpeh4n748&redirect_uri=http://d2iny48xdni2vj.cloudfront.net/dashboard
+  authorize: https://bambam-client.auth.us-east-1.amazoncognito.com/oauth2/authorize?response_type=code&client_id=n5l1l6id094g0lk2f3vc1h6h7&redirect_uri=http://d2iny48xdni2vj.cloudfront.net/dashboard
   token: https://bambam-client.auth.us-east-1.amazoncognito.com/oauth2/token
 cognito:
-  client: 6mrdhjt4gch9lvrd5vpeh4n748
-  secret: viut9iprfln5jbf7c0legkvj6kgpergt32kk9d25s8mjgkb54l9
+  client: 
+  secret: 
   callback: http://d2iny48xdni2vj.cloudfront.net/dashboard
   keys: https://cognito-idp.auth.us-east-1.amazonaws.com/_7bWZrc3vS/.well-known/jwks.json
   scope: aws.cognito.signin.user.admin
