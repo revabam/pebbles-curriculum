@@ -95,7 +95,7 @@ public class SubTopicService {
 	
 	/**
 	 * Creates a new subtopic and saves it to the database.
-	 * @param DaySubTopic
+	 * @param SubTopicNames
 	 * @return saved SubTopicName
 	 * @author Rhys Yamasaki | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
