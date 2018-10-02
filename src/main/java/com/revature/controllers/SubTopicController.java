@@ -130,7 +130,8 @@ public class SubTopicController {
 	/**
 	 * Adds a new subtopic to subtopic names table
 	 * @param newSubtopic
-	 * @return
+	 * @return ResponseEntity<SubtopicNames> and
+	 * 			an HttpStatus of ok
 	 * @author Rhys Yamasaki | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
 	

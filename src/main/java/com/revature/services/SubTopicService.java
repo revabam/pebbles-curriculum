@@ -96,8 +96,8 @@ public class SubTopicService {
 	/**
 	 * Creates a new subtopic and saves it to the database.
 	 * @param DaySubTopic
-	 * @return saved DaySubTopic
-	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @return saved SubTopicName
+	 * @author Rhys Yamasaki | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
 	public SubtopicNames addSubtopic(SubtopicNames newSubtopic) {
 		return subtopicNamesRepo.save(newSubtopic);
