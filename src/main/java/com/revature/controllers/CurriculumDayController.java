@@ -108,7 +108,7 @@ public class CurriculumDayController {
 	 * @author Rhys Yamasaki | Spark-1806-Jun-USF | Steven Kelsey
 	 */
 	@ExceptionHandler(Exception.class)
-	  public final ResponseEntity<ExceptionObject> handleUserNotFoundException(Exception ex, WebRequest request) {
+	  public final ResponseEntity<ExceptionObject> curriculumDayException(Exception ex, WebRequest request) {
 		ExceptionObject errorDetails = new ExceptionObject(ex.getMessage(), ex.toString(), "" + this.getClass());
 		if (ex instanceof HttpMessageNotReadableException) {
 			return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);

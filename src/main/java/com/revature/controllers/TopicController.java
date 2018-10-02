@@ -81,7 +81,7 @@ public class TopicController {
 	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
 	@ExceptionHandler(Exception.class)
-	  public final ResponseEntity<ExceptionObject> handleUserNotFoundException(Exception ex, WebRequest request) {
+	  public final ResponseEntity<ExceptionObject> topicException(Exception ex, WebRequest request) {
 		ExceptionObject errorDetails = new ExceptionObject(ex.getMessage(), ex.toString(), "" + this.getClass());
 		if (ex instanceof HttpMessageNotReadableException) {
 			return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
