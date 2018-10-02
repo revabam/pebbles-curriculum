@@ -46,6 +46,9 @@ insert into curriculum_week values (2, 2, 1);
 
 insert into CURRICULUM_DAY values (1, 1, 1);
 insert into CURRICULUM_DAY values (2, 1, 2);
+insert into CURRICULUM_DAY values (5, 1, 3);
+insert into CURRICULUM_DAY values (6, 1, 4);
+insert into CURRICULUM_DAY values (7, 1, 5);
 insert into CURRICULUM_DAY values (3, 2, 1);
 insert into CURRICULUM_DAY values (4, 2, 2);
 
@@ -70,5 +73,20 @@ values(7, 4, 3);
 insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, subtopic_name_id)
 values(8, 4, 4);
 
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, subtopic_name_id)
+values(9, 5, 5);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, subtopic_name_id)
+values(10, 5, 6);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, subtopic_name_id)   
+values(11, 6, 7);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, subtopic_name_id)
+values(12, 6, 8);
+
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, subtopic_name_id)
+values(13, 7, 9);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, subtopic_name_id)
+values(14, 7, 10);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, subtopic_name_id)   
+values(15, 7, 11);
 
 

@@ -1,5 +1,6 @@
 package com.revature.controllers;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.validation.Valid;
@@ -22,6 +23,7 @@ import org.springframework.web.context.request.WebRequest;
 
 import com.revature.models.DaySubTopic;
 import com.revature.models.ExceptionObject;
+import com.revature.models.SubtopicNames;
 import com.revature.services.SubTopicService;
 
 @CrossOrigin
@@ -40,7 +42,7 @@ public class SubTopicController {
 	 *         status code
 	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
 	 */
-	@PostMapping
+	@PostMapping("/day")
 	public ResponseEntity<DaySubTopic> addSubtopic(@RequestBody DaySubTopic newSubtopic) {
 		System.out.println("CREATING SUBTOPIC " + newSubtopic);
 		DaySubTopic subtopic = service.addSubtopic(newSubtopic);
@@ -54,7 +56,7 @@ public class SubTopicController {
 	 * @return ResponseEntity<Subtopic> A subtopic object and a HTTP status code
 	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
 	 */
-	@PutMapping
+	@PutMapping("/day")
 	public ResponseEntity<DaySubTopic> updateSubtopic(@Valid @RequestBody DaySubTopic updatedSubtopic) {
 		DaySubTopic subtopic = service.updateSubtopic(updatedSubtopic);
 		return new ResponseEntity<>(subtopic, HttpStatus.OK);
@@ -63,23 +65,23 @@ public class SubTopicController {
 	/**
 	 * Returns all subtopics within the database
 	 * 
-	 * @return ResponseEntity<Set<DaySubTopic>> A set of subtopics and an
+	 * @return ResponseEntity<Set<DaySubTopic>> A set of day subtopics and an
 	 *         HttpStatus.OK
 	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 * 
 	 */
-	@GetMapping
-	public ResponseEntity<Set<DaySubTopic>> getAllSubtopics() {
-		Set<DaySubTopic> values = service.getAllSubtopics();
+	@GetMapping("/day")
+	public ResponseEntity<Set<DaySubTopic>> getAllDaySubtopics() {
+		Set<DaySubTopic> values = service.getAllDaySubtopics();
 		return new ResponseEntity<>(values, HttpStatus.OK);
 	}
 	/**
-	 * Deletes a subtopic with the specified id from the database.
+	 * Deletes a day subtopic with the specified id from the database.
 	 * @param int id
 	 * @return HttpStatus
 	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/day/{id}")
 	public ResponseEntity<HttpStatus> deleteSubTopic(@PathVariable int id){
 		service.deleteSubtopic(id);
 		return new ResponseEntity<>(HttpStatus.OK);
@@ -91,10 +93,38 @@ public class SubTopicController {
 	 * @return HttpStatus
 	 * @author Chris Holmes | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
-	@DeleteMapping("/day/{id}")
+	@DeleteMapping("/{id}")
 	public ResponseEntity<HttpStatus> deleteDaySubTopic(@PathVariable int id){
 		service.delete(id);
 		return new ResponseEntity<>(HttpStatus.OK);
+	}
+	
+	/**
+	 * Returns all subtopics within the database
+	 * 
+	 * @return ResponseEntity<List<SubtopicNames>> A list of subtopics and an
+	 *         HttpStatus.OK
+	 * @author Rhys Yamasaki | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * 
+	 */
+	@GetMapping
+	public ResponseEntity<List<SubtopicNames>> getAllSubtopics() {
+		List<SubtopicNames> values = service.getAllSubtopics();
+		return new ResponseEntity<>(values, HttpStatus.OK);
+	}
+	
+	/**
+	 * Return a subtopic within the database
+	 * 
+	 * @return ResponseEntity<SubtopicNames> and an
+	 *         HttpStatus.OK
+	 * @author Rhys Yamasaki | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * 
+	 */
+	@GetMapping("/{id}")
+	public ResponseEntity<SubtopicNames> getBySubtopicId(@PathVariable int id) {
+		SubtopicNames value = service.getBySubtopicId(id);
+		return new ResponseEntity<>(value, HttpStatus.OK);
 	}
 
 	/**
