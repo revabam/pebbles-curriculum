@@ -60,12 +60,26 @@ public class JwtAutoConfiguration {
 
    @Bean
    public ConfigurableJWTProcessor configurableJWTProcessor() throws MalformedURLException {
+	   
+        //A new resource retriever is being created that contains the http read timeout and connect timeout specified in the jwtConfiguration class.
        ResourceRetriever resourceRetriever = new DefaultResourceRetriever(jwtConfiguration.getConnectionTimeout(), jwtConfiguration.getReadTimeout());
+       
+       //A URL object is created from the String specified in our getJwkUrl method in the jwkConfiguration class.
        URL jwkSetURL = new URL(jwtConfiguration.getJwkUrl());
+       
+       //A list of JWKs matching the specified selector jwkSetUrl is being retrieved, and a new remote JWK set is being created
        JWKSource keySource = new RemoteJWKSet(jwkSetURL, resourceRetriever);
+       
+       //The ConfigurableJWTProcessor interface that will process the jwt to be verified and decrypted is being instantiated
        ConfigurableJWTProcessor jwtProcessor = new DefaultJWTProcessor();
+       
+       //Setting the JWS algorithm to RS256 for RSA PKCS #1 signature with SHA-256
        JWSAlgorithm expectedJWSAlg = JWSAlgorithm.RS256;
+       
+       //A new JWS verification key selector is created for selecting key candidates for verifying a JSON Web Signature(JWS) object and
+       //determining if it's available for further processing
        JWSKeySelector keySelector = new JWSVerificationKeySelector(expectedJWSAlg, keySource);
+       
        jwtProcessor.setJWSKeySelector(keySelector);
        return jwtProcessor;
    }
