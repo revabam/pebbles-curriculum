@@ -31,24 +31,18 @@ public class TopicController {
 	TopicService service;
 	
 	/**
-	 * Creates a topic and attaches it to a curriculum
+	 * Creates a topic
 	 *
-	 * @param id
-	 *            int
-	 * @param week
-	 *            int
 	 * @param newTopic
 	 *            Topic
 	 * @return ResponseEntity<Topic> A newly created topic object and a HTTP status
 	 *         code
 	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
+	 * 		   Rhys Yamasaki | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
-	@PostMapping(value = "/topics/{id}/{week}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Topic> addTopic(@PathVariable("id") int id, @PathVariable("week") int week,
-			@RequestBody Topic newTopic) {
+	@PostMapping
+	public ResponseEntity<Topic> addTopic(@RequestBody Topic newTopic) {
 		Topic topic = service.addTopic(newTopic);
-		//CurriculumTopic ct = new CurriculumTopic(id, topic.getId(), week);
-		//service.addCurriculumTopic(ct);
 		return new ResponseEntity<>(topic, HttpStatus.CREATED);
 	}
 	/**
@@ -57,8 +51,8 @@ public class TopicController {
 	 * @return ResponseEntity<Topic>
 	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
-	@GetMapping("/find/{id}")
-	public ResponseEntity<Topic> findTopic(@PathVariable int id){
+	@GetMapping("/{id}")
+	public ResponseEntity<Topic> findByTopicId(@PathVariable int id){
 		
 		Topic value = service.findTopic(id);
 		return new ResponseEntity<>(value, HttpStatus.OK);
@@ -69,7 +63,7 @@ public class TopicController {
 	 * @return
 	 * @author Beck Larson, Joey Shannon | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
-	@GetMapping("/topics")
+	@GetMapping
 	public ResponseEntity<List<Topic>> findAllTopics(){
 		List<Topic> value = service.findAllTopics();
 		return new ResponseEntity<>(value, HttpStatus.OK);
