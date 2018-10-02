@@ -21,12 +21,12 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "CURRICULUM_WEEK")
-@SequenceGenerator(name="curriculum_seq_name", sequenceName="curriculum_seq", initialValue=3, allocationSize=1)
 public class CurriculumWeek implements Serializable{
 
 	@Id
+	@SequenceGenerator(name="curriculum_week_seq", sequenceName="curriculum_week_seq")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="curriculum_week_seq")
 	@Column(name = "CURRICULUM_WEEK_ID")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="curriculum_seq_name")
 	@NotNull
 	private int id;
 	
@@ -87,6 +87,13 @@ public class CurriculumWeek implements Serializable{
 		this.curriculumDays = curriculumDay;
 	}
 
+	public int getCurriculumId() {
+		return curriculumId;
+	}
+
+	public void setCurriculumId(int curriculumId) {
+		this.curriculumId = curriculumId;
+	}
 
 	@Override
 	public String toString() {

@@ -20,22 +20,17 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "CURRICULUM_DAY")
-@SequenceGenerator(name="curriculum_seq_name", sequenceName="curriculum_seq", initialValue=3, allocationSize=1)
 public class CurriculumDay implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 5619871966502548105L;
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="curriculum_seq_name")
-	@NotNull
+	@SequenceGenerator(name="curriculum_day_seq", sequenceName="curriculum_day_seq")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="curriculum_day_seq")
 	@Column(name = "CURRICULUM_DAY_ID")
 	private int id;
 	
 	
 	@Column(name = "DAY_NUM")
-	@NotNull
 	private int dayNum;
 	
 	@Column(name = "CURRICULUM_WEEK_ID")
