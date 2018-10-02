@@ -14,5 +14,5 @@ public interface SubtopicRepository extends CrudRepository<DaySubTopic, Integer>
 	List<DaySubTopic> findById(Integer id);
 	
 	Set<DaySubTopic> findAll();
-
+	
 }

@@ -33,14 +33,16 @@ public class DaySubTopic implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name = "subtopic_seq_name", sequenceName = "subtopic_seq_name", initialValue = 12, allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "subtopic_seq_name")
+	@SequenceGenerator(name = "day_subtopic_seq_name", sequenceName = "day_subtopic_seq_name", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "day_subtopic_seq_name")
 	@Column(name = "subtopic_id")
 	private Integer id;
 	
+	@Column(name="CURRICULUM_DAY_ID")
+	private Integer curriculumDayId;
+	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "CURRICULUM_DAY_ID", insertable = false, updatable = false)
-	@NotNull
 	private CurriculumDay dailySubtopics;
 	
 	@Column(name="SUBTOPIC_NAME_ID")
@@ -48,13 +50,22 @@ public class DaySubTopic implements Serializable {
 
 	public DaySubTopic() {
 	}
-	
-	public DaySubTopic(Integer id, int subTopicNameId, Set<SubtopicNames> subTopicName) {
+
+	public DaySubTopic(Integer id, Integer curriculumDayId, int subTopicNameId) {
 		super();
 		this.id = id;
+		this.curriculumDayId = curriculumDayId;
 		this.subTopicNameId = subTopicNameId;
 	}
-	
+
+	public Integer getCurriculumDayId() {
+		return curriculumDayId;
+	}
+
+	public void setCurriculumDayId(Integer curriculumDayId) {
+		this.curriculumDayId = curriculumDayId;
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -73,7 +84,7 @@ public class DaySubTopic implements Serializable {
 
 	@Override
 	public String toString() {
-		return "DaySubTopic [id=" + id + ", subTopicNameId=" + subTopicNameId
+		return "DaySubTopic [id=" + id + ", curriculumDayId=" + curriculumDayId + ", subTopicNameId=" + subTopicNameId
 				+ "]";
 	}
 
