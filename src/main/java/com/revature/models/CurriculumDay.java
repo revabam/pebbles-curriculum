@@ -31,7 +31,7 @@ public class CurriculumDay implements Serializable{
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="curriculum_seq_name")
 	@NotNull
 	@Column(name = "CURRICULUM_DAY_ID")
-	private int curriculumDayId;
+	private int id;
 	
 	
 	@Column(name = "DAY_NUM")
@@ -39,41 +39,41 @@ public class CurriculumDay implements Serializable{
 	private int dayNum;
 	
 	@Column(name = "CURRICULUM_WEEK_ID")
-	private int curriculumWeekId;
+	private int weekId;
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "CURRICULUM_WEEK_ID", insertable= false, updatable=false)
 	private CurriculumWeek days;
 	
 	@OneToMany(mappedBy = "dailySubtopics", fetch = FetchType.EAGER)
-	private Set<DaySubTopic> subTopic = new HashSet<DaySubTopic>();
+	private Set<DaySubTopic> daySubTopic = new HashSet<DaySubTopic>();
 
 	public CurriculumDay() {
 		super();
 	}
 	
-	public CurriculumDay(int curriculumDayId, int dayNum, int curriculumWeekId, Set<DaySubTopic> subTopic) {
+	public CurriculumDay(int curriculumDayId, int dayNum, int weekId, Set<DaySubTopic> subTopic) {
 		super();
-		this.curriculumDayId = curriculumDayId;
+		this.id = curriculumDayId;
 		this.dayNum = dayNum;
-		this.curriculumWeekId = curriculumWeekId;
-		this.subTopic = subTopic;
+		this.weekId = weekId;
+		this.daySubTopic = subTopic;
 	}
 
-	public int getCurriculumWeekId() {
-		return curriculumWeekId;
+	public int getWeekId() {
+		return weekId;
 	}
 
-	public void setCurriculumWeekId(int curriculumWeekId) {
-		this.curriculumWeekId = curriculumWeekId;
+	public void setWeekId(int weekId) {
+		this.weekId = weekId;
 	}
 
-	public int getCurriculumDayId() {
-		return curriculumDayId;
+	public int getId() {
+		return id;
 	}
 
-	public void setCurriculumDayId(int curriculumDayId) {
-		this.curriculumDayId = curriculumDayId;
+	public void setId(int curriculumDayId) {
+		this.id = curriculumDayId;
 	}
 
 	public int getDayNum() {
@@ -84,18 +84,18 @@ public class CurriculumDay implements Serializable{
 		this.dayNum = dayNum;
 	}
 
-	public Set<DaySubTopic> getSubTopic() {
-		return subTopic;
+	public Set<DaySubTopic> getDaySubTopic() {
+		return daySubTopic;
 	}
 
-	public void setSubTopic(Set<DaySubTopic> subTopic) {
-		this.subTopic = subTopic;
+	public void setDaySubTopic(Set<DaySubTopic> subTopic) {
+		this.daySubTopic = subTopic;
 	}
 
 	@Override
 	public String toString() {
-		return "CurriculumDay [curriculumDayId=" + curriculumDayId + ", dayNum=" + dayNum
-				+ ", subTopic=" + subTopic + "]";
+		return "CurriculumDay [curriculumDayId=" + id + ", dayNum=" + dayNum
+				+ ", subTopic=" + daySubTopic + "]";
 	}
 	
 }

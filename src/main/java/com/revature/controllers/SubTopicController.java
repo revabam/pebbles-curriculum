@@ -45,7 +45,7 @@ public class SubTopicController {
 	@PostMapping("/day")
 	public ResponseEntity<DaySubTopic> addDaySubtopic(@RequestBody DaySubTopic newSubtopic) {
 		System.out.println("CREATING SUBTOPIC " + newSubtopic);
-		DaySubTopic subtopic = service.addSubtopic(newSubtopic);
+		DaySubTopic subtopic = service.addDaySubtopic(newSubtopic);
 		return new ResponseEntity<>(subtopic, HttpStatus.CREATED);
 	}
 	
@@ -127,10 +127,17 @@ public class SubTopicController {
 		return new ResponseEntity<>(value, HttpStatus.OK);
 	}
 	
+	/**
+	 * Adds a new subtopic to subtopic names table
+	 * @param newSubtopic
+	 * @return
+	 * @author Rhys Yamasaki | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 */
+	
 	@PostMapping
-	public ResponseEntity<DaySubTopic> addSubtopic(@RequestBody DaySubTopic newSubtopic) {
+	public ResponseEntity<SubtopicNames> addSubtopic(@RequestBody SubtopicNames newSubtopic) {
 		System.out.println("CREATING SUBTOPIC " + newSubtopic);
-		DaySubTopic subtopic = service.addSubtopic(newSubtopic);
+		SubtopicNames subtopic = service.addSubtopic(newSubtopic);
 		return new ResponseEntity<>(subtopic, HttpStatus.CREATED);
 	}
 

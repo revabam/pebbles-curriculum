@@ -28,42 +28,43 @@ public class CurriculumWeek implements Serializable{
 	@Column(name = "CURRICULUM_WEEK_ID")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="curriculum_seq_name")
 	@NotNull
-	private int curriculumWeekId;
+	private int id;
 	
 	@Column(name = "WEEK_NUM")
 	@NotNull
 	private int weekNum;
 	
+	@Column(name = "CURRICULUM_ID")
+	private int curriculumId;
+	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "ID", insertable= false, updatable=false)
+	@JoinColumn(name = "CURRICULUM_ID", insertable= false, updatable=false)
 	private Curriculum weeks;
 	
 	@OneToMany(mappedBy = "days", fetch = FetchType.EAGER)
 	@NotNull
-	private Set<CurriculumDay> curriculumDay = new HashSet<CurriculumDay>();
+	private Set<CurriculumDay> curriculumDays = new HashSet<CurriculumDay>();
 	
 
 	public CurriculumWeek() {
 		super();
 	}
 
-
-	public CurriculumWeek(int curriculumWeekId, int weekNum, Curriculum weeks, Set<CurriculumDay> curriculumDay) {
+	public CurriculumWeek(int id, int weekNum, int curriculumId, Set<CurriculumDay> curriculumDay) {
 		super();
-		this.curriculumWeekId = curriculumWeekId;
+		this.id = id;
 		this.weekNum = weekNum;
-		this.weeks = weeks;
-		this.curriculumDay = curriculumDay;
+		this.curriculumId = curriculumId;
+		this.curriculumDays = curriculumDay;
+	}
+
+	public int getid() {
+		return id;
 	}
 
 
-	public int getCurriculumWeekId() {
-		return curriculumWeekId;
-	}
-
-
-	public void setCurriculumWeekId(int curriculumWeekId) {
-		this.curriculumWeekId = curriculumWeekId;
+	public void setid(int id) {
+		this.id = id;
 	}
 
 
@@ -77,25 +78,20 @@ public class CurriculumWeek implements Serializable{
 	}
 
 
-	public Set<CurriculumDay> getCurriculumDay() {
-		return curriculumDay;
+	public Set<CurriculumDay> getCurriculumDays() {
+		return curriculumDays;
 	}
 
 
-	public void setCurriculumDay(Set<CurriculumDay> curriculumDay) {
-		this.curriculumDay = curriculumDay;
+	public void setCurriculumDays(Set<CurriculumDay> curriculumDay) {
+		this.curriculumDays = curriculumDay;
 	}
 
 
 	@Override
 	public String toString() {
-		return "CurriculumWeek [curriculumWeekId=" + curriculumWeekId + ", weekNum=" + weekNum 
-				+ ", curriculumDay=" + curriculumDay + "]";
+		return "CurriculumWeek [id=" + id + ", weekNum=" + weekNum 
+				+ ", curriculumDay=" + curriculumDays + "]";
 	}
-
-
-	
-
-	
 
 }

@@ -59,7 +59,7 @@ public class Curriculum implements Serializable {
 	private Integer numberOfWeeks;
 	
 	@OneToMany(mappedBy = "weeks", fetch = FetchType.LAZY)
-	private Set<CurriculumWeek> curriculumWeek = new HashSet<CurriculumWeek>();
+	private Set<CurriculumWeek> curriculumWeeks = new HashSet<CurriculumWeek>();
 
 	public Curriculum() {
 		super();
@@ -76,7 +76,7 @@ public class Curriculum implements Serializable {
 		this.status = status;
 		this.dateCreated = dateCreated;
 		this.numberOfWeeks = numberOfWeeks;
-		this.curriculumWeek = curriculumWeek;
+		this.curriculumWeeks = curriculumWeek;
 	}
 
 	public Integer getId() {
@@ -143,19 +143,19 @@ public class Curriculum implements Serializable {
 		this.numberOfWeeks = numberOfWeeks;
 	}
 
-	public Set<CurriculumWeek> getCurriculumWeek() {
-		return curriculumWeek;
+	public Set<CurriculumWeek> getCurriculumWeeks() {
+		return curriculumWeeks;
 	}
 
-	public void setCurriculumWeek(Set<CurriculumWeek> curriculumWeek) {
-		this.curriculumWeek = curriculumWeek;
+	public void setCurriculumWeeks(Set<CurriculumWeek> curriculumWeek) {
+		this.curriculumWeeks = curriculumWeek;
 	}
 
 	@Override
 	public String toString() {
 		return "Curriculum [id=" + id + ", name=" + name + ", version=" + version + ", creatorId=" + creatorId
 				+ ", approvedById=" + approvedById + ", status=" + status + ", dateCreated=" + dateCreated
-				+ ", numberOfWeeks=" + numberOfWeeks + ", curriculumWeek=" + curriculumWeek + "]";
+				+ ", numberOfWeeks=" + numberOfWeeks + ", curriculumWeek=" + curriculumWeeks + "]";
 	}
 	
 }

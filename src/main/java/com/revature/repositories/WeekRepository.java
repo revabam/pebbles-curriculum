@@ -16,7 +16,7 @@ public interface WeekRepository extends JpaRepository<CurriculumWeek, Serializab
 
 	List<CurriculumWeek> findAll();
 
-	CurriculumWeek findByCurriculumWeekIdAndWeekNum(int id, int week);
+	CurriculumWeek findByIdAndWeekNum(int id, int week);
 	
 	@Modifying
 	@Transactional

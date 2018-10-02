@@ -22,12 +22,12 @@ public class SubTopicService {
 	
 	
 	/**
-	 * Creates a new subtopic and saves it to the database.
+	 * Creates a day new subtopic and saves it to the database.
 	 * @param DaySubTopic
 	 * @return saved DaySubTopic
 	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
-	public DaySubTopic addSubtopic(DaySubTopic newSubtopic) {
+	public DaySubTopic addDaySubtopic(DaySubTopic newSubtopic) {
 		return subRepo.save(newSubtopic);
 	}
 	
@@ -91,6 +91,16 @@ public class SubTopicService {
 	 */
 	public SubtopicNames getBySubtopicId(int id) {
 		return subtopicNamesRepo.findOne(id);
+	}
+	
+	/**
+	 * Creates a new subtopic and saves it to the database.
+	 * @param DaySubTopic
+	 * @return saved DaySubTopic
+	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 */
+	public SubtopicNames addSubtopic(SubtopicNames newSubtopic) {
+		return subtopicNamesRepo.save(newSubtopic);
 	}
 
 }

@@ -24,7 +24,7 @@ import com.revature.services.CurriculumDayService;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/curriculums/day")
+@RequestMapping("/curriculums/days")
 public class CurriculumDayController {
 
 	@Autowired
