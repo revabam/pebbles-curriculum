@@ -3,11 +3,10 @@ package com.revature.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.revature.models.Curriculum;
+import com.revature.models.SubtopicNames;
 
 @Repository
-public interface CurriculumRepository extends JpaRepository<Curriculum, Integer> {
+public interface SubtopicNamesRepository extends JpaRepository<SubtopicNames, Integer> {
 
-	Curriculum findById(Integer id);
-
+	
 }
