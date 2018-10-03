@@ -30,31 +30,31 @@ public class Topic implements Serializable {
 	@Id
 	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "topic_seq_name")
-	private Integer topicId;
+	private Integer id;
 
 	@NotNull
 	@Column(name = "name", unique = true)
 	private String name;
 	
 	@OneToMany(mappedBy = "topic", fetch = FetchType.EAGER)
-	private Set<SubtopicNames> daySubTopic = new HashSet<SubtopicNames>();
+	private Set<SubtopicNames> subTopics = new HashSet<SubtopicNames>();
 
 	public Topic() {
 	}
 
 	public Topic(Integer topicId, String name, Set<SubtopicNames> daySubTopic) {
 		super();
-		this.topicId = topicId;
+		this.id = topicId;
 		this.name = name;
-		this.daySubTopic = daySubTopic;
+		this.subTopics = daySubTopic;
 	}
 
-	public Integer getTopicId() {
-		return topicId;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setTopicId(Integer topicId) {
-		this.topicId = topicId;
+	public void setId(Integer topicId) {
+		this.id = topicId;
 	}
 
 	public String getName() {
@@ -65,17 +65,17 @@ public class Topic implements Serializable {
 		this.name = name;
 	}
 
-	public Set<SubtopicNames> getDaySubTopic() {
-		return daySubTopic;
+	public Set<SubtopicNames> getSubTopic() {
+		return subTopics;
 	}
 
-	public void setDaySubTopic(Set<SubtopicNames> daySubTopic) {
-		this.daySubTopic = daySubTopic;
+	public void setSubTopic(Set<SubtopicNames> daySubTopic) {
+		this.subTopics = daySubTopic;
 	}
 
 	@Override
 	public String toString() {
-		return "Topic [topicId=" + topicId + ", name=" + name + ", daySubTopic=" + daySubTopic + "]";
+		return "Topic [topicId=" + id + ", name=" + name + ", daySubTopic=" + subTopics + "]";
 	}
 
 }

@@ -10,6 +10,6 @@ import com.revature.models.CurriculumDay;
 @Repository
 public interface CurriculumDayRepository extends JpaRepository<CurriculumDay, Integer> {
 	
-	public List<CurriculumDay> findByCurriculumWeekIdAndDayNum(int id, int dayNum);
+	public List<CurriculumDay> findByWeekIdAndDayNum(int id, int dayNum);
 
 	}

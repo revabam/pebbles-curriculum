@@ -39,31 +39,35 @@ public class DaySubTopic implements Serializable {
 	private Integer id;
 	
 	@Column(name="CURRICULUM_DAY_ID")
-	private Integer curriculumDayId;
+	private Integer dayId;
+	
+	@Column(name="INDEX")
+	private Integer index;
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "CURRICULUM_DAY_ID", insertable = false, updatable = false)
 	private CurriculumDay dailySubtopics;
 	
 	@Column(name="SUBTOPIC_NAME_ID")
-	private int subTopicNameId;
+	private int subTopicId;
 
 	public DaySubTopic() {
 	}
 
-	public DaySubTopic(Integer id, Integer curriculumDayId, int subTopicNameId) {
+	public DaySubTopic(Integer id, Integer dayId, Integer index, int subTopicNameId) {
 		super();
 		this.id = id;
-		this.curriculumDayId = curriculumDayId;
-		this.subTopicNameId = subTopicNameId;
+		this.dayId = dayId;
+		this.index = index;
+		this.subTopicId = subTopicNameId;
 	}
 
-	public Integer getCurriculumDayId() {
-		return curriculumDayId;
+	public Integer getDayId() {
+		return dayId;
 	}
 
-	public void setCurriculumDayId(Integer curriculumDayId) {
-		this.curriculumDayId = curriculumDayId;
+	public void setDayId(Integer curriculumDayId) {
+		this.dayId = curriculumDayId;
 	}
 
 	public Integer getId() {
@@ -74,19 +78,26 @@ public class DaySubTopic implements Serializable {
 		this.id = id;
 	}
 
-	public int getSubTopicNameId() {
-		return subTopicNameId;
+	public int getSubTopicId() {
+		return subTopicId;
 	}
 
-	public void setSubTopicNameId(int subTopicNameId) {
-		this.subTopicNameId = subTopicNameId;
+	public void setSubTopicId(int subTopicNameId) {
+		this.subTopicId = subTopicNameId;
+	}
+
+	public Integer getIndex() {
+		return index;
+	}
+
+	public void setIndex(Integer index) {
+		this.index = index;
 	}
 
 	@Override
 	public String toString() {
-		return "DaySubTopic [id=" + id + ", curriculumDayId=" + curriculumDayId + ", subTopicNameId=" + subTopicNameId
+		return "DaySubTopic [id=" + id + ", dayId=" + dayId + ", index=" + index + ", subTopicNameId=" + subTopicId
 				+ "]";
 	}
-
 	
 }
