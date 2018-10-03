@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * This is a Class where a Spring Aop advice executes before or after the
  * methods in the services and controller is called/executed.
  * 
- * @author Obosa Nosa-Igiebor | Batch: 1806-spark, Steven Kelsey
+ * @author Obosa Nosa-Igiebor | Batch: 1806-spark | Steven Kelsey
  *
  */
 
