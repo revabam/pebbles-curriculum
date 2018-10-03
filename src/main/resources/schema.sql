@@ -16,12 +16,12 @@ START WITH 3;
 DROP SEQUENCE IF EXISTS topic_seq;
 CREATE SEQUENCE IF NOT EXISTS topic_seq
 INCREMENT BY 1
-START WITH 5;
+START WITH 11;
 
 DROP TABLE IF EXISTS topic CASCADE;
 CREATE TABLE IF NOT EXISTS topic
 (id INTEGER NOT NULL,
-name VARCHAR(25),
+name VARCHAR(100),
 PRIMARY KEY(id));
 
 DROP SEQUENCE IF EXISTS subtopic_seq_name;
@@ -41,11 +41,11 @@ CREATE TABLE IF NOT EXISTS CURRICULUM
 (ID INTEGER NOT NULL,
 name varchar(25),
 version integer,
-creator_id integer,
+creator_id varchar(400),
 date_created date,
 number_of_weeks integer,
 status integer,
-approved_by_id integer,
+approved_by_id varchar(400),
 PRIMARY KEY(ID));
 
 DROP TABLE IF EXISTS CURRICULUM_WEEK CASCADE;
