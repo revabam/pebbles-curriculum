@@ -3,9 +3,9 @@ package com.revature.security;
 /**
  * Class has no implementations at the moment. 
  * 
- * @author Alex Moraga, Richard Iskra, Tosin Onilogbo
- *
+ * @author Tosin Onilogbo, Alex Moraga | Spark1806-USF-Java | Steven Kelsey
  */
+
 public class AuthorizationServer {
 
 }

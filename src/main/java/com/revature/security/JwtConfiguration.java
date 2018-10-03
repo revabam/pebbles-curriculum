@@ -6,9 +6,9 @@ import org.springframework.stereotype.Component;
 /**
  * This class is a Java Bean for JWTs configurations.
  * 
- * @author Alex Moraga, Richard Iskra, Tosin Onilogbo
- *
+ * @author Tosin Onilogbo, Alex Moraga | Spark1806-USF-Java | Steven Kelsey
  */
+
 @Component
 @ConfigurationProperties(prefix = "com.revature.security.jwt.aws")
 public class JwtConfiguration {

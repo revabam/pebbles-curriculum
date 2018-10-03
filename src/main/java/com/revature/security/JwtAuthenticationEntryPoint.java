@@ -12,8 +12,7 @@ import org.springframework.security.web.AuthenticationEntryPoint;
 /**
  * Class for setting the entry point for authentication
  * 
- * @author Alex Moraga, Richard Iskra, Tosin Onilogbo
- *
+ * @author Tosin Onilogbo, Alex Moraga | Spark1806-USF-Java | Steven Kelsey
  */
 
 public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {

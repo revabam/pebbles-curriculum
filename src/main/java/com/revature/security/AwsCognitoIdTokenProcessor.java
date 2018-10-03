@@ -22,8 +22,7 @@ import com.nimbusds.jwt.proc.ConfigurableJWTProcessor;
  * 
  * This class is also responsible to for denying requests that do not contain a token
  * 
- * @author Alex Moraga, Richard Iskra, Tosin Onilogbo
- *
+ * @author Tosin Onilogbo, Alex Moraga | Spark1806-USF-Java | Steven Kelsey
  */
 
 public class AwsCognitoIdTokenProcessor {

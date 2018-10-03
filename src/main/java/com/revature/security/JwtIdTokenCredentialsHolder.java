@@ -1,13 +1,12 @@
 package com.revature.security;
 
 /**
- * This class is a POJO (Plain Old Java Object) to allow a methods 
- * - to set an id Token 
- * - get an id Token
+ * This class is a POJO (Plain Old Java Object) to allow a methods - to set an
+ * id Token - get an id Token
  * 
- * @author Alex Moraga, Richard Iskra, Tosin Onilogbo
- *
+ * @author Tosin Onilogbo, Alex Moraga | Spark1806-USF-Java | Steven Kelsey
  */
+
 public class JwtIdTokenCredentialsHolder {
 
 	public String getIdToken() {

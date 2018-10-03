@@ -10,34 +10,34 @@ import com.nimbusds.jwt.JWTClaimsSet;
 /**
  * Class for JwtAuthentication
  * 
- * @author Alex Moraga, Richard Iskra, Tosin Onilogbo
- *
+ * @author Tosin Onilogbo, Alex Moraga | Spark1806-USF-Java | Steven Kelsey
  */
 
 public class JwtAuthentication extends AbstractAuthenticationToken {
 
-    private final Object principal;
-    private JWTClaimsSet jwtClaimsSet;
-    
+	private final Object principal;
+	private JWTClaimsSet jwtClaimsSet;
+
 //  Constructor for an object, claimsSet, and a collection storing Strings of granted authorities (from the interface)
-    public JwtAuthentication(Object principal, JWTClaimsSet jwtClaimsSet, Collection<? extends GrantedAuthority> authorities) {
-        super(authorities);
-        this.principal = principal;
-        this.jwtClaimsSet = jwtClaimsSet;
-        super.setAuthenticated(true);
-    }
+	public JwtAuthentication(Object principal, JWTClaimsSet jwtClaimsSet,
+			Collection<? extends GrantedAuthority> authorities) {
+		super(authorities);
+		this.principal = principal;
+		this.jwtClaimsSet = jwtClaimsSet;
+		super.setAuthenticated(true);
+	}
 
-    @Override
-    public Object getCredentials() {
-        return null;
-    }
+	@Override
+	public Object getCredentials() {
+		return null;
+	}
 
-    @Override
-    public Object getPrincipal() {
-        return principal;
-    }
+	@Override
+	public Object getPrincipal() {
+		return principal;
+	}
 
-    public JWTClaimsSet getJwtClaimsSet() {
-        return jwtClaimsSet;
-    }
+	public JWTClaimsSet getJwtClaimsSet() {
+		return jwtClaimsSet;
+	}
 }

@@ -7,8 +7,7 @@ import org.springframework.security.core.AuthenticationException;
 /**
  * Class for authentication using AuthenticationProvider for filter chaining
  * 
- * @author Alex Moraga, Richard Iskra, Tosin Onilogbo
- *
+ * @author Tosin Onilogbo, Alex Moraga | Spark1806-USF-Java | Steven Kelsey
  */
 
 public class JwtAuthenticationProvider implements AuthenticationProvider {

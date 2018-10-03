@@ -19,9 +19,9 @@ import org.springframework.web.filter.GenericFilterBean;
  * The purpose of this class is too distinguish non-authentic tokens from authentic tokens 
  * and take accorded action.
  * 
- * @author Tosin Onilogbo
- *
+ * @author Tosin Onilogbo, Alex Moraga | Spark1806-USF-Java | Steven Kelsey
  */
+
 public class AwsCognitoJwtAuthenticationFilter extends GenericFilterBean {
 
 //	Variable "logger" using the ".getLogger" method to return a named logger, without the application having to care about factories.

@@ -31,8 +31,7 @@ import com.nimbusds.jwt.proc.DefaultJWTProcessor;
  * token with an unexpected algorithm is received it'll be rejected in the
  * authenticationFilter class.
  * 
- * @author Tosin Onilogbo
- *
+  * @author Tosin Onilogbo, Alex Moraga | Spark1806-USF-Java | Steven Kelsey
  */
 
 @Configuration
@@ -92,7 +91,7 @@ public class JwtAutoConfiguration {
 		// determining if it's eligible for further processing
 		JWSKeySelector keySelector = new JWSVerificationKeySelector(expectedJWSAlg, keySource);
 
-//		Processing the selected key
+        //Processing the selected key
 		jwtProcessor.setJWSKeySelector(keySelector);
 		return jwtProcessor;
 	}
