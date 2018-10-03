@@ -42,10 +42,10 @@ public class Curriculum implements Serializable {
 	
 	@NotNull
 	@Column(name="creator_id")
-	private Integer creatorId;
+	private String creatorId;
 	
 	@Column(name="APPROVED_BY_ID")
-	private int approvedById;
+	private String approvedById;
 	
 	@Column(name="STATUS")
 	private int status;
@@ -65,7 +65,7 @@ public class Curriculum implements Serializable {
 		super();
 	}
 
-	public Curriculum(Integer id, String name, Integer version, Integer creatorId, int approvedById, int status,
+	public Curriculum(Integer id, String name, Integer version, String creatorId, String approvedById, int status,
 			Date dateCreated, Integer numberOfWeeks, Set<CurriculumWeek> curriculumWeek) {
 		super();
 		this.id = id;
@@ -103,19 +103,19 @@ public class Curriculum implements Serializable {
 		this.version = version;
 	}
 
-	public Integer getCreatorId() {
+	public String getCreatorId() {
 		return creatorId;
 	}
 
-	public void setCreatorId(Integer creatorId) {
+	public void setCreatorId(String creatorId) {
 		this.creatorId = creatorId;
 	}
 
-	public int getApprovedById() {
+	public String getApprovedById() {
 		return approvedById;
 	}
 
-	public void setApprovedById(int approvedById) {
+	public void setApprovedById(String approvedById) {
 		this.approvedById = approvedById;
 	}
 
