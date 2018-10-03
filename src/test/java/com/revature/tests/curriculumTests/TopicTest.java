@@ -29,22 +29,41 @@ public class TopicTest extends TestDriver{
 
 	static String url = "http://localhost:9996/topic";
 	
-@Test
-public void addTopic() {
-  Topic topic = new Topic(0, "Angular", null);
-  
-  int status = RestAssured.given().contentType("application/json").body(topic).post(url+"/topics/1/4").getStatusCode();
-  
-  assertEquals(201, status);
-}
+    @Test
+    public void findAllSubtopics() {
+    	
+        int status = RestAssured.given().contentType("application/json").get(url + "/topics").getStatusCode();
+        
+        assertEquals(200, status);
+    }
+	
 
-
-@Test
-public void findTopicById() {
-  int status = RestAssured.given().contentType("application/json").get(url+"/find/1").getStatusCode();
-  
-  assertEquals(200, status);
-}
+	@Test
+	public void addTopic() {
+	  Topic topic = new Topic(0, "Angular", null);
+	  
+	  int status = RestAssured.given().contentType("application/json").body(topic).post(url + "/topics/1/4").getStatusCode();
+	  
+	  assertEquals(201, status);
+	}
+	
+	
+	@Test
+	public void findTopicById() {
+		
+	  int status = RestAssured.given().contentType("application/json").get(url + "/find/1").getStatusCode();
+	  
+	  assertEquals(200, status);
+	}
+	
+	
+	@Test
+	public void deleteTopic() {
+		
+		int status = RestAssured.given().contentType("application/json").delete(url + "/1").getStatusCode();
+	
+		assertEquals(200, status);
+	}
 
 
 }

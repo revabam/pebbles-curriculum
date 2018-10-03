@@ -38,16 +38,19 @@ values(10, 'Node', 4);
 merge into SUBTOPIC_NAMES (subtopic_name_id, SUBTOPIC_NAME, TOPIC_ID)
 values(11, 'Express APIs', 4);
 
+
+
+
 merge into curriculum (id, name, version, creator_id, date_created, number_of_weeks, status, approved_by_id) values (1,'java',1, 1, '2018-09-27', 10, 1, 2);
 merge into curriculum (id, name, version, creator_id, date_created, number_of_weeks, status, approved_by_id) values (2,'java',2, 1, '2018-09-29', 10, 1, 2);
 
-merge into curriculum_week values (1, 1, 1);
-merge into curriculum_week values (2, 2, 1);
+merge into curriculum_week (curriculum_week_id, id, week_num) values (1, 1, 1);
+merge into curriculum_week (curriculum_week_id, id, week_num) values (2, 2, 1);
 
-merge into CURRICULUM_DAY values (1, 1, 1);
-merge into CURRICULUM_DAY values (2, 1, 2);
-merge into CURRICULUM_DAY values (3, 2, 1);
-merge into CURRICULUM_DAY values (4, 2, 2);
+merge into CURRICULUM_DAY (curriculum_day_id, curriculum_week_id, day_num) values (1, 1, 1);
+merge into CURRICULUM_DAY (curriculum_day_id, curriculum_week_id, day_num) values (2, 1, 2);
+merge into CURRICULUM_DAY (curriculum_day_id, curriculum_week_id, day_num) values (3, 2, 1);
+merge into CURRICULUM_DAY (curriculum_day_id, curriculum_week_id, day_num) values (4, 2, 2);
 
 
 
@@ -69,6 +72,7 @@ merge into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, subtopic_name_id)
 values(7, 4, 3);
 merge into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, subtopic_name_id)
 values(8, 4, 4);
+
 
 
 

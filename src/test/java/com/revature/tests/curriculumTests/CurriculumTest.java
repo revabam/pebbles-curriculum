@@ -34,8 +34,6 @@ public class CurriculumTest extends TestDriver {
     }
     
     
-    
-    
     @Test
     public void findCurriculumById() {
         int status = RestAssured.given().contentType("application/json").get(url+"/1").getStatusCode();
@@ -54,7 +52,8 @@ public class CurriculumTest extends TestDriver {
         assertEquals(201, status);
     }
 
-@Test
+    
+    @Test
     public void updateCurriculum() {
         Curriculum updatedCurr = new Curriculum(1, "Full-stack .Net", 2, 1, 1, 1, new Date(1534815476247L), 10, null);
 
