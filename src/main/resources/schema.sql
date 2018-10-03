@@ -6,7 +6,7 @@ START WITH 3;
 DROP SEQUENCE IF EXISTS curriculum_day_seq;
 CREATE SEQUENCE IF NOT EXISTS curriculum_day_seq
 INCREMENT BY 1
-START WITH 8;
+START WITH 31;
 
 DROP SEQUENCE IF EXISTS curriculum_week_seq;
 CREATE SEQUENCE IF NOT EXISTS curriculum_week_seq
@@ -39,7 +39,7 @@ PRIMARY KEY(subtopic_name_id));
 DROP TABLE IF EXISTS CURRICULUM CASCADE;
 CREATE TABLE IF NOT EXISTS CURRICULUM
 (ID INTEGER NOT NULL,
-name varchar(25),
+name varchar(50),
 version integer,
 creator_id varchar(400),
 date_created date,
@@ -65,7 +65,7 @@ PRIMARY KEY(CURRICULUM_DAY_ID));
 DROP SEQUENCE IF EXISTS day_subtopic_seq_name;
 CREATE SEQUENCE IF NOT EXISTS day_subtopic_seq_name
 INCREMENT BY 1
-START WITH 16;
+START WITH 70;
 
 DROP TABLE IF EXISTS day_subtopic CASCADE;
 CREATE TABLE IF NOT EXISTS day_subtopic
