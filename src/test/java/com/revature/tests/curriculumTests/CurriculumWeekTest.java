@@ -9,7 +9,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.revature.Application;
 import com.revature.models.CurriculumWeek;
 import com.revature.tests.TestDriver;
@@ -23,7 +22,6 @@ import io.restassured.RestAssured;
 public class CurriculumWeekTest extends TestDriver {
 	
 	static String url = "http://localhost:9996/curriculums/weeks";
-	
 	
 	@Test
 	public void findAllWeeks() {
@@ -41,7 +39,6 @@ public class CurriculumWeekTest extends TestDriver {
 		assertEquals(200, status);
 	}
 	
-	
 	@Ignore
 	@Test
 	public void findWeekByIdAndWeekNum() {
@@ -51,24 +48,22 @@ public class CurriculumWeekTest extends TestDriver {
 		assertEquals(1, CurriculumWeekId);
 	}
 	
-	
 	@Ignore
 	@Test
 	public void addWeek() {
 		
-		CurriculumWeek curriculumWeek = new CurriculumWeek(1, 1, null, null);
+		CurriculumWeek curriculumWeek = new CurriculumWeek(1, 1, 0, null);
 		
 		int status = RestAssured.given().contentType("application/json").body(curriculumWeek).post(url).getStatusCode();
 		
 		assertEquals(201, status);
 	}
 	
-
 	@Ignore
 	@Test
 	public void updateWeek() {
 		
-		CurriculumWeek testCurriculumWeek = new CurriculumWeek(1, 1, null, null);
+		CurriculumWeek testCurriculumWeek = new CurriculumWeek(1, 1, 0, null);
 		
 		CurriculumWeek curriculumWeek = RestAssured.given().contentType("application/json").body(testCurriculumWeek).put(url).as(CurriculumWeek.class);
 		
@@ -76,8 +71,7 @@ public class CurriculumWeekTest extends TestDriver {
 		assertEquals(testCurriculumWeek, curriculumWeek);
 	}
 	
-	
-	
+	@Ignore
 	@Test
 	public void deleteWeek() {
 		
@@ -85,10 +79,5 @@ public class CurriculumWeekTest extends TestDriver {
 		
 		assertEquals(200, status);
 	}
-	
-	
-	
-	
-	
 
 }

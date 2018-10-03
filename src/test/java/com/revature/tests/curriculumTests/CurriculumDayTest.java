@@ -21,7 +21,7 @@ import io.restassured.RestAssured;
 
 public class CurriculumDayTest extends TestDriver {
 	
-	static String url = "http://localhost:9996/curriculums/day";
+	static String url = "http://localhost:9996/curriculums/days";
 	
 	
 	@Test
@@ -32,7 +32,6 @@ public class CurriculumDayTest extends TestDriver {
         assertEquals(200, status);
     }
 	
-	
 	@Test
 	public void findByCurriculumDayId() {
 		
@@ -41,7 +40,6 @@ public class CurriculumDayTest extends TestDriver {
 		assertEquals(200, status);
 	}
 	
-	
 	@Test
 	public void findByCurriculumWeekIdAndDayNum() {
 		
@@ -49,7 +47,6 @@ public class CurriculumDayTest extends TestDriver {
 		
 		assertEquals(200, status);
 	}
-	
 	
 	@Ignore
 	@Test
@@ -62,7 +59,6 @@ public class CurriculumDayTest extends TestDriver {
 		assertEquals(201, status);
 	}
 	
-	
 	@Ignore
 	@Test
 	public void updateCurriculumDay() {
@@ -72,7 +68,6 @@ public class CurriculumDayTest extends TestDriver {
 	    
 	    assertEquals(testCurriculumDay, curriculumDay);
 	  }
-	
 	
 	@Ignore
 	@Test

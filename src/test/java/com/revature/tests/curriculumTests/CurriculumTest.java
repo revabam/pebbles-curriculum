@@ -2,11 +2,8 @@ package com.revature.tests.curriculumTests;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,8 +12,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.revature.Application;
 import com.revature.models.Curriculum;
-import com.revature.models.Subtopic;
-import com.revature.models.Topic;
 import com.revature.tests.TestDriver;
 
 import io.restassured.RestAssured;
@@ -33,15 +28,12 @@ public class CurriculumTest extends TestDriver {
         RestAssured.get(url).prettyPrint();
     }
     
-    
     @Test
     public void findCurriculumById() {
         int status = RestAssured.given().contentType("application/json").get(url+"/1").getStatusCode();
         
         assertEquals(200, status);
     }
-    
-
     
     @Test
     public void addCurriculum() {
@@ -51,7 +43,6 @@ public class CurriculumTest extends TestDriver {
         
         assertEquals(201, status);
     }
-
     
     @Test
     public void updateCurriculum() {
@@ -61,5 +52,5 @@ public class CurriculumTest extends TestDriver {
         
         assertEquals(200, status);
     }
-
+    
 }

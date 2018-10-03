@@ -2,11 +2,6 @@ package com.revature.tests.curriculumTests;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,8 +9,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.revature.Application;
-import com.revature.models.Curriculum;
-import com.revature.models.Subtopic;
 import com.revature.models.Topic;
 import com.revature.tests.TestDriver;
 
@@ -32,30 +25,27 @@ public class TopicTest extends TestDriver{
     @Test
     public void findAllSubtopics() {
     	
-        int status = RestAssured.given().contentType("application/json").get(url + "/topics").getStatusCode();
+        int status = RestAssured.given().contentType("application/json").get(url).getStatusCode();
         
         assertEquals(200, status);
     }
-	
 
 	@Test
 	public void addTopic() {
 	  Topic topic = new Topic(0, "Angular", null);
 	  
-	  int status = RestAssured.given().contentType("application/json").body(topic).post(url + "/topics/1/4").getStatusCode();
+	  int status = RestAssured.given().contentType("application/json").body(topic).post(url).getStatusCode();
 	  
 	  assertEquals(201, status);
 	}
 	
-	
 	@Test
 	public void findTopicById() {
 		
-	  int status = RestAssured.given().contentType("application/json").get(url + "/find/1").getStatusCode();
+	  int status = RestAssured.given().contentType("application/json").get(url + "/1").getStatusCode();
 	  
 	  assertEquals(200, status);
 	}
-	
 	
 	@Test
 	public void deleteTopic() {
@@ -64,7 +54,6 @@ public class TopicTest extends TestDriver{
 	
 		assertEquals(200, status);
 	}
-
 
 }
 
