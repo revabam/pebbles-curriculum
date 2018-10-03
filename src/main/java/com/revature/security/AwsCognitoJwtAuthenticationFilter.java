@@ -45,12 +45,12 @@ public class AwsCognitoJwtAuthenticationFilter extends GenericFilterBean {
             authentication = awsCognitoIdTokenProcessor.getAuthentication((HttpServletRequest)request);
 
 //          if the authentication != null, then set the authentication to change 
-//          the currently authentiated prinicple or removes authentication information.
+//          the currently authenticated prinicple or removes authentication information.
             if (authentication!=null) {
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }
             
-//          If not, then throw a Servlet Exception called Access Denied.
+//          If not, it will throw a message w/"Access Denied".
             else if(authentication==null) {
             	 throw new ServletException("Access Denied");
             	 
@@ -64,19 +64,8 @@ public class AwsCognitoJwtAuthenticationFilter extends GenericFilterBean {
             SecurityContextHolder.clearContext();
         }
         
-//      Setting httpServletResponse with the response for the HTTP request.
-        HttpServletResponse httpServletResponse = (HttpServletResponse) response;
-        
-//      Print out the HTTP status code
-        System.out.println(httpServletResponse.getStatus());
-        
-//      Setting the Response status code to ___.
-        httpServletResponse.setStatus(401);
-        
-//      Print out the HTTP status code
-        System.out.println(httpServletResponse.getStatus());
         
 //      Calling the doFilter method from the filter chain class
-        filterChain.doFilter(request,httpServletResponse);
+        filterChain.doFilter(request,response);
     }
 }
