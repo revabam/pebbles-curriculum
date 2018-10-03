@@ -23,9 +23,10 @@ public class SubTopicService {
 	
 	/**
 	 * Creates a day new subtopic and saves it to the database.
+	 * 
 	 * @param DaySubTopic
 	 * @return saved DaySubTopic
-	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
 	 */
 	public DaySubTopic addDaySubtopic(DaySubTopic newSubtopic) {
 		return subRepo.save(newSubtopic);
@@ -33,9 +34,10 @@ public class SubTopicService {
 	
 	/**
 	 * Updates a subtopic that exists in the database.
+	 * 
 	 * @param DaySubTopic
 	 * @return null or saved DaySubTopic
-	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
 	 */
 	public DaySubTopic updateSubtopic(DaySubTopic updatedSubtopic) {
 		DaySubTopic subtopic = subRepo.findOne(updatedSubtopic.getId());
@@ -48,8 +50,9 @@ public class SubTopicService {
 	
 	/**
 	 * Gets all of the day subtopics within the database.
+	 * 
 	 * @return Set<DaySubTopic>
-	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
 	 */
 	public Set<DaySubTopic> getAllDaySubtopics() {
 		return subRepo.findAll();
@@ -59,7 +62,7 @@ public class SubTopicService {
 	 * Deletes a day subtopic.
 	 * 
 	 * @param int id
-	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
 	 */
 	public void deleteSubtopic(int id) {
 		subRepo.delete(id);
@@ -69,7 +72,7 @@ public class SubTopicService {
 	 * Deletes a subtopic.
 	 * 
 	 * @param int id
-	 * @author Chris Holmes | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @author Chris Holmes | Spark1806-USF-Java | Steven Kelsey
 	 */
 	public void delete(int id) {
 		subtopicNamesRepo.delete(id);
@@ -77,8 +80,9 @@ public class SubTopicService {
 	
 	/**
 	 * Gets all of the subtopics within the database.
+	 * 
 	 * @return List<SubtopicNames>
-	 * @author Rhys Yamasaki | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 */
 	public List<SubtopicNames> getAllSubtopics() {
 		return subtopicNamesRepo.findAll();
@@ -86,8 +90,9 @@ public class SubTopicService {
 	
 	/**
 	 * Gets a subtopic by id within the database.
+	 * 
 	 * @return SubtopicNames
-	 * @author Rhys Yamasaki | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 */
 	public SubtopicNames getBySubtopicId(int id) {
 		return subtopicNamesRepo.findOne(id);
@@ -95,9 +100,10 @@ public class SubTopicService {
 	
 	/**
 	 * Creates a new subtopic and saves it to the database.
+	 * 
 	 * @param SubTopicNames
 	 * @return saved SubTopicName
-	 * @author Rhys Yamasaki | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 */
 	public SubtopicNames addSubtopic(SubtopicNames newSubtopic) {
 		return subtopicNamesRepo.save(newSubtopic);

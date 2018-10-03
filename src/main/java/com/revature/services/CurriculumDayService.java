@@ -16,8 +16,9 @@ public class CurriculumDayService {
 
 	/**
 	 * Gets a list of all curriculum day
-	 * @return a list of all CurriculumDay objects
-	 * @author Rhys Yamasaki | Spark-1806-Jun-2018-USF | Steven Kelsey
+	 * 
+	 * @return List<CurriculumDay>
+	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 */
 	public List<CurriculumDay> findAllCurriculumDay() {
 		return curriculumDayRepo.findAll();
@@ -25,9 +26,10 @@ public class CurriculumDayService {
 
 	/**
 	 * Gets a curriculum day by its id
+	 * 
 	 * @param id
-	 * @return a CurriculumDay object
-	 * @author Rhys Yamasaki | Spark-1806-Jun-2018-USF | Steven Kelsey
+	 * @return CurriculumDay 
+	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 */
 	public CurriculumDay findByCurriculumDayId(int id) {
 		return curriculumDayRepo.findOne(id);
@@ -35,10 +37,11 @@ public class CurriculumDayService {
 	
 	/**
 	 * Gets a list of CurriculumDay by curriculumWeekId and dayNum
+	 * 
 	 * @param id
 	 * @param dayNum
-	 * @return a list of CurriculumDay objects
-	 * @author Rhys Yamasaki | Spark-1806-Jun-2018-USF | Steven Kelsey
+	 * @return List<CurriculumDay>
+	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 */
 	public List<CurriculumDay> findByCurriculumWeekIdAndDayNum(int id, int dayNum) {
 		return curriculumDayRepo.findByWeekIdAndDayNum(id, dayNum);
@@ -46,28 +49,31 @@ public class CurriculumDayService {
 
 	/**
 	 * creates a CurriculumDay and persists it in the database
+	 * 
 	 * @param day
-	 * @return the curriculumDay object
-	 * @author Rhys Yamasaki | Spark-1806-Jun-2018-USF | Steven Kelsey
+	 * @return CurriculumDay
+	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 */
 	public CurriculumDay addDay(CurriculumDay day) {
 		return curriculumDayRepo.save(day);
 	}
 
 	/**
-	 * Updates a Curriculumday and persists it in the database
+	 * Updates a CurriculumDay and persists it in the database
+	 * 
 	 * @param day
-	 * @return the curriculumDay object
-	 * @author Rhys Yamasaki | Spark-1806-Jun-2018-USF | Steven Kelsey
+	 * @return CurriculumDay
+	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 */
 	public CurriculumDay updateDay(CurriculumDay day) {
 		return curriculumDayRepo.save(day);
 	}
 	
 	/**
-	 * Deletes a Curriculumday from the database based on id
+	 * Deletes a CurriculumDay from the database based on id
+	 * 
 	 * @param id
-	 * @author Rhys Yamasaki | Spark-1806-Jun-2018-USF | Steven Kelsey
+	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 */
 	public void delete(int id) {
 		curriculumDayRepo.delete(id);
