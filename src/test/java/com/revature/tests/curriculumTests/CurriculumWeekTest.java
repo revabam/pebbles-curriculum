@@ -15,7 +15,10 @@ import com.revature.tests.TestDriver;
 
 import io.restassured.RestAssured;
 
-
+/**
+ * Tests endpoints in the CurriculumWeekController
+ * @author Joshua Maciejewski | Spark-1806-Jun-2018-USF | Steven Kelsey
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes=TestDriver.class, properties="/pebbles-curriculum/src/test/resources/application.properties", webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @ContextConfiguration(classes=Application.class)
