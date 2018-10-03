@@ -27,12 +27,12 @@ PRIMARY KEY(id));
 DROP SEQUENCE IF EXISTS subtopic_seq_name;
 CREATE SEQUENCE IF NOT EXISTS subtopic_seq_name
 INCREMENT BY 1
-START WITH 12;
+START WITH 66;
 
 DROP TABLE IF EXISTS subtopic_names CASCADE;
 CREATE TABLE IF NOT EXISTS subtopic_names
 (subtopic_name_id INTEGER NOT NULL,
-subtopic_name VARCHAR(50),
+subtopic_name VARCHAR(200),
 TOPIC_ID INTEGER NOT NULL,
 PRIMARY KEY(subtopic_name_id));
 
