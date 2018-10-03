@@ -33,7 +33,7 @@ public class TopicService {
 	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
 	public Topic findTopic( int id) {
-		return topicRepo.findByTopicId(id);
+		return topicRepo.findOne(id);
 	}
 	/**
 	 * Finds all topics currently within the database.
@@ -49,7 +49,7 @@ public class TopicService {
 	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
 	public void deleteTopic(int id) {
-		topicRepo.deleteTopicByTopicId(id);
+		topicRepo.deleteTopicById(id);
 	}
 
 }

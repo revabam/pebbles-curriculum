@@ -13,13 +13,9 @@ import com.revature.models.Topic;
 @Repository
 public interface TopicRepository extends JpaRepository<Topic, Integer> {
 
-	Topic findByTopicId(int topicId);
-
-	List<Topic> findAllByTopicId(int topicId);
-
 	@Modifying
 	@Transactional
-	@Query(value="delete from Topic c where topicId = ?1")
-	void deleteTopicByTopicId(int id);
+	@Query(value="delete from Topic c where id = ?1")
+	void deleteTopicById(int id);
 
 }
