@@ -37,7 +37,7 @@ public class CurriculumController {
 	 * 
 	 * @return ResponseEntity<List<Curriculum>> A list of curriculums and an HTTP
 	 *         status code
-	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
+	 * @author Christian DeFaria | 1806-Jun18-USF-Java | Wezley Singleton
 	 */
 	@GetMapping
 	public ResponseEntity<List<Curriculum>> findAllCurriculums() {
@@ -53,7 +53,7 @@ public class CurriculumController {
 	 * @param id
 	 *            int
 	 * @return ResponseEntity<Curriculum> A curriculum object and a HTTP status code
-	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
+	 * @author Christian DeFaria| 1806-Jun18-USF-Java | Wezley Singleton
 	 */
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Curriculum> findCurriculumById(@PathVariable("id") int id) {
@@ -72,7 +72,7 @@ public class CurriculumController {
 	 * @param newCurr
 	 *            Curriculum
 	 * @return ResponseEntity<Curriculum> A curriculum object and a HTTP status code
-	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
+	 * @author Christian DeFaria | 1806-Jun18-USF-Java | Wezley Singleton
 	 */
 	@PostMapping
 	public ResponseEntity<Curriculum> addCurriculum(@RequestBody Curriculum newCurr) {
@@ -86,7 +86,7 @@ public class CurriculumController {
 	 * @param updatedCurr
 	 *            Curriculum
 	 * @return ResponseEntity<Curriculum> A curriculum object and a HTTP status code
-	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
+	 * @author Christian DeFaria | 1806-Jun18-USF-Java | Wezley Singleton
 	 */
 	@PutMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Curriculum> updateCurriculum(@Valid @RequestBody Curriculum updatedCurr) {
@@ -95,10 +95,12 @@ public class CurriculumController {
 	}
 	/**
 	 * Handles all exceptions thrown within the SubTopicController, then creates a error object. 
-	 * @param Exception
+	 * 
+	 * @param ex
 	 * @param request
-	 * @return ResponseEntity<ExceptionObject> A error object that contains details based off of the exception caught and a HttpStatus based off of the exception thrown. 
-	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @return ResponseEntity<ExceptionObject> An error object that contains details based off 
+	 * 			of the exception caught and a HttpStatus based off of the exception thrown. 
+	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
 	 */
 	@ExceptionHandler(Exception.class)
 	  public final ResponseEntity<ExceptionObject> handleUserNotFoundException(Exception ex, WebRequest request) {

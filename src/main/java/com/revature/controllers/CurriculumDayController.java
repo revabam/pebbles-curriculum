@@ -32,8 +32,9 @@ public class CurriculumDayController {
 	
 	/**
 	 * Gets a list all curriculum days
-	 * @return 
-	 * @author Rhys Yamasaki | Spark-1806-Jun-2018-USF | Steven Kelsey
+	 * 
+	 * @return ResponseEntity<List<CurriculumDay>> and an http status of ok
+	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 */
 	@GetMapping
 	public ResponseEntity<List<CurriculumDay>> findAllCurriculumDays() {
@@ -43,9 +44,10 @@ public class CurriculumDayController {
 	
 	/**
 	 * Gets a curriculumDay by its id
+	 * 
 	 * @param id
-	 * @return a curriculum day object
-	 * @author Rhys Yamasaki | Spark-1806-Jun-2018-USF | Steven Kelsey
+	 * @return ResponseEntity<CurriculumDay> and an http status of ok
+	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 */
 	@GetMapping("/{id}")
 	public ResponseEntity<CurriculumDay> findByCurriculumDayId(@PathVariable int id) {
@@ -55,10 +57,11 @@ public class CurriculumDayController {
 	
 	/**
 	 * Gets a curriculum day by passing in curriculumWeekId and dayNum
+	 * 
 	 * @param curriculumWeekId
 	 * @param dayNum
-	 * @return a list of curriculum days
-	 * @author Rhys Yamasaki | Spark-1806-Jun-2018-USF | Steven Kelsey
+	 * @return 
+	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 */
 	@GetMapping("/{curriculumWeekId}/{dayNum}")
 	public ResponseEntity<List<CurriculumDay>> findByCurriculumWeekIdAndDayNum(@PathVariable int curriculumWeekId, @PathVariable int dayNum) {
@@ -68,8 +71,10 @@ public class CurriculumDayController {
 	
 	/**
 	 * Creates a curriculum day by passing in a curriculum day object
+	 * 
 	 * @param day
-	 * @return the created 
+	 * @return ResponseEntity<CurriculumDay> and 
+	 * 			an http status of created
 	 * @author Rhys Yamasaki | Spark-1806-Jun-2018-USF | Steven Kelsey
 	 */
 	@PostMapping
@@ -80,9 +85,11 @@ public class CurriculumDayController {
 	
 	/**
 	 * Updates a curriculum day by passing a curriculum day object
+	 * 
 	 * @param day
-	 * @return the updated object
-	 * @author Rhys Yamasaki | Spark-1806-Jun-2018-USF | Steven Kelsey
+	 * @return ResponseEntity<CurriculumDay> and
+	 * 			an http status of ok
+	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 */
 	@PutMapping
 	public ResponseEntity<CurriculumDay> updateCurriculumDay(@RequestBody CurriculumDay day) {
@@ -91,9 +98,10 @@ public class CurriculumDayController {
 	}
 	
 	/**
-	 * Deletes a Curriculumday from the database based on id
+	 * Deletes a CurriculumDay from the database based on id
+	 * 
 	 * @param id
-	 * @author Rhys Yamasaki | Spark-1806-Jun-2018-USF | Steven Kelsey
+	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 */
 	@DeleteMapping("{id}")
 	public void deleteCurriculumDay(@PathVariable int id) {
@@ -102,10 +110,12 @@ public class CurriculumDayController {
 	
 	/**
 	 * Handles all exceptions thrown within the CurriculumDayController, then creates a error object. 
-	 * @param Exception
+	 * 
+	 * @param ex
 	 * @param request
-	 * @return ResponseEntity<ExceptionObject> A error object that contains details based off of the exception caught and a HttpStatus based off of the exception thrown. 
-	 * @author Rhys Yamasaki | Spark-1806-Jun-USF | Steven Kelsey
+	 * @return ResponseEntity<ExceptionObject> An error object that contains details based off 
+	 * 			of the exception caught and a HttpStatus based off of the exception thrown. 
+	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 */
 	@ExceptionHandler(Exception.class)
 	  public final ResponseEntity<ExceptionObject> curriculumDayException(Exception ex, WebRequest request) {

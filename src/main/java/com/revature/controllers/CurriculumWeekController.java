@@ -35,7 +35,7 @@ public class CurriculumWeekController {
 	 * Finds all weeks within the database.
 	 * 
 	 * @return ResponseEntity<List<CurriculumWeek>>
-	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
 	 */
 	@GetMapping
 	public ResponseEntity<List<CurriculumWeek>> findAllWeeks() {
@@ -47,7 +47,7 @@ public class CurriculumWeekController {
 	 * Finds a curriculum week by its ID from the database.
 	 * 
 	 * @return ResponseEntity<CurriculumWeek>
-	 * @author Beck Larson
+	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
 	 */
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<CurriculumWeek> findWeek(@PathVariable int id) {
@@ -59,7 +59,7 @@ public class CurriculumWeekController {
 	 * Finds a curriculum week by its ID and week num from the database.
 	 * 
 	 * @return ResponseEntity<CurriculumWeek>
-	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
 	 */
 	@GetMapping(value = "/{id}/{week}")
 	public ResponseEntity<CurriculumWeek> findWeek(@PathVariable int id, int week) {
@@ -72,7 +72,7 @@ public class CurriculumWeekController {
 	 * 
 	 * @param CurriculumWeek
 	 * @return ResponseEntity<CurriculumWeek>
-	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
 	 */
 	@PostMapping
 	public ResponseEntity<CurriculumWeek> addWeek(@RequestBody CurriculumWeek week) {
@@ -85,7 +85,7 @@ public class CurriculumWeekController {
 	 * 
 	 * @param CurriculumWeek
 	 * @return ResponseEntity<CurriculumWeek>
-	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
 	 */
 	@PutMapping
 	public ResponseEntity<CurriculumWeek> updateWeek(@RequestBody CurriculumWeek week) {
@@ -96,7 +96,7 @@ public class CurriculumWeekController {
 	 * Deletes a week with the id requested.
 	 * @param int id
 	 * @return HttpStatus
-	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
 	 */
 	@DeleteMapping("{id}")
 	public ResponseEntity<HttpStatus> deleteWeek(@PathVariable int id){
@@ -113,7 +113,7 @@ public class CurriculumWeekController {
 	 * @return ResponseEntity<ExceptionObject> A error object that contains details
 	 *         based off of the exception caught and a HttpStatus based off of the
 	 *         exception thrown.
-	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
 	 */
 	@ExceptionHandler(Exception.class)
 	public final ResponseEntity<ExceptionObject> curriculumWeekException(Exception ex, WebRequest request) {

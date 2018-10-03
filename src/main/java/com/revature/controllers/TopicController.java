@@ -35,10 +35,9 @@ public class TopicController {
 	 *
 	 * @param newTopic
 	 *            Topic
-	 * @return ResponseEntity<Topic> A newly created topic object and a HTTP status
-	 *         code
-	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
-	 * 		   Rhys Yamasaki | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @return ResponseEntity<Topic> and an HttpStatus.ok
+	 * @author Christian DeFaria | 1806-Jun18-USF-Java | Wezley Singleton
+	 * 		   Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 */
 	@PostMapping
 	public ResponseEntity<Topic> addTopic(@RequestBody Topic newTopic) {
@@ -47,9 +46,10 @@ public class TopicController {
 	}
 	/**
 	 * Finds topic by its ID.
+	 * 
 	 * @param Int id
 	 * @return ResponseEntity<Topic>
-	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
 	 */
 	@GetMapping("/{id}")
 	public ResponseEntity<Topic> findByTopicId(@PathVariable int id){
@@ -60,8 +60,9 @@ public class TopicController {
 	}
 	/**
 	 * Find all topics within the database.
+	 * 
 	 * @return
-	 * @author Beck Larson, Joey Shannon | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @author Beck Larson | Joey Shannon | Spark1806-USF-Java | Steven Kelsey
 	 */
 	@GetMapping
 	public ResponseEntity<List<Topic>> findAllTopics(){
@@ -75,10 +76,13 @@ public class TopicController {
 	}
 	/**
 	 * Handles all exceptions thrown within the SubTopicController, then creates a error object. 
-	 * @param Exception
+	 * @param ex
 	 * @param request
-	 * @return ResponseEntity<ExceptionObject> A error object that contains details based off of the exception caught and a HttpStatus based off of the exception thrown. 
-	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @return ResponseEntity<ExceptionObject> A error object that contains details based off 
+	 * 			of the exception caught and a HttpStatus based off of the exception thrown. 
+	 * 
+	 * @author Beck Larson | Spark1806-USF-Java | USF | Steven Kelsey
+	 * 
 	 */
 	@ExceptionHandler(Exception.class)
 	  public final ResponseEntity<ExceptionObject> topicException(Exception ex, WebRequest request) {

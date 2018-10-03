@@ -40,7 +40,7 @@ public class SubTopicController {
 	 * @param newSubtopic Subtopic
 	 * @return ResponseEntity<Subtopic> A newly created subtopic object and a HTTP
 	 *         status code
-	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
+	 * @author Christian DeFaria | 1806-Jun18-USF-Java | Wezley Singleton
 	 */
 	@PostMapping("/day")
 	public ResponseEntity<DaySubTopic> addDaySubtopic(@RequestBody DaySubTopic newSubtopic) {
@@ -54,7 +54,7 @@ public class SubTopicController {
 	 *
 	 * @param updatedSubtopic Subtopic
 	 * @return ResponseEntity<Subtopic> A subtopic object and a HTTP status code
-	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
+	 * @author Christian DeFaria | 1806-Jun18-USF-Java | Wezley Singleton
 	 */
 	@PutMapping("/day")
 	public ResponseEntity<DaySubTopic> updateDaySubtopic(@Valid @RequestBody DaySubTopic updatedSubtopic) {
@@ -67,7 +67,7 @@ public class SubTopicController {
 	 * 
 	 * @return ResponseEntity<Set<DaySubTopic>> A set of day subtopics and an
 	 *         HttpStatus.OK
-	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
 	 * 
 	 */
 	@GetMapping("/day")
@@ -79,7 +79,7 @@ public class SubTopicController {
 	 * Deletes a day subtopic with the specified id from the database.
 	 * @param int id
 	 * @return HttpStatus
-	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
 	 */
 	@DeleteMapping("/day/{id}")
 	public ResponseEntity<HttpStatus> deleteDaySubTopic(@PathVariable int id){
@@ -91,7 +91,7 @@ public class SubTopicController {
 	 * Deletes a subtopic with the specified id from the database.
 	 * @param int id
 	 * @return HttpStatus
-	 * @author Chris Holmes | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @author Chris Holmes | Spark1806-USF-Java | Steven Kelsey
 	 */
 	@DeleteMapping("/{id}")
 	public ResponseEntity<HttpStatus> deleteSubTopic(@PathVariable int id){
@@ -104,7 +104,7 @@ public class SubTopicController {
 	 * 
 	 * @return ResponseEntity<List<SubtopicNames>> A list of subtopics and an
 	 *         HttpStatus.OK
-	 * @author Rhys Yamasaki | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 * 
 	 */
 	@GetMapping
@@ -118,7 +118,7 @@ public class SubTopicController {
 	 * 
 	 * @return ResponseEntity<SubtopicNames> and an
 	 *         HttpStatus.OK
-	 * @author Rhys Yamasaki | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 * 
 	 */
 	@GetMapping("/{id}")
@@ -132,7 +132,7 @@ public class SubTopicController {
 	 * @param newSubtopic
 	 * @return ResponseEntity<SubtopicNames> and
 	 * 			an HttpStatus of ok
-	 * @author Rhys Yamasaki | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 */
 	
 	@PostMapping
@@ -146,12 +146,12 @@ public class SubTopicController {
 	 * Handles all exceptions thrown within the SubTopicController, then creates a
 	 * error object.
 	 * 
-	 * @param Exception
+	 * @param ex
 	 * @param request
 	 * @return ResponseEntity<ExceptionObject> A error object that contains details
 	 *         based off of the exception caught and a HttpStatus based off of the
 	 *         exception thrown.
-	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
 	 */
 	@ExceptionHandler(Exception.class)
 	public final ResponseEntity<ExceptionObject> subtopicException(Exception ex, WebRequest request) {
