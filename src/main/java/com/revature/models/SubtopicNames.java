@@ -32,15 +32,14 @@ public class SubtopicNames implements Serializable {
 	@SequenceGenerator(name = "subtopic_seq_name", sequenceName = "subtopic_seq_name", initialValue = 12, allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "subtopic_seq_name")
 	@Column(name = "SUBTOPIC_NAME_ID")
-	private int nameId;
-	
+	private int id;
 
 	@Column(name = "SUBTOPIC_NAME")
 	@NotNull
-	private String topicName;
+	private String name;
 
 	@Column(name="TOPIC_ID")
-	private int topicId;
+	private int parentTopicId;
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "TOPIC_ID", insertable= false, updatable=false)
@@ -50,42 +49,40 @@ public class SubtopicNames implements Serializable {
 		super();
 	}
 
-	public SubtopicNames(int nameId, String topicName, int topicId) {
+	public SubtopicNames(int id, String name, int parentTopicId) {
 		super();
-		this.nameId = nameId;
-		this.topicName = topicName;
-		this.topicId = topicId;
+		this.id = id;
+		this.name = name;
+		this.parentTopicId = parentTopicId;
 	}
 
-	public int getNameId() {
-		return nameId;
+	public int getId() {
+		return id;
 	}
 
-	public void setNameId(int nameId) {
-		this.nameId = nameId;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public String getTopicName() {
-		return topicName;
+	public String getName() {
+		return name;
 	}
 
-	public void setTopicName(String topicName) {
-		this.topicName = topicName;	
-	}
-	
-	public int getTopicId() {
-		return topicId;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public void setTopicId(int topicId) {
-		this.topicId = topicId;
+	public int getParentTopicId() {
+		return parentTopicId;
+	}
+
+	public void setParentTopicId(int parentTopicId) {
+		this.parentTopicId = parentTopicId;
 	}
 
 	@Override
 	public String toString() {
-		return "SubtopicNames [nameId=" + nameId + ", topicName=" + topicName + ", topicId=" + topicId + ", topic="
-				+ topic + "]";
+		return "SubtopicNames [id=" + id + ", name=" + name + ", parentTopicId=" + parentTopicId + "]";
 	}
-
 
 }

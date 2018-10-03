@@ -41,7 +41,7 @@ public class CurriculumDayService {
 	 * @author Rhys Yamasaki | Spark-1806-Jun-2018-USF | Steven Kelsey
 	 */
 	public List<CurriculumDay> findByCurriculumWeekIdAndDayNum(int id, int dayNum) {
-		return curriculumDayRepo.findByCurriculumWeekIdAndDayNum(id, dayNum);
+		return curriculumDayRepo.findByWeekIdAndDayNum(id, dayNum);
 	}
 
 	/**

@@ -43,12 +43,12 @@ public class SubTopicController {
 	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
 	 */
 	@PostMapping("/day")
-	public ResponseEntity<DaySubTopic> addSubtopic(@RequestBody DaySubTopic newSubtopic) {
+	public ResponseEntity<DaySubTopic> addDaySubtopic(@RequestBody DaySubTopic newSubtopic) {
 		System.out.println("CREATING SUBTOPIC " + newSubtopic);
-		DaySubTopic subtopic = service.addSubtopic(newSubtopic);
+		DaySubTopic subtopic = service.addDaySubtopic(newSubtopic);
 		return new ResponseEntity<>(subtopic, HttpStatus.CREATED);
 	}
-
+	
 	/**
 	 * Updates a subtopic in the database
 	 *
@@ -57,7 +57,7 @@ public class SubTopicController {
 	 * @author Christian DeFaria 1806-Jun18-USF-Java Wezley Singleton
 	 */
 	@PutMapping("/day")
-	public ResponseEntity<DaySubTopic> updateSubtopic(@Valid @RequestBody DaySubTopic updatedSubtopic) {
+	public ResponseEntity<DaySubTopic> updateDaySubtopic(@Valid @RequestBody DaySubTopic updatedSubtopic) {
 		DaySubTopic subtopic = service.updateSubtopic(updatedSubtopic);
 		return new ResponseEntity<>(subtopic, HttpStatus.OK);
 	}
@@ -82,7 +82,7 @@ public class SubTopicController {
 	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
 	@DeleteMapping("/day/{id}")
-	public ResponseEntity<HttpStatus> deleteSubTopic(@PathVariable int id){
+	public ResponseEntity<HttpStatus> deleteDaySubTopic(@PathVariable int id){
 		service.deleteSubtopic(id);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
@@ -94,7 +94,7 @@ public class SubTopicController {
 	 * @author Chris Holmes | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
 	@DeleteMapping("/{id}")
-	public ResponseEntity<HttpStatus> deleteDaySubTopic(@PathVariable int id){
+	public ResponseEntity<HttpStatus> deleteSubTopic(@PathVariable int id){
 		service.delete(id);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
@@ -126,6 +126,21 @@ public class SubTopicController {
 		SubtopicNames value = service.getBySubtopicId(id);
 		return new ResponseEntity<>(value, HttpStatus.OK);
 	}
+	
+	/**
+	 * Adds a new subtopic to subtopic names table
+	 * @param newSubtopic
+	 * @return ResponseEntity<SubtopicNames> and
+	 * 			an HttpStatus of ok
+	 * @author Rhys Yamasaki | Spark 1806 June25 2018 | USF | Steven Kelsey
+	 */
+	
+	@PostMapping
+	public ResponseEntity<SubtopicNames> addSubtopic(@RequestBody SubtopicNames newSubtopic) {
+		System.out.println("CREATING SUBTOPIC " + newSubtopic);
+		SubtopicNames subtopic = service.addSubtopic(newSubtopic);
+		return new ResponseEntity<>(subtopic, HttpStatus.CREATED);
+	}
 
 	/**
 	 * Handles all exceptions thrown within the SubTopicController, then creates a
@@ -139,7 +154,7 @@ public class SubTopicController {
 	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
 	@ExceptionHandler(Exception.class)
-	public final ResponseEntity<ExceptionObject> handleUserNotFoundException(Exception ex, WebRequest request) {
+	public final ResponseEntity<ExceptionObject> subtopicException(Exception ex, WebRequest request) {
 		ExceptionObject errorDetails = new ExceptionObject(ex.getMessage(), ex.toString(), "" + this.getClass());
 		if (ex instanceof HttpMessageNotReadableException) {
 			return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);

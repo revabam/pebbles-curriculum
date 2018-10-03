@@ -58,7 +58,7 @@ public class WeekService {
 	 * @author Beck Larson | Spark 1806 June25 2018 | USF | Steven Kelsey
 	 */
 	public CurriculumWeek findByIdAndWeekNum(int id, int week) {
-		return weekRepo.findByCurriculumWeekIdAndWeekNum(id, week);
+		return weekRepo.findByIdAndWeekNum(id, week);
 	}
 	/**
 	 * Deletes a week if it has no children.
