@@ -1191,13 +1191,13 @@ values(233, 100, 1, 47);
 insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
 values(234, 100, 2, 48);
 
-/* Day subtopics for .NET Curriculum 2 Week 1 Day 1 */
+/* Day subtopics for .NET Curriculum 1 Week 1 Day 1 */
 insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
 values(235, 101, 1, 66);
 insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
 values(236, 101, 2, 68);
 
-/* Day subtopics for Java Curriculum 2 Week 1 Day 2 */
+/* Day subtopics for .NET Curriculum 1 Week 1 Day 2 */
 insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
 values(237, 102, 1, 3);
 insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
@@ -1205,11 +1205,11 @@ values(238, 102, 2, 4);
 insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
 values(239, 102, 3, 5);
 
-/* Day subtopics for Java Curriculum 2 Week 1 Day 3 */
+/* Day subtopics for .NET Curriculum 1 Week 1 Day 3 */
 insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
 values(240, 103, 2, 6);
 
-/* Day subtopics for Java Curriculum 2 Week 1 Day 4 */
+/* Day subtopics for .NET Curriculum 1 Week 1 Day 4 */
 insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
 values(241, 104, 1, 7);
 insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
@@ -1217,305 +1217,305 @@ values(242, 104, 2, 8);
 insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
 values(243, 104, 3, 9);
 
-/* Day subtopics for Java Curriculum 2 Week 1 Day 5 */
+/* Day subtopics for .NET Curriculum 1 Week 1 Day 5 */
 insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
 values(244, 105, 1, 10);
 
--- /* Day subtopics for Java Curriculum 2 Week 2 Day 1 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(245, 106, 1, 11);
+/* Day subtopics for .NET Curriculum 1 Week 2 Day 1 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(246, 106, 1, 11);
 
--- /* Day subtopics for Java Curriculum 2 Week 2 Day 2 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(246, 57, 1, 12);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(247, 57, 2, 13);
+/* Day subtopics for .NET Curriculum 1 Week 2 Day 2 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(247, 107, 1, 12);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(248, 107, 2, 13);
 
--- /* Day subtopics for Java Curriculum 2 Week 2 Day 3 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(135, 58, 1, 14);
+/* Day subtopics for .NET Curriculum 1 Week 2 Day 3 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(249, 108, 1, 14);
 
--- /* Day subtopics for Java Curriculum 2 Week 2 Day 4 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(136, 59, 1, 15);
+/* Day subtopics for .NET Curriculum 1 Week 2 Day 4 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(250, 109, 1, 15);
 
--- /* Day subtopics for Java Curriculum 2 Week 2 Day 5 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(137, 60, 1, 16);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(138, 60, 2, 17);
+/* Day subtopics for .NET Curriculum 1 Week 2 Day 5 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(251, 110, 1, 16);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(252, 110, 2, 17);
 
--- /* Day subtopics for Java Curriculum 2 Week 3 Day 1 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(139, 61, 1, 21);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(140, 61, 2, 22);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(141, 61, 3, 23);
+/* Day subtopics for Java Curriculum 2 Week 3 Day 1 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(253, 111, 1, 21);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(254, 111, 2, 22);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(255, 111, 3, 23);
 
--- /* Day subtopics for Java Curriculum 2 Week 3 Day 2 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(142, 62, 1, 24);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(143, 62, 2, 25);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(144, 62, 3, 26);
+/* Day subtopics for Java Curriculum 2 Week 3 Day 2 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(256, 112, 1, 24);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(257, 112, 2, 25);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(258, 112, 3, 26);
 
--- /* Day subtopics for Java Curriculum 2 Week 3 Day 3 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(145, 63, 1, 27);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(146, 63, 2, 28);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(147, 63, 3, 29);
+/* Day subtopics for Java Curriculum 2 Week 3 Day 3 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(259, 113, 1, 27);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(260, 113, 2, 28);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(261, 113, 3, 29);
 
--- /* Day subtopics for Java Curriculum 2 Week 3 Day 4 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(148, 64, 1, 30);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(149, 64, 2, 31);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(150, 64, 3, 32);
+/* Day subtopics for Java Curriculum 2 Week 3 Day 4 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(262, 114, 1, 30);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(263, 114, 2, 31);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(264, 114, 3, 32);
 
--- /* Day subtopics for Java Curriculum 2 Week 3 Day 5 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(151, 65, 1, 33);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(152, 65, 2, 34);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(153, 65, 3, 35);
+/* Day subtopics for Java Curriculum 2 Week 3 Day 5 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(265, 115, 1, 33);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(266, 115, 2, 34);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(267, 115, 3, 35);
 
--- /* Day subtopics for Java Curriculum 2 Week 4 Day 1 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(154, 66, 1, 36);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(155, 66, 2, 37);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(156, 66, 3, 38);
+/* Day subtopics for Java Curriculum 2 Week 4 Day 1 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(268, 116, 1, 36);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(269, 116, 2, 37);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(270, 116, 3, 38);
 
--- /* Day subtopics for Java Curriculum 2 Week 4 Day 2 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(157, 67, 1, 39);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(158, 67, 2, 40);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(159, 67, 3, 41);
+/* Day subtopics for Java Curriculum 2 Week 4 Day 2 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(271, 117, 1, 39);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(272, 117, 2, 40);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(273, 117, 3, 41);
 
--- /* Day subtopics for Java Curriculum 2 Week 4 Day 3 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(160, 68, 1, 42);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(161, 68, 2, 43);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(162, 68, 3, 44);
+/* Day subtopics for Java Curriculum 2 Week 4 Day 3 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(274, 118, 1, 42);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(275, 118, 2, 43);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(276, 118, 3, 44);
 
--- /* Day subtopics for Java Curriculum 2 Week 4 Day 4 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(163, 69, 1, 45);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(164, 69, 2, 46);
+/* Day subtopics for Java Curriculum 2 Week 4 Day 4 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(277, 119, 1, 45);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(278, 119, 2, 46);
 
--- /* Day subtopics for Java Curriculum 2 Week 4 Day 5 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(165, 70, 1, 47);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(166, 70, 2, 48);
+/* Day subtopics for Java Curriculum 2 Week 4 Day 5 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(279, 120, 1, 47);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(280, 120, 2, 48);
 
--- /* Day subtopics for Java Curriculum 2 Week 5 Day 1 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(167, 71, 1, 49);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(168, 71, 2, 50);
+/* Day subtopics for Java Curriculum 2 Week 5 Day 1 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(281, 121, 1, 49);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(282, 121, 2, 50);
 
--- /* Day subtopics for Java Curriculum 2 Week 5 Day 2 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(169, 72, 1, 51);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(170, 72, 2, 52);
+/* Day subtopics for Java Curriculum 2 Week 5 Day 2 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(283, 122, 1, 51);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(284, 122, 2, 52);
 
--- /* Day subtopics for Java Curriculum 2 Week 5 Day 3 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(171, 73, 1, 53);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(172, 73, 2, 54);
+/* Day subtopics for Java Curriculum 2 Week 5 Day 3 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(285, 123, 1, 53);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(286, 123, 2, 54);
 
--- /* Day subtopics for Java Curriculum 2 Week 5 Day 4 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(173, 74, 1, 55);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(174, 74, 2, 56);
+/* Day subtopics for Java Curriculum 2 Week 5 Day 4 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(287, 124, 1, 55);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(288, 124, 2, 56);
 
--- /* Day subtopics for Java Curriculum 2 Week 5 Day 5 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(175, 75, 1, 57);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(176, 75, 2, 58);
+/* Day subtopics for Java Curriculum 2 Week 5 Day 5 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(289, 125, 1, 57);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(290, 125, 2, 58);
 
--- /* Day subtopics for Java Curriculum 2 Week 6 Day 1 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(177, 76, 1, 59);
+/* Day subtopics for Java Curriculum 2 Week 6 Day 1 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(291, 126, 1, 59);
 
--- /* Day subtopics for Java Curriculum 2 Week 6 Day 2 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(178, 77, 1, 60);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(179, 77, 2, 61);
+/* Day subtopics for Java Curriculum 2 Week 6 Day 2 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(292, 127, 1, 60);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(293, 127, 2, 61);
 
--- /* Day subtopics for Java Curriculum 2 Week 6 Day 3 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(180, 78, 1, 62);
+/* Day subtopics for Java Curriculum 2 Week 6 Day 3 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(294, 128, 1, 62);
 
--- /* Day subtopics for Java Curriculum 2 Week 6 Day 4 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(181, 79, 1, 63);
+/* Day subtopics for Java Curriculum 2 Week 6 Day 4 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(295, 129, 1, 63);
 
--- /* Day subtopics for Java Curriculum 2 Week 6 Day 5 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(182, 80, 1, 64);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(183, 80, 2, 65);
+/* Day subtopics for Java Curriculum 2 Week 6 Day 5 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(296, 130, 1, 64);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(297, 130, 2, 65);
 
--- /* Day subtopics for Java Curriculum 2 Week 7 Day 1 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(184, 81, 1, 1);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID,INDEX, subtopic_name_id)
--- values(185, 81, 2, 2);
+/* Day subtopics for Java Curriculum 2 Week 7 Day 1 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(298, 131, 1, 1);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID,INDEX, subtopic_name_id)
+values(299, 131, 2, 2);
 
--- /* Day subtopics for Java Curriculum 2 Week 7 Day 2 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(186, 82, 1, 3);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(187, 82, 2, 4);
+/* Day subtopics for Java Curriculum 2 Week 7 Day 2 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(300, 132, 1, 3);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(301, 132, 2, 4);
 
--- /* Day subtopics for Java Curriculum 2 Week 7 Day 3 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(188, 83, 1, 1);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(189, 83, 2, 2);
+/* Day subtopics for Java Curriculum 2 Week 7 Day 3 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(302, 133, 1, 1);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(303, 133, 2, 2);
 
--- /* Day subtopics for Java Curriculum 2 Week 7 Day 4 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(190, 84, 1, 3);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(190, 84, 2, 4);
+/* Day subtopics for Java Curriculum 2 Week 7 Day 4 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(304, 134, 1, 3);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(305, 134, 2, 4);
 
--- /* Day subtopics for Java Curriculum 2 Week 7 Day 5 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(191, 85, 1, 5);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(192, 85, 2, 6);
+/* Day subtopics for Java Curriculum 2 Week 7 Day 5 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(306, 135, 1, 5);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(307, 135, 2, 6);
 
--- /* Day subtopics for Java Curriculum 2 Week 8 Day 1 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(193, 86, 1, 7);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(194, 86, 2, 8);
+/* Day subtopics for Java Curriculum 2 Week 8 Day 1 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(308, 136, 1, 7);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(309, 136, 2, 8);
 
--- /* Day subtopics for Java Curriculum 2 Week 8 Day 2 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(195, 87, 1, 9);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(196, 87, 2, 10);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(197, 87, 3, 11);
+/* Day subtopics for Java Curriculum 2 Week 8 Day 2 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(310, 137, 1, 9);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(311, 137, 2, 10);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(312, 137, 3, 11);
 
--- /* Day subtopics for Java Curriculum 2 Week 8 Day 3 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(198, 88, 1, 12);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(199, 88, 2, 13);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(200, 88, 3, 14);
+/* Day subtopics for Java Curriculum 2 Week 8 Day 3 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(313, 138, 1, 12);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(314, 138, 2, 13);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(315, 138, 3, 14);
 
--- /* Day subtopics for Java Curriculum 2 Week 8 Day 4 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(201, 89, 1, 15);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(202, 89, 2, 16);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(203, 89, 3, 17);
+/* Day subtopics for Java Curriculum 2 Week 8 Day 4 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(316, 139, 1, 15);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(317, 139, 2, 16);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(318, 139, 3, 17);
 
--- /* Day subtopics for Java Curriculum 2 Week 8 Day 5 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(204, 90, 1, 18);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(205, 90, 2, 19);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(206, 90, 3, 20);
+/* Day subtopics for Java Curriculum 2 Week 8 Day 5 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(319, 140, 1, 18);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(320, 140, 2, 19);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(321, 140, 3, 20);
 
--- /* Day subtopics for Java Curriculum 2 Week 9 Day 1 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(207, 91, 1, 21);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(208, 91, 2, 22);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(209, 91, 3, 23);
+/* Day subtopics for Java Curriculum 2 Week 9 Day 1 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(322, 141, 1, 21);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(323, 141, 2, 22);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(324, 141, 3, 23);
 
--- /* Day subtopics for Java Curriculum 2 Week 9 Day 2 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(210, 92, 1, 24);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(211, 92, 2, 25);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(212, 92, 3, 26);
+/* Day subtopics for Java Curriculum 2 Week 9 Day 2 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(325, 142, 1, 24);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(326, 142, 2, 25);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(327, 142, 3, 26);
 
--- /* Day subtopics for Java Curriculum 2 Week 9 Day 3 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(213, 93, 1, 27);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(214, 93, 2, 28);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(215, 93, 3, 29);
+/* Day subtopics for Java Curriculum 2 Week 9 Day 3 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(328, 143, 1, 27);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(329, 143, 2, 28);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(330, 143, 3, 29);
 
--- /* Day subtopics for Java Curriculum 2 Week 9 Day 4 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(216, 94, 1, 30);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(217, 94, 2, 31);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(218, 94, 3, 32);
+/* Day subtopics for Java Curriculum 2 Week 9 Day 4 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(331, 144, 1, 30);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(332, 144, 2, 31);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(333, 144, 3, 32);
 
--- /* Day subtopics for Java Curriculum 2 Week 9 Day 5 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(219, 95, 1, 33);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(220, 95, 2, 34);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(221, 95, 3, 35);
+/* Day subtopics for Java Curriculum 2 Week 9 Day 5 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(334, 145, 1, 33);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(335, 145, 2, 34);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(336, 145, 3, 35);
 
 
--- /* Day subtopics for Java Curriculum 2 Week 10 Day 1 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(222, 96, 1, 36);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(223, 96, 2, 37);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(224, 96, 3, 38);
+/* Day subtopics for Java Curriculum 2 Week 10 Day 1 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(337, 146, 1, 36);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(338, 146, 2, 37);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(339, 146, 3, 38);
 
--- /* Day subtopics for Java Curriculum 2 Week 10 Day 2 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(225, 97, 1, 39);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(226, 97, 2, 40);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(227, 97, 3, 41);
+/* Day subtopics for Java Curriculum 2 Week 10 Day 2 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(340, 147, 1, 39);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(341, 147, 2, 40);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(342, 147, 3, 41);
 
--- /* Day subtopics for Java Curriculum 2 Week 10 Day 3 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(228, 98, 1, 42);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(229, 98, 2, 43);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(230, 98, 3, 44);
+/* Day subtopics for Java Curriculum 2 Week 10 Day 3 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(343, 148, 1, 42);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(344, 148, 2, 43);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(345, 148, 3, 44);
 
--- /* Day subtopics for Java Curriculum 2 Week 10 Day 4 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(231, 99, 1, 45);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(232, 99, 2, 46);
+/* Day subtopics for Java Curriculum 2 Week 10 Day 4 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(346, 149, 1, 45);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(347, 149, 2, 46);
 
--- /* Day subtopics for Java Curriculum 2 Week 10 Day 5 */
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
--- values(233, 100, 1, 47);
--- insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
--- values(234, 100, 2, 48);
+/* Day subtopics for Java Curriculum 2 Week 10 Day 5 */
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(348, 150, 1, 47);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(349, 150, 2, 48);
