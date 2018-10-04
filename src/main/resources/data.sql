@@ -165,6 +165,10 @@ insert into curriculum values (2,'Java',2, 1, '2018-09-29', 10, '1', '2');
 
 insert into curriculum_week values (1, 1, 1);
 insert into curriculum_week values (2, 2, 1);
+insert into curriculum_week values (3, 2, 2);
+insert into curriculum_week values (4, 2, 3);
+insert into curriculum_week values (5, 2, 4);
+insert into curriculum_week values (6, 2, 5);
 
 insert into CURRICULUM_DAY values (1, 1, 1);
 insert into CURRICULUM_DAY values (2, 1, 2);
@@ -173,7 +177,33 @@ insert into CURRICULUM_DAY values (6, 1, 4);
 insert into CURRICULUM_DAY values (7, 1, 5);
 insert into CURRICULUM_DAY values (3, 2, 1);
 insert into CURRICULUM_DAY values (4, 2, 2);
+insert into CURRICULUM_DAY values (8, 2, 3);
+insert into CURRICULUM_DAY values (9, 2, 4);
+insert into CURRICULUM_DAY values (10, 2, 5);
 
+insert into CURRICULUM_DAY values (11, 3, 1);
+insert into CURRICULUM_DAY values (12, 3, 2);
+insert into CURRICULUM_DAY values (13, 3, 3);
+insert into CURRICULUM_DAY values (14, 3, 4);
+insert into CURRICULUM_DAY values (15, 3, 5);
+
+insert into CURRICULUM_DAY values (16, 4, 1);
+insert into CURRICULUM_DAY values (17, 4, 2);
+insert into CURRICULUM_DAY values (18, 4, 3);
+insert into CURRICULUM_DAY values (19, 4, 4);
+insert into CURRICULUM_DAY values (20, 4, 5);
+
+insert into CURRICULUM_DAY values (21, 5, 1);
+insert into CURRICULUM_DAY values (22, 5, 2);
+insert into CURRICULUM_DAY values (23, 5, 3);
+insert into CURRICULUM_DAY values (24, 5, 4);
+insert into CURRICULUM_DAY values (25, 5, 5);
+
+insert into CURRICULUM_DAY values (26, 6, 1);
+insert into CURRICULUM_DAY values (27, 6, 2);
+insert into CURRICULUM_DAY values (28, 6, 3);
+insert into CURRICULUM_DAY values (29, 6, 4);
+insert into CURRICULUM_DAY values (30, 6, 5);
 
 
 
@@ -211,4 +241,133 @@ values(14, 7, 2, 10);
 insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
 values(15, 7, 3, 11);
 
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(16, 8, 1, 12);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(17, 8, 2, 13);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(18, 8, 3, 14);
 
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(19, 9, 1, 15);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(20, 9, 2, 16);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(21, 9, 3, 17);
+
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(22, 10, 1, 18);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(23, 10, 2, 19);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(24, 10, 3, 20);
+
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(25, 11, 1, 21);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(26, 11, 2, 22);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(27, 11, 3, 23);
+
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(28, 12, 1, 24);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(29, 12, 2, 25);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(30, 12, 3, 26);
+
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(31, 13, 1, 27);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(32, 13, 2, 28);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(33, 13, 3, 29);
+
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(34, 14, 1, 30);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(35, 14, 2, 31);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(36, 14, 3, 32);
+
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(37, 15, 1, 33);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(38, 15, 2, 34);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(39, 15, 3, 35);
+
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(40, 16, 1, 36);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(41, 16, 2, 37);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(42, 16, 3, 38);
+
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(43, 17, 1, 39);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(44, 17, 2, 40);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(45, 17, 3, 41);
+
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(46, 18, 1, 42);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(47, 18, 2, 43);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(48, 18, 3, 44);
+
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(49, 19, 1, 45);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(50, 19, 2, 46);
+
+
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(51, 20, 1, 47);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(52, 20, 2, 48);
+
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(53, 21, 1, 49);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(54, 21, 2, 50);
+
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(55, 22, 1, 51);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(56, 22, 2, 52);
+
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(57, 23, 1, 53);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(58, 23, 2, 54);
+
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(59, 24, 1, 55);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(60, 24, 2, 56);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(61, 25, 1, 57);
+
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(62, 25, 2, 58);
+
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(63, 26, 1, 59);
+
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(64, 27, 1, 60);
+
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(65, 27, 2, 61);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(66, 28, 2, 62);
+
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)
+values(67, 29, 1, 63);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(68, 30, 1, 64);
+insert into day_subtopic (subtopic_id, CURRICULUM_DAY_ID, INDEX, subtopic_name_id)   
+values(69, 30, 2, 65);
