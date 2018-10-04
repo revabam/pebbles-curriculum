@@ -157,7 +157,7 @@ values(61, 'Microservices Architecture', 10);
 insert into SUBTOPIC_NAMES (subtopic_name_id, SUBTOPIC_NAME, TOPIC_ID)
 values(62, 'API Gateway-Zuul/MS Web API', 10);
 insert into SUBTOPIC_NAMES (subtopic_name_id, SUBTOPIC_NAME, TOPIC_ID)
-values(63, 'Service Discovery & Registry-Eureka(Ribbon)/Consul', 10);
+values(63, 'Service Discovery & Registry-Eureka', 10);
 insert into SUBTOPIC_NAMES (subtopic_name_id, SUBTOPIC_NAME, TOPIC_ID)
 values(64, 'Deployment Environment', 10);
 insert into SUBTOPIC_NAMES (subtopic_name_id, SUBTOPIC_NAME, TOPIC_ID)
