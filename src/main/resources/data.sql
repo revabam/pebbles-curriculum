@@ -49,7 +49,7 @@ values(11, 'Reflection', 1);
 insert into SUBTOPIC_NAMES (subtopic_name_id, SUBTOPIC_NAME, TOPIC_ID)
 values(12, 'Inheritance', 1);
 insert into SUBTOPIC_NAMES (subtopic_name_id, SUBTOPIC_NAME, TOPIC_ID)
-values(13, 'File I/O: FileInputStream/FileReader/FileWriter', 1);
+values(13, 'File I/O: FileInputStream, FileReader, FileWriter', 1);
 insert into SUBTOPIC_NAMES (subtopic_name_id, SUBTOPIC_NAME, TOPIC_ID)
 values(14, 'Methods and Parameters', 1);
 insert into SUBTOPIC_NAMES (subtopic_name_id, SUBTOPIC_NAME, TOPIC_ID)
