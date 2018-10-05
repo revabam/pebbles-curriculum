@@ -26,8 +26,6 @@ public class CurriculumLogging {
 	 */
 	@After("execution( * com.revature.services.*.*(..))")
 	public void logExecutionTime(JoinPoint joinPoint) throws Throwable {
-		System.out.println("Current Directory = " + System.getProperty("user.dir"));
-		System.out.println("NOW LOGGING");
 		logger.info("Used  services " + joinPoint);
 		logger.error("Error!");
 		logger.debug("Now Debugging...");
