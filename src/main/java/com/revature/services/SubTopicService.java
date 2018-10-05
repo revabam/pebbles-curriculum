@@ -20,10 +20,8 @@ public class SubTopicService {
 	@Autowired
 	SubtopicNamesRepository subtopicNamesRepo;
 	
-	
 	/**
 	 * Creates a day new subtopic and saves it to the database.
-	 * 
 	 * @param DaySubTopic
 	 * @return saved DaySubTopic
 	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
@@ -34,7 +32,6 @@ public class SubTopicService {
 	
 	/**
 	 * Updates a subtopic that exists in the database.
-	 * 
 	 * @param DaySubTopic
 	 * @return null or saved DaySubTopic
 	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
@@ -50,7 +47,6 @@ public class SubTopicService {
 	
 	/**
 	 * Gets all of the day subtopics within the database.
-	 * 
 	 * @return Set<DaySubTopic>
 	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
 	 */
@@ -60,7 +56,6 @@ public class SubTopicService {
 	
 	/**
 	 * Deletes a day subtopic.
-	 * 
 	 * @param int id
 	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
 	 */
@@ -70,7 +65,6 @@ public class SubTopicService {
 	
 	/**
 	 * Deletes a subtopic.
-	 * 
 	 * @param int id
 	 * @author Chris Holmes | Spark1806-USF-Java | Steven Kelsey
 	 */
@@ -80,7 +74,6 @@ public class SubTopicService {
 	
 	/**
 	 * Gets all of the subtopics within the database.
-	 * 
 	 * @return List<SubtopicNames>
 	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 */
@@ -90,7 +83,6 @@ public class SubTopicService {
 	
 	/**
 	 * Gets a subtopic by id within the database.
-	 * 
 	 * @return SubtopicNames
 	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 */
@@ -100,7 +92,6 @@ public class SubTopicService {
 	
 	/**
 	 * Creates a new subtopic and saves it to the database.
-	 * 
 	 * @param SubTopicNames
 	 * @return saved SubTopicName
 	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey

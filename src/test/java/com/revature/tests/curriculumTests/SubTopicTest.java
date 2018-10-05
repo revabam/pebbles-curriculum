@@ -11,7 +11,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.revature.Application;
 import com.revature.models.DaySubTopic;
-import com.revature.models.Subtopic;
 import com.revature.tests.TestDriver;
 
 import io.restassured.RestAssured;
@@ -28,15 +27,6 @@ public class SubTopicTest extends TestDriver {
 	
 	static String url = "http://localhost:9996/subtopic";
 
-	@Test
-	public void updateSubtopic() {
-	    Subtopic subtopic = new Subtopic(2, "Exceptions", 1);
-	    
-	    int status = RestAssured.given().contentType("application/json").body(subtopic).put(url + "/day").getStatusCode();
-	    
-	    assertEquals(200, status);
-	  }
-	
 	@Test
     public void getAllSubtopics() {
     	
@@ -89,14 +79,4 @@ public class SubTopicTest extends TestDriver {
 	    assertEquals(201, status);
 	  }
 	
-	@Ignore
-	@Test
-	public void addSubtopic() {
-	    Subtopic subtopic = new Subtopic(10, "Test", 1);
-	    
-	    int status = RestAssured.given().contentType("application/json").body(subtopic).post(url).getStatusCode();
-	    
-	    assertEquals(201, status);
-	  }
-
 }

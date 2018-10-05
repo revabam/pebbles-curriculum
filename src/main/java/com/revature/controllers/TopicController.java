@@ -32,7 +32,6 @@ public class TopicController {
 	
 	/**
 	 * Creates a topic
-	 *
 	 * @param newTopic
 	 *            Topic
 	 * @return ResponseEntity<Topic> and an HttpStatus.ok
@@ -44,9 +43,9 @@ public class TopicController {
 		Topic topic = service.addTopic(newTopic);
 		return new ResponseEntity<>(topic, HttpStatus.CREATED);
 	}
+	
 	/**
 	 * Finds topic by its ID.
-	 * 
 	 * @param Int id
 	 * @return ResponseEntity<Topic>
 	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
@@ -56,12 +55,11 @@ public class TopicController {
 		
 		Topic value = service.findTopic(id);
 		return new ResponseEntity<>(value, HttpStatus.OK);
-		
 	}
+	
 	/**
 	 * Find all topics within the database.
-	 * 
-	 * @return
+	 * @return ResponseEntity<List<Topic>>
 	 * @author Beck Larson | Joey Shannon | Spark1806-USF-Java | Steven Kelsey
 	 */
 	@GetMapping
@@ -69,20 +67,26 @@ public class TopicController {
 		List<Topic> value = service.findAllTopics();
 		return new ResponseEntity<>(value, HttpStatus.OK);
 	}
+	
+	/**
+	 * Deletes topic from database with the given ID. 
+	 * @param id
+	 * @return ResponseEntity<HttpStatus>
+	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
+	 */
 	@DeleteMapping("/{id}")
 	public ResponseEntity<HttpStatus> deleteTopic(@PathVariable int id){
 		service.deleteTopic(id);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
+	
 	/**
 	 * Handles all exceptions thrown within the SubTopicController, then creates a error object. 
 	 * @param ex
 	 * @param request
 	 * @return ResponseEntity<ExceptionObject> A error object that contains details based off 
 	 * 			of the exception caught and a HttpStatus based off of the exception thrown. 
-	 * 
 	 * @author Beck Larson | Spark1806-USF-Java | USF | Steven Kelsey
-	 * 
 	 */
 	@ExceptionHandler(Exception.class)
 	  public final ResponseEntity<ExceptionObject> topicException(Exception ex, WebRequest request) {

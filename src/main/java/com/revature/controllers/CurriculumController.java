@@ -34,7 +34,6 @@ public class CurriculumController {
 
 	/**
 	 * Gets all Curriculums
-	 * 
 	 * @return ResponseEntity<List<Curriculum>> A list of curriculums and an HTTP
 	 *         status code
 	 * @author Christian DeFaria | 1806-Jun18-USF-Java | Wezley Singleton
@@ -49,7 +48,6 @@ public class CurriculumController {
 
 	/**
 	 * Gets one curriculum by its id
-	 *
 	 * @param id
 	 *            int
 	 * @return ResponseEntity<Curriculum> A curriculum object and a HTTP status code
@@ -68,7 +66,6 @@ public class CurriculumController {
 
 	/**
 	 * Adds a curriculum to the database and returns it
-	 *
 	 * @param newCurr
 	 *            Curriculum
 	 * @return ResponseEntity<Curriculum> A curriculum object and a HTTP status code
@@ -82,7 +79,6 @@ public class CurriculumController {
 
 	/**
 	 * Updates a curriculum in the database and returns it
-	 *
 	 * @param updatedCurr
 	 *            Curriculum
 	 * @return ResponseEntity<Curriculum> A curriculum object and a HTTP status code
@@ -93,9 +89,9 @@ public class CurriculumController {
 		Curriculum curr = service.updateCurriculum(updatedCurr);
 		return new ResponseEntity<>(curr, HttpStatus.OK);
 	}
+	
 	/**
 	 * Handles all exceptions thrown within the SubTopicController, then creates a error object. 
-	 * 
 	 * @param ex
 	 * @param request
 	 * @return ResponseEntity<ExceptionObject> An error object that contains details based off 

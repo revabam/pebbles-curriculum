@@ -25,6 +25,10 @@ import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
+/**
+ * This maps the DaySubTopic model to the day_subtopic table in H2 database
+ * @author Rhys Yamasaki | Joshua Maciejewski | Beck Larson | Spark-1806-Jun-2018-USF | Steven Kelsey
+ */
 @Entity
 @Component
 @Table(name = "DAY_SUBTOPIC")
@@ -33,8 +37,8 @@ public class DaySubTopic implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name = "day_subtopic_seq_name", sequenceName = "day_subtopic_seq_name", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "day_subtopic_seq_name")
+	@SequenceGenerator(name = "DAY_SUBTOPIC_SEQ_NAME", sequenceName = "DAY_SUBTOPIC_SEQ_NAME", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "DAY_SUBTOPIC_SEQ_NAME")
 	@Column(name = "subtopic_id")
 	private Integer id;
 	

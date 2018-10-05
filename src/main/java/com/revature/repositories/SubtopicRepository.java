@@ -8,11 +8,18 @@ import org.springframework.stereotype.Repository;
 
 import com.revature.models.DaySubTopic;
 
+/**
+ * Repository for DaySubtopic
+ * @author Beck Larson | Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
+ */
 @Repository
 public interface SubtopicRepository extends CrudRepository<DaySubTopic, Integer> {
-
-	List<DaySubTopic> findById(Integer id);
 	
+	/**
+	 * Finds all DaySubTopic
+	 * @return Set<DaySubTopic>
+	 * @author Beck Larson | Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
+	 */
 	Set<DaySubTopic> findAll();
 	
 }

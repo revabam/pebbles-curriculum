@@ -22,6 +22,10 @@ import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+/**
+ * This maps the SubtopicNames model to the subtopic_names table in H2 database
+ * @author Rhys Yamasaki | Joshua Maciejewski | Beck Larson | Spark-1806-Jun-2018-USF | Steven Kelsey
+ */
 @Entity
 @Table(name = "SUBTOPIC_NAMES")
 public class SubtopicNames implements Serializable {
@@ -29,8 +33,8 @@ public class SubtopicNames implements Serializable {
 	private static final long serialVersionUID = -6260965338214448594L;
 
 	@Id
-	@SequenceGenerator(name = "subtopic_seq_name", sequenceName = "subtopic_seq_name", initialValue = 12, allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "subtopic_seq_name")
+	@SequenceGenerator(name = "SUBTOPIC_SEQ_NAME", sequenceName = "SUBTOPIC_SEQ_NAME", initialValue = 12, allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SUBTOPIC_SEQ_NAME")
 	@Column(name = "SUBTOPIC_NAME_ID")
 	private int id;
 

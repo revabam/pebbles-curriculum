@@ -19,16 +19,20 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.stereotype.Component;
 
+/**
+ * This maps the Curriculum model to the Curriculum table in H2 database
+ * @author Rhys Yamasaki | Joshua Maciejewski | Beck Larson | Spark-1806-Jun-2018-USF | Steven Kelsey
+ */
 @Entity
 @Component
-@Table(name="CURRICULUM")
+@Table(name="curriculum")
 @SequenceGenerator(name="curriculum_seq_name", sequenceName="curriculum_seq", initialValue=3, allocationSize=1)
 public class Curriculum implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="ID")
+	@Column(name="id")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="curriculum_seq_name")
 	private Integer id;
 	
@@ -44,10 +48,10 @@ public class Curriculum implements Serializable {
 	@Column(name="creator_id")
 	private String creatorId;
 	
-	@Column(name="APPROVED_BY_ID")
+	@Column(name="approved_by_id")
 	private String approvedById;
 	
-	@Column(name="STATUS")
+	@Column(name="status")
 	private int status;
 	
 	@NotNull
