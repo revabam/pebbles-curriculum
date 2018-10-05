@@ -24,8 +24,6 @@ public class CurriculumLogging {
 	// This executes after the methods in the service class
 	@After("execution( * com.revature.services.*.*(..))")
 	public void logExecutionTime(JoinPoint joinPoint) throws Throwable {
-		System.out.println("Current Directory = " + System.getProperty("user.dir"));
-		System.out.println("NOW LOGGING");
 		logger.info("Used  services " + joinPoint);
 		logger.error("Error!");
 		logger.debug("Now Debugging...");
@@ -39,7 +37,7 @@ public class CurriculumLogging {
 		logger.debug("Now Debugging...");
 	}
 
-	// This executed before the methods in the curriculum controller
+	// This executed before the methods in the curriculum day controller
 	@Before("execution( * com.revature.controllers.CurriculumDayController.*(..))")
 	public void logCurriculumDay(JoinPoint joinPoint) throws Throwable {
 		logger.info("Curriculum Day endpoints hit" + joinPoint);
@@ -47,7 +45,7 @@ public class CurriculumLogging {
 		logger.debug("Now Debugging...");
 	}
 
-	// This executed before the methods in the curriculum controller
+	// This executed before the methods in the curriculum week controller
 	@Before("execution( * com.revature.controllers.CurriculumWeekController.*(..))")
 	public void logCurriculumWeek(JoinPoint joinPoint) throws Throwable {
 		logger.info("Curriculum Week Day endpoints hit" + joinPoint);
@@ -55,7 +53,7 @@ public class CurriculumLogging {
 		logger.debug("Now Debugging...");
 	}
 
-	// This executed before the methods in the curriculum controller
+	// This executed before the methods in the subtopic controller
 	@Before("execution( * com.revature.controllers.SubTopicController.*(..))")
 	public void logSubTopic(JoinPoint joinPoint) throws Throwable {
 		logger.info("SubTopic endpoints hit" + joinPoint);
@@ -63,7 +61,7 @@ public class CurriculumLogging {
 		logger.debug("Now Debugging...");
 	}
 
-	// This executed before the methods in the curriculum controller
+	// This executed before the methods in the topic controller
 	@Before("execution( * com.revature.controllers.TopicController.*(..))")
 	public void logTopic(JoinPoint joinPoint) throws Throwable {
 		logger.info("Topic endpoints hit" + joinPoint);
