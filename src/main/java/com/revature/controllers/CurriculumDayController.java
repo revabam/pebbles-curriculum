@@ -32,7 +32,6 @@ public class CurriculumDayController {
 	
 	/**
 	 * Gets a list all curriculum days
-	 * 
 	 * @return ResponseEntity<List<CurriculumDay>> and an http status of ok
 	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 */
@@ -44,7 +43,6 @@ public class CurriculumDayController {
 	
 	/**
 	 * Gets a curriculumDay by its id
-	 * 
 	 * @param id
 	 * @return ResponseEntity<CurriculumDay> and an http status of ok
 	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
@@ -57,7 +55,6 @@ public class CurriculumDayController {
 	
 	/**
 	 * Gets a curriculum day by passing in curriculumWeekId and dayNum
-	 * 
 	 * @param curriculumWeekId
 	 * @param dayNum
 	 * @return 
@@ -71,7 +68,6 @@ public class CurriculumDayController {
 	
 	/**
 	 * Creates a curriculum day by passing in a curriculum day object
-	 * 
 	 * @param day
 	 * @return ResponseEntity<CurriculumDay> and 
 	 * 			an http status of created
@@ -85,7 +81,6 @@ public class CurriculumDayController {
 	
 	/**
 	 * Updates a curriculum day by passing a curriculum day object
-	 * 
 	 * @param day
 	 * @return ResponseEntity<CurriculumDay> and
 	 * 			an http status of ok
@@ -99,7 +94,6 @@ public class CurriculumDayController {
 	
 	/**
 	 * Deletes a CurriculumDay from the database based on id
-	 * 
 	 * @param id
 	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 */
@@ -110,7 +104,6 @@ public class CurriculumDayController {
 	
 	/**
 	 * Handles all exceptions thrown within the CurriculumDayController, then creates a error object. 
-	 * 
 	 * @param ex
 	 * @param request
 	 * @return ResponseEntity<ExceptionObject> An error object that contains details based off 

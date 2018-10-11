@@ -33,7 +33,6 @@ public class CurriculumWeekController {
 
 	/**
 	 * Finds all weeks within the database.
-	 * 
 	 * @return ResponseEntity<List<CurriculumWeek>>
 	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
 	 */
@@ -45,7 +44,6 @@ public class CurriculumWeekController {
 
 	/**
 	 * Finds a curriculum week by its ID from the database.
-	 * 
 	 * @return ResponseEntity<CurriculumWeek>
 	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
 	 */
@@ -57,7 +55,6 @@ public class CurriculumWeekController {
 
 	/**
 	 * Finds a curriculum week by its ID and week num from the database.
-	 * 
 	 * @return ResponseEntity<CurriculumWeek>
 	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
 	 */
@@ -69,7 +66,6 @@ public class CurriculumWeekController {
 
 	/**
 	 * Creates a new week and saves it to the database.
-	 * 
 	 * @param CurriculumWeek
 	 * @return ResponseEntity<CurriculumWeek>
 	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
@@ -82,7 +78,6 @@ public class CurriculumWeekController {
 
 	/**
 	 * Updates a week that is already in the database.
-	 * 
 	 * @param CurriculumWeek
 	 * @return ResponseEntity<CurriculumWeek>
 	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
@@ -92,6 +87,7 @@ public class CurriculumWeekController {
 		CurriculumWeek value = service.updateWeek(week);
 		return new ResponseEntity<>(value, HttpStatus.ACCEPTED);
 	}
+	
 	/**
 	 * Deletes a week with the id requested.
 	 * @param int id
@@ -107,7 +103,6 @@ public class CurriculumWeekController {
 	/**
 	 * Handles all exceptions thrown within the SubTopicController, then creates a
 	 * error object.
-	 * 
 	 * @param Exception
 	 * @param request
 	 * @return ResponseEntity<ExceptionObject> A error object that contains details

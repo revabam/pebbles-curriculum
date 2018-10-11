@@ -19,13 +19,17 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+/**
+ * This maps the CurriculumWeek model to the curriculum_week table in H2 database
+ * @author Rhys Yamasaki | Joshua Maciejewski | Beck Larson | Spark-1806-Jun-2018-USF | Steven Kelsey
+ */
 @Entity
 @Table(name = "CURRICULUM_WEEK")
 public class CurriculumWeek implements Serializable{
 
 	@Id
-	@SequenceGenerator(name="curriculum_week_seq", sequenceName="curriculum_week_seq")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="curriculum_week_seq")
+	@SequenceGenerator(name="CURRICULUM_WEEK_SEQ", sequenceName="CURRICULUM_WEEK_SEQ")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="CURRICULUM_WEEK_SEQ")
 	@Column(name = "CURRICULUM_WEEK_ID")
 	@NotNull
 	private int id;
@@ -45,7 +49,6 @@ public class CurriculumWeek implements Serializable{
 	@NotNull
 	private Set<CurriculumDay> curriculumDays = new HashSet<CurriculumDay>();
 	
-
 	public CurriculumWeek() {
 		super();
 	}
@@ -62,26 +65,21 @@ public class CurriculumWeek implements Serializable{
 		return id;
 	}
 
-
 	public void setid(int id) {
 		this.id = id;
 	}
-
 
 	public int getWeekNum() {
 		return weekNum;
 	}
 
-
 	public void setWeekNum(int weekNum) {
 		this.weekNum = weekNum;
 	}
 
-
 	public Set<CurriculumDay> getCurriculumDays() {
 		return curriculumDays;
 	}
-
 
 	public void setCurriculumDays(Set<CurriculumDay> curriculumDay) {
 		this.curriculumDays = curriculumDay;

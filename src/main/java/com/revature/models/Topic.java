@@ -19,21 +19,25 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.stereotype.Component;
 
+/**
+ * This maps the Topic model to the topic table in H2 database
+ * @author Rhys Yamasaki | Joshua Maciejewski | Beck Larson | Spark-1806-Jun-2018-USF | Steven Kelsey
+ */
 @Entity
 @Component
 @Table(name = "TOPIC")
-@SequenceGenerator(name = "topic_seq_name", sequenceName = "topic_seq", initialValue = 5, allocationSize = 1)
+@SequenceGenerator(name = "TOPIC_SEQ_NAME", sequenceName = "TOPIC_SEQ")
 public class Topic implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@Column(name = "ID")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "topic_seq_name")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TOPIC_SEQ_NAME")
 	private Integer id;
 
 	@NotNull
-	@Column(name = "name", unique = true)
+	@Column(name = "NAME", unique = true)
 	private String name;
 	
 	@OneToMany(mappedBy = "topic", fetch = FetchType.EAGER)

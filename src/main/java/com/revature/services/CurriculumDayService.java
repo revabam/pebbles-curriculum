@@ -16,7 +16,6 @@ public class CurriculumDayService {
 
 	/**
 	 * Gets a list of all curriculum day
-	 * 
 	 * @return List<CurriculumDay>
 	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 */
@@ -26,7 +25,6 @@ public class CurriculumDayService {
 
 	/**
 	 * Gets a curriculum day by its id
-	 * 
 	 * @param id
 	 * @return CurriculumDay 
 	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
@@ -37,7 +35,6 @@ public class CurriculumDayService {
 	
 	/**
 	 * Gets a list of CurriculumDay by curriculumWeekId and dayNum
-	 * 
 	 * @param id
 	 * @param dayNum
 	 * @return List<CurriculumDay>
@@ -49,7 +46,6 @@ public class CurriculumDayService {
 
 	/**
 	 * creates a CurriculumDay and persists it in the database
-	 * 
 	 * @param day
 	 * @return CurriculumDay
 	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
@@ -60,7 +56,6 @@ public class CurriculumDayService {
 
 	/**
 	 * Updates a CurriculumDay and persists it in the database
-	 * 
 	 * @param day
 	 * @return CurriculumDay
 	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
@@ -71,7 +66,6 @@ public class CurriculumDayService {
 	
 	/**
 	 * Deletes a CurriculumDay from the database based on id
-	 * 
 	 * @param id
 	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 */

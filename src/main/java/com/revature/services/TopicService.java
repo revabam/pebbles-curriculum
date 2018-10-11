@@ -18,7 +18,6 @@ public class TopicService {
 
 	/**
 	 * Creates a new subtopic in the database.
-	 * 
 	 * @param Topic
 	 * @return Saved Topic.
 	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
@@ -29,7 +28,6 @@ public class TopicService {
 	
 	/**
 	 * Finds a Topic by its id.
-	 * 
 	 * @param int id
 	 * @return Topic
 	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
@@ -37,18 +35,18 @@ public class TopicService {
 	public Topic findTopic( int id) {
 		return topicRepo.findOne(id);
 	}
+	
 	/**
 	 * Finds all topics currently within the database.
-	 * 
 	 * @return List<Topic>
 	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
 	 */
 	public List<Topic> findAllTopics(){
 		return topicRepo.findAll();
 	}
+	
 	/**
 	 * deletes a topic by its id.
-	 * 
 	 * @param int id
 	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
 	 */

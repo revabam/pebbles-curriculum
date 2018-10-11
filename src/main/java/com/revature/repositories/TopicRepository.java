@@ -10,9 +10,17 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.models.Topic;
 
+/**
+ * Repository for Topic
+ * @author Beck Larson | Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
+ */
 @Repository
 public interface TopicRepository extends JpaRepository<Topic, Integer> {
 
+	/**
+	 * Deletes topic by id
+	 * @author Beck Larson | Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
+	 */
 	@Modifying
 	@Transactional
 	@Query(value="delete from Topic c where id = ?1")

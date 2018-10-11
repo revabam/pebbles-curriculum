@@ -18,17 +18,20 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+/**
+ * This maps the CurriculumDay model to the curriculum_day table in H2 database
+ * @author Rhys Yamasaki | Joshua Maciejewski | Beck Larson | Spark-1806-Jun-2018-USF | Steven Kelsey
+ */
 @Entity
 @Table(name = "CURRICULUM_DAY")
 public class CurriculumDay implements Serializable{
 
 	private static final long serialVersionUID = 5619871966502548105L;
 	@Id
-	@SequenceGenerator(name="curriculum_day_seq", sequenceName="curriculum_day_seq")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="curriculum_day_seq")
+	@SequenceGenerator(name="CURRICULUM_DAY_SEQ", sequenceName="CURRICULUM_DAY_SEQ")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="CURRICULUM_DAY_SEQ")
 	@Column(name = "CURRICULUM_DAY_ID")
 	private int id;
-	
 	
 	@Column(name = "DAY_NUM")
 	private int dayNum;

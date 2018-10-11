@@ -36,7 +36,6 @@ public class SubTopicController {
 
 	/**
 	 * Creates a subtopic in the database
-	 *
 	 * @param newSubtopic Subtopic
 	 * @return ResponseEntity<Subtopic> A newly created subtopic object and a HTTP
 	 *         status code
@@ -51,7 +50,6 @@ public class SubTopicController {
 	
 	/**
 	 * Updates a subtopic in the database
-	 *
 	 * @param updatedSubtopic Subtopic
 	 * @return ResponseEntity<Subtopic> A subtopic object and a HTTP status code
 	 * @author Christian DeFaria | 1806-Jun18-USF-Java | Wezley Singleton
@@ -64,11 +62,9 @@ public class SubTopicController {
 
 	/**
 	 * Returns all subtopics within the database
-	 * 
 	 * @return ResponseEntity<Set<DaySubTopic>> A set of day subtopics and an
 	 *         HttpStatus.OK
 	 * @author Beck Larson | Spark1806-USF-Java | Steven Kelsey
-	 * 
 	 */
 	@GetMapping("/day")
 	public ResponseEntity<Set<DaySubTopic>> getAllDaySubtopics() {
@@ -101,11 +97,9 @@ public class SubTopicController {
 	
 	/**
 	 * Returns all subtopics within the database
-	 * 
 	 * @return ResponseEntity<List<SubtopicNames>> A list of subtopics and an
 	 *         HttpStatus.OK
 	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
-	 * 
 	 */
 	@GetMapping
 	public ResponseEntity<List<SubtopicNames>> getAllSubtopics() {
@@ -115,11 +109,9 @@ public class SubTopicController {
 	
 	/**
 	 * Return a subtopic within the database
-	 * 
 	 * @return ResponseEntity<SubtopicNames> and an
 	 *         HttpStatus.OK
 	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
-	 * 
 	 */
 	@GetMapping("/{id}")
 	public ResponseEntity<SubtopicNames> getBySubtopicId(@PathVariable int id) {
@@ -134,7 +126,6 @@ public class SubTopicController {
 	 * 			an HttpStatus of ok
 	 * @author Rhys Yamasaki | Spark1806-USF-Java | Steven Kelsey
 	 */
-	
 	@PostMapping
 	public ResponseEntity<SubtopicNames> addSubtopic(@RequestBody SubtopicNames newSubtopic) {
 		System.out.println("CREATING SUBTOPIC " + newSubtopic);
@@ -145,7 +136,6 @@ public class SubTopicController {
 	/**
 	 * Handles all exceptions thrown within the SubTopicController, then creates a
 	 * error object.
-	 * 
 	 * @param ex
 	 * @param request
 	 * @return ResponseEntity<ExceptionObject> A error object that contains details
